@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label ();
             this.nazivTB = new System.Windows.Forms.TextBox ();
             this.panel1 = new System.Windows.Forms.Panel ();
+            this.odustaniBTN = new System.Windows.Forms.Button ();
+            this.prihvatiBTN = new System.Windows.Forms.Button ();
             this.SuspendLayout ();
             // 
             // ucitajSlikuTB
@@ -148,11 +150,35 @@
             this.panel1.Size = new System.Drawing.Size (25, 30);
             this.panel1.TabIndex = 13;
             // 
+            // odustaniBTN
+            // 
+            this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
+            this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.odustaniBTN.Location = new System.Drawing.Point (471, 286);
+            this.odustaniBTN.Name = "odustaniBTN";
+            this.odustaniBTN.Size = new System.Drawing.Size (43, 43);
+            this.odustaniBTN.TabIndex = 26;
+            this.odustaniBTN.UseVisualStyleBackColor = true;
+            this.odustaniBTN.Click += new System.EventHandler (this.odustaniBTN_Click);
+            // 
+            // prihvatiBTN
+            // 
+            this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
+            this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.prihvatiBTN.Location = new System.Drawing.Point (422, 286);
+            this.prihvatiBTN.Name = "prihvatiBTN";
+            this.prihvatiBTN.Size = new System.Drawing.Size (43, 43);
+            this.prihvatiBTN.TabIndex = 25;
+            this.prihvatiBTN.UseVisualStyleBackColor = true;
+            this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
+            // 
             // NoviEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size (526, 287);
+            this.ClientSize = new System.Drawing.Size (526, 337);
+            this.Controls.Add (this.odustaniBTN);
+            this.Controls.Add (this.prihvatiBTN);
             this.Controls.Add (this.ucitajSlikuTB);
             this.Controls.Add (this.otvoren);
             this.Controls.Add (this.label4);
@@ -186,5 +212,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nazivTB;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button odustaniBTN;
+        private System.Windows.Forms.Button prihvatiBTN;
     }
 }

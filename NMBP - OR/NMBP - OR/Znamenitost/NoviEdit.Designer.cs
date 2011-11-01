@@ -39,6 +39,8 @@
             this.datumIzgradnje = new System.Windows.Forms.DateTimePicker ();
             this.label5 = new System.Windows.Forms.Label ();
             this.label6 = new System.Windows.Forms.Label ();
+            this.odustaniBTN = new System.Windows.Forms.Button ();
+            this.prihvatiBTN = new System.Windows.Forms.Button ();
             this.SuspendLayout ();
             // 
             // ucitajSlikuTB
@@ -104,7 +106,7 @@
             this.opisTB.Location = new System.Drawing.Point (53, 304);
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
-            this.opisTB.Size = new System.Drawing.Size (459, 46);
+            this.opisTB.Size = new System.Drawing.Size (462, 46);
             this.opisTB.TabIndex = 18;
             // 
             // label2
@@ -188,11 +190,35 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Datum izgradnje";
             // 
+            // odustaniBTN
+            // 
+            this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
+            this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.odustaniBTN.Location = new System.Drawing.Point (472, 356);
+            this.odustaniBTN.Name = "odustaniBTN";
+            this.odustaniBTN.Size = new System.Drawing.Size (43, 43);
+            this.odustaniBTN.TabIndex = 30;
+            this.odustaniBTN.UseVisualStyleBackColor = true;
+            this.odustaniBTN.Click += new System.EventHandler (this.odustaniBTN_Click);
+            // 
+            // prihvatiBTN
+            // 
+            this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
+            this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.prihvatiBTN.Location = new System.Drawing.Point (423, 356);
+            this.prihvatiBTN.Name = "prihvatiBTN";
+            this.prihvatiBTN.Size = new System.Drawing.Size (43, 43);
+            this.prihvatiBTN.TabIndex = 29;
+            this.prihvatiBTN.UseVisualStyleBackColor = true;
+            this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
+            // 
             // NoviEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size (526, 362);
+            this.ClientSize = new System.Drawing.Size (526, 407);
+            this.Controls.Add (this.odustaniBTN);
+            this.Controls.Add (this.prihvatiBTN);
             this.Controls.Add (this.label6);
             this.Controls.Add (this.label5);
             this.Controls.Add (this.datumIzgradnje);
@@ -234,5 +260,7 @@
         private System.Windows.Forms.DateTimePicker datumIzgradnje;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button odustaniBTN;
+        private System.Windows.Forms.Button prihvatiBTN;
     }
 }

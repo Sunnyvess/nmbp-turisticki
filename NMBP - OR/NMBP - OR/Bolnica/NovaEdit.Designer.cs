@@ -33,8 +33,10 @@
             this.label4 = new System.Windows.Forms.Label ();
             this.radnoVrijemeTB = new System.Windows.Forms.TextBox ();
             this.dezurna = new System.Windows.Forms.CheckBox ();
-            this.panel1 = new System.Windows.Forms.Panel ();
             this.ucitajSlikuBTN = new System.Windows.Forms.Button ();
+            this.odustaniBTN = new System.Windows.Forms.Button ();
+            this.prihvatiBTN = new System.Windows.Forms.Button ();
+            this.panel1 = new System.Windows.Forms.Panel ();
             this.SuspendLayout ();
             // 
             // nazivTB
@@ -130,15 +132,6 @@
             this.dezurna.Text = "Dezurna";
             this.dezurna.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.bolnica;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point (12, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size (25, 30);
-            this.panel1.TabIndex = 1;
-            // 
             // ucitajSlikuBTN
             // 
             this.ucitajSlikuBTN.Location = new System.Drawing.Point (440, 6);
@@ -148,11 +141,44 @@
             this.ucitajSlikuBTN.Text = "Ucitaj sliku";
             this.ucitajSlikuBTN.UseVisualStyleBackColor = true;
             // 
+            // odustaniBTN
+            // 
+            this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
+            this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.odustaniBTN.Location = new System.Drawing.Point (471, 285);
+            this.odustaniBTN.Name = "odustaniBTN";
+            this.odustaniBTN.Size = new System.Drawing.Size (43, 43);
+            this.odustaniBTN.TabIndex = 14;
+            this.odustaniBTN.UseVisualStyleBackColor = true;
+            this.odustaniBTN.Click += new System.EventHandler (this.odustaniBTN_Click);
+            // 
+            // prihvatiBTN
+            // 
+            this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
+            this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.prihvatiBTN.Location = new System.Drawing.Point (422, 285);
+            this.prihvatiBTN.Name = "prihvatiBTN";
+            this.prihvatiBTN.Size = new System.Drawing.Size (43, 43);
+            this.prihvatiBTN.TabIndex = 13;
+            this.prihvatiBTN.UseVisualStyleBackColor = true;
+            this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.bolnica;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point (12, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size (25, 30);
+            this.panel1.TabIndex = 1;
+            // 
             // NovaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size (526, 287);
+            this.ClientSize = new System.Drawing.Size (526, 339);
+            this.Controls.Add (this.odustaniBTN);
+            this.Controls.Add (this.prihvatiBTN);
             this.Controls.Add (this.ucitajSlikuBTN);
             this.Controls.Add (this.dezurna);
             this.Controls.Add (this.label4);
@@ -186,5 +212,7 @@
         private System.Windows.Forms.TextBox radnoVrijemeTB;
         private System.Windows.Forms.CheckBox dezurna;
         private System.Windows.Forms.Button ucitajSlikuBTN;
+        private System.Windows.Forms.Button prihvatiBTN;
+        private System.Windows.Forms.Button odustaniBTN;
     }
 }
