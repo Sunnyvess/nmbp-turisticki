@@ -62,19 +62,19 @@ namespace NMBP___OR.Presentation {
         }
 
         private void masterLista_SelectedIndexChanged (object sender, EventArgs e) {
-            ILokacija selectedItem = masterLista.SelectedItem as ILokacija;
+            Logic.ILokacija selectedItem = masterLista.SelectedItem as Logic.ILokacija;
             if (selectedItem == null)
                 return;
             selectedItem.PrikaziInfo ();
         }
         private void editBTN_Click (object sender, EventArgs e) {
-            ILokacija selectedItem = masterLista.SelectedItem as ILokacija;
+            Logic.ILokacija selectedItem = masterLista.SelectedItem as Logic.ILokacija;
             if (selectedItem == null)
                 return;
             selectedItem.Izmijeni ();
         }
         private void deleteBTN_Click (object sender, EventArgs e) {
-            ILokacija selectedItem = masterLista.SelectedItem as ILokacija;
+            Logic.ILokacija selectedItem = masterLista.SelectedItem as Logic.ILokacija;
             if (selectedItem == null)
                 return;
             selectedItem.Obrisi ();

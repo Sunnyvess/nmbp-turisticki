@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace NMBP___OR.Logic {
-    public class Park : ILokacija {
+    public class Park : Logic.ILokacija {
         public bool otvoren = false;
 
         public void Obrisi () {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace NMBP___OR.Logic {
-    public class Muzej : ILokacija {
+    public class Muzej : Logic.ILokacija {
         TipMuzeja tip;
 
         public void Obrisi () {
