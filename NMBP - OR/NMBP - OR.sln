@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMBP - OR", "NMBP - OR\NMBP - OR.csproj", "{497BA257-CDAD-4BE0-ACC6-56C8995A14B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{CA6567D1-9898-4A27-9F14-81B3950B46C4}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -19,10 +17,6 @@ Global
 		{497BA257-CDAD-4BE0-ACC6-56C8995A14B2}.Debug|x86.Build.0 = Debug|x86
 		{497BA257-CDAD-4BE0-ACC6-56C8995A14B2}.Release|x86.ActiveCfg = Release|x86
 		{497BA257-CDAD-4BE0-ACC6-56C8995A14B2}.Release|x86.Build.0 = Release|x86
-		{CA6567D1-9898-4A27-9F14-81B3950B46C4}.Debug|x86.ActiveCfg = Debug|x86
-		{CA6567D1-9898-4A27-9F14-81B3950B46C4}.Debug|x86.Build.0 = Debug|x86
-		{CA6567D1-9898-4A27-9F14-81B3950B46C4}.Release|x86.ActiveCfg = Release|x86
-		{CA6567D1-9898-4A27-9F14-81B3950B46C4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
