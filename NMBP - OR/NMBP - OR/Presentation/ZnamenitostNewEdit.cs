@@ -17,12 +17,14 @@ namespace NMBP___OR.Presentation {
             znamen = new Logic.Znamenitost ();
             this.Name = "Nova znamenitost";
             NapuniTipoveZnamenitosti ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public ZnamenitostNewEdit (Logic.Znamenitost znamenitostToEdit) {
             InitializeComponent ();
             znamen = znamenitostToEdit;
             this.Name = "Izmjena znamenitosti";
             NapuniTipoveZnamenitosti ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         void NapuniTipoveZnamenitosti () {
             tipZnamenCB.Items.Clear ();
@@ -35,7 +37,6 @@ namespace NMBP___OR.Presentation {
             accepted = true;
             this.Close ();
         }
-
         private void odustaniBTN_Click (object sender, EventArgs e) {
             accepted = false;
             this.Close ();

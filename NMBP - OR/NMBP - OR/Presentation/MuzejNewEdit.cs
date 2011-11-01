@@ -17,12 +17,14 @@ namespace NMBP___OR.Presentation {
             muzej = new Logic.Muzej ();
             this.Name = "Novi muzej";
             NapuniTipMuzeja ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public MuzejNewEdit (Logic.Muzej muzejToEdit) {
             InitializeComponent ();
             muzej = muzejToEdit;
             this.Name = "Izmjena muzeja";
             NapuniTipMuzeja ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         void NapuniTipMuzeja () {
             tipMuzejaCB.Items.Clear ();
@@ -35,7 +37,6 @@ namespace NMBP___OR.Presentation {
             accepted = true;
             this.Close ();
         }
-
         private void odustaniBTN_Click (object sender, EventArgs e) {
             accepted = false;
             this.Close ();

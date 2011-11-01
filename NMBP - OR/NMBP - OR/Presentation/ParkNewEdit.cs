@@ -16,18 +16,19 @@ namespace NMBP___OR.Presentation {
             InitializeComponent ();
             park = new Logic.Park ();
             this.Name = "Novi park";
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public ParkNewEdit (Logic.Park parkToEdit) {
             InitializeComponent ();
             park = parkToEdit;
             this.Name = "Izmjena parka";
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void prihvatiBTN_Click (object sender, EventArgs e) {
             accepted = true;
             this.Close ();
         }
-
         private void odustaniBTN_Click (object sender, EventArgs e) {
             accepted = false;
             this.Close ();

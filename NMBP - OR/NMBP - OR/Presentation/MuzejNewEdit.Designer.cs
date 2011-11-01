@@ -89,10 +89,11 @@
             // 
             // slikaPanel
             // 
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Location = new System.Drawing.Point (335, 35);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size (180, 180);
+            this.slikaPanel.Size = new System.Drawing.Size (180, 233);
             this.slikaPanel.TabIndex = 36;
             // 
             // label3
@@ -181,7 +182,7 @@
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
             // 
-            // NoviEdit
+            // MuzejNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +202,7 @@
             this.Controls.Add (this.label1);
             this.Controls.Add (this.nazivTB);
             this.Controls.Add (this.panel1);
-            this.Name = "NoviEdit";
+            this.Name = "MuzejNewEdit";
             this.Text = "Novi muzej";
             this.ResumeLayout (false);
             this.PerformLayout ();

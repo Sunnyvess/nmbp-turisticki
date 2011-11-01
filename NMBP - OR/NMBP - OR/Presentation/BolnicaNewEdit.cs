@@ -16,18 +16,19 @@ namespace NMBP___OR.Presentation {
             InitializeComponent ();
             bolnica = new Logic.Bolnica ();
             this.Name = "Nova bolnica";
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public BolnicaNewEdit (Logic.Bolnica bolnicaToEdit) {
             InitializeComponent ();
             bolnica = bolnicaToEdit;
             this.Name = "Izmjena bolnice";
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void prihvatiBTN_Click (object sender, EventArgs e) {
             accepted = true;
             this.Close ();
         }
-
         private void odustaniBTN_Click (object sender, EventArgs e) {
             accepted = false;
             this.Close ();

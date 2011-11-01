@@ -11,6 +11,7 @@ namespace NMBP___OR.Presentation {
     public partial class BolnicaInfo : Form {
         public BolnicaInfo (Logic.Bolnica bolnica) {
             InitializeComponent ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace NMBP___OR.Presentation {
     public partial class MuzejInfo : Form {
         public MuzejInfo (Logic.Muzej muzej) {
             InitializeComponent ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
