@@ -34,6 +34,8 @@ namespace NMBP___OR.Presentation {
             //    lokacijaComboBox.Items.Add (tempPark);
             //foreach (Znamenitost.Znamenitost tempZnam in znamList)
             //    lokacijaComboBox.Items.Add (tempZnam);
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void addBTN_Click (object sender, EventArgs e) {

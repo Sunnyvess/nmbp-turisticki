@@ -40,31 +40,33 @@
             // 
             // masterLista
             // 
-            this.masterLista.BackColor = System.Drawing.Color.Black;
-            this.masterLista.ForeColor = System.Drawing.Color.White;
+            this.masterLista.BackColor = System.Drawing.Color.FromArgb (((int) (((byte) (192)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
+            this.masterLista.Font = new System.Drawing.Font ("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.masterLista.ForeColor = System.Drawing.Color.FromArgb (((int) (((byte) (64)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.masterLista.FormattingEnabled = true;
+            this.masterLista.ItemHeight = 18;
             this.masterLista.Location = new System.Drawing.Point (12, 63);
             this.masterLista.Name = "masterLista";
-            this.masterLista.Size = new System.Drawing.Size (318, 290);
+            this.masterLista.Size = new System.Drawing.Size (318, 274);
             this.masterLista.TabIndex = 0;
             this.masterLista.SelectedIndexChanged += new System.EventHandler (this.masterLista_SelectedIndexChanged);
             // 
             // gradoviComboBox
             // 
-            this.gradoviComboBox.Font = new System.Drawing.Font ("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.gradoviComboBox.Font = new System.Drawing.Font ("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.gradoviComboBox.FormattingEnabled = true;
             this.gradoviComboBox.Location = new System.Drawing.Point (12, 12);
             this.gradoviComboBox.Name = "gradoviComboBox";
-            this.gradoviComboBox.Size = new System.Drawing.Size (161, 32);
+            this.gradoviComboBox.Size = new System.Drawing.Size (161, 31);
             this.gradoviComboBox.TabIndex = 1;
             // 
             // lokacijaComboBox
             // 
-            this.lokacijaComboBox.Font = new System.Drawing.Font ("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.lokacijaComboBox.Font = new System.Drawing.Font ("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
             this.lokacijaComboBox.FormattingEnabled = true;
             this.lokacijaComboBox.Location = new System.Drawing.Point (179, 16);
             this.lokacijaComboBox.Name = "lokacijaComboBox";
-            this.lokacijaComboBox.Size = new System.Drawing.Size (151, 28);
+            this.lokacijaComboBox.Size = new System.Drawing.Size (151, 27);
             this.lokacijaComboBox.TabIndex = 2;
             // 
             // deleteBTN

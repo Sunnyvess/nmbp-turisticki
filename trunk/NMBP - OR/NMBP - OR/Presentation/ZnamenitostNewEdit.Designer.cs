@@ -72,6 +72,7 @@
             // 
             // slikaPanel
             // 
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Location = new System.Drawing.Point (335, 32);
             this.slikaPanel.Name = "slikaPanel";

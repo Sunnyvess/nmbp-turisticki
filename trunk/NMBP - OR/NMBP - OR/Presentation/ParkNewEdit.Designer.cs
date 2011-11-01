@@ -80,6 +80,7 @@
             // 
             // slikaPanel
             // 
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Location = new System.Drawing.Point (335, 32);
             this.slikaPanel.Name = "slikaPanel";
@@ -172,7 +173,7 @@
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
             // 
-            // NoviEdit
+            // ParkNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +192,7 @@
             this.Controls.Add (this.label1);
             this.Controls.Add (this.nazivTB);
             this.Controls.Add (this.panel1);
-            this.Name = "NoviEdit";
+            this.Name = "ParkNewEdit";
             this.Text = "Novi park";
             this.ResumeLayout (false);
             this.PerformLayout ();

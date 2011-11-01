@@ -11,6 +11,7 @@ namespace NMBP___OR.Presentation {
     public partial class ParkInfo : Form {
         public ParkInfo (Logic.Park park) {
             InitializeComponent ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

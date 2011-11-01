@@ -96,6 +96,7 @@
             // 
             // slikaPanel
             // 
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Location = new System.Drawing.Point (335, 31);
             this.slikaPanel.Name = "slikaPanel";
@@ -129,7 +130,7 @@
             this.dezurna.Name = "dezurna";
             this.dezurna.Size = new System.Drawing.Size (83, 22);
             this.dezurna.TabIndex = 11;
-            this.dezurna.Text = "Dezurna";
+            this.dezurna.Text = "Dežurna";
             this.dezurna.UseVisualStyleBackColor = true;
             // 
             // ucitajSlikuBTN
@@ -172,7 +173,7 @@
             this.panel1.Size = new System.Drawing.Size (25, 30);
             this.panel1.TabIndex = 1;
             // 
-            // NovaEdit
+            // BolnicaNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +192,7 @@
             this.Controls.Add (this.label1);
             this.Controls.Add (this.nazivTB);
             this.Controls.Add (this.panel1);
-            this.Name = "NovaEdit";
+            this.Name = "BolnicaNewEdit";
             this.Text = "Nova bolnica";
             this.ResumeLayout (false);
             this.PerformLayout ();

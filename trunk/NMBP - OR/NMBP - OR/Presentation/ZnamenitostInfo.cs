@@ -11,6 +11,7 @@ namespace NMBP___OR.Presentation {
     public partial class ZnamenitostInfo : Form {
         public ZnamenitostInfo (Logic.Znamenitost znamenitost) {
             InitializeComponent ();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
