@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent () {
             this.ucitajSlikuTB = new System.Windows.Forms.Button ();
-            this.checkBox1 = new System.Windows.Forms.CheckBox ();
             this.label4 = new System.Windows.Forms.Label ();
             this.radnoVrijemeTB = new System.Windows.Forms.TextBox ();
             this.slikaPanel = new System.Windows.Forms.Panel ();
@@ -51,17 +50,6 @@
             this.ucitajSlikuTB.TabIndex = 24;
             this.ucitajSlikuTB.Text = "Ucitaj sliku";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font ("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.checkBox1.Location = new System.Drawing.Point (230, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size (83, 22);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Dezurna";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -212,7 +200,7 @@
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler (this.prihvatiBTN_Click);
             // 
-            // NoviEdit
+            // ZnamenitostNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +212,6 @@
             this.Controls.Add (this.datumIzgradnje);
             this.Controls.Add (this.tipZnamenCB);
             this.Controls.Add (this.ucitajSlikuTB);
-            this.Controls.Add (this.checkBox1);
             this.Controls.Add (this.label4);
             this.Controls.Add (this.radnoVrijemeTB);
             this.Controls.Add (this.slikaPanel);
@@ -235,7 +222,7 @@
             this.Controls.Add (this.label1);
             this.Controls.Add (this.nazivTB);
             this.Controls.Add (this.panel1);
-            this.Name = "NoviEdit";
+            this.Name = "ZnamenitostNewEdit";
             this.Text = "Nova znamenitost";
             this.ResumeLayout (false);
             this.PerformLayout ();
@@ -245,7 +232,6 @@
         #endregion
 
         private System.Windows.Forms.Button ucitajSlikuTB;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox radnoVrijemeTB;
         private System.Windows.Forms.Panel slikaPanel;
