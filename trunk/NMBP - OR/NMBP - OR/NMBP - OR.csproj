@@ -158,6 +158,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\accept.png" />
     <Content Include="Resources\add1.png" />
     <None Include="Resources\statue.png" />
     <None Include="Resources\znamenitost.png" />

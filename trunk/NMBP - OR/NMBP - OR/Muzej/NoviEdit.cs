@@ -30,5 +30,15 @@ namespace NMBP___OR.Muzej {
                 tipMuzejaCB.Items.Add (tip.ToString());
             }
         }
+
+        private void prihvatiBTN_Click (object sender, EventArgs e) {
+            accepted = true;
+            this.Close ();
+        }
+
+        private void odustaniBTN_Click (object sender, EventArgs e) {
+            accepted = false;
+            this.Close ();
+        }
     }
 }

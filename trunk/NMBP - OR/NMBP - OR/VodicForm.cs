@@ -37,6 +37,8 @@ namespace NMBP___OR {
         }
 
         private void addBTN_Click (object sender, EventArgs e) {
+            if (lokacijaComboBox.SelectedItem == null || gradoviComboBox.SelectedItem == null)
+                return;
             switch (lokacijaComboBox.SelectedItem.ToString ()) {
                 case "Muzej":
                     Muzej.NoviEdit muzejNovi = new Muzej.NoviEdit ();

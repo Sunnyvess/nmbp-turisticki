@@ -22,5 +22,15 @@ namespace NMBP___OR.Park {
             park = parkToEdit;
             this.Name = "Izmjena parka";
         }
+
+        private void prihvatiBTN_Click (object sender, EventArgs e) {
+            accepted = true;
+            this.Close ();
+        }
+
+        private void odustaniBTN_Click (object sender, EventArgs e) {
+            accepted = false;
+            this.Close ();
+        }
     }
 }
