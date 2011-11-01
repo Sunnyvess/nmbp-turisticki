@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR {
+namespace NMBP___OR.Presentation {
     public partial class VodicForm : Form {
         public VodicForm () {
             InitializeComponent ();
@@ -41,19 +41,19 @@ namespace NMBP___OR {
                 return;
             switch (lokacijaComboBox.SelectedItem.ToString ()) {
                 case "Muzej":
-                    Muzej.NoviEdit muzejNovi = new Muzej.NoviEdit ();
+                    MuzejNewEdit muzejNovi = new MuzejNewEdit ();
                     muzejNovi.ShowDialog ();
                     break;
                 case "Bolnica":
-                    Bolnica.NovaEdit bolnicaNova = new Bolnica.NovaEdit ();
+                    BolnicaNewEdit bolnicaNova = new BolnicaNewEdit ();
                     bolnicaNova.ShowDialog ();
                     break;
                 case "Znamenitost":
-                    Znamenitost.NoviEdit znamenitostNova = new Znamenitost.NoviEdit ();
+                    ZnamenitostNewEdit znamenitostNova = new ZnamenitostNewEdit ();
                     znamenitostNova.ShowDialog ();
                     break;
                 case "Park":
-                    Park.NoviEdit parkNovi = new Park.NoviEdit ();
+                    ParkNewEdit parkNovi = new ParkNewEdit ();
                     parkNovi.ShowDialog ();
                     break;
             }

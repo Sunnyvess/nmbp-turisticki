@@ -1,5 +1,5 @@
-﻿namespace NMBP___OR.Bolnica {
-    partial class Info {
+﻿namespace NMBP___OR.Presentation {
+    partial class BolnicaInfo {
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NMBP___OR.Park {
-    public class Park : ILokacija {
-        public bool otvoren = false;
+namespace NMBP___OR.Logic {
+    public class Muzej : ILokacija {
+        TipMuzeja tip;
 
         public void Obrisi () {
             throw new NotImplementedException ();
         }
         public void Izmijeni () {
-            NoviEdit parkEdit = new NoviEdit (this);
-            parkEdit.ShowDialog ();
-            if (parkEdit.accepted) {
+            Presentation.MuzejNewEdit muzejEdit = new Presentation.MuzejNewEdit (this);
+            muzejEdit.ShowDialog ();
+            if (muzejEdit.accepted) {
                 //izmijena u bazi i izmijena klase
             }
         }
         public void PrikaziInfo () {
-            Info muzejinfo = new Info (this);
+            Presentation.MuzejInfo muzejinfo = new Presentation.MuzejInfo (this);
             muzejinfo.ShowDialog ();
         }
 
@@ -26,5 +26,13 @@ namespace NMBP___OR.Park {
             //return name;
             return base.ToString ();
         }
+    }
+
+    enum TipMuzeja {
+        Prirodoslovni,
+        Arheoloski,
+        Tehnicki,
+        Povjesni,
+        Umjetnicki
     }
 }

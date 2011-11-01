@@ -1,5 +1,5 @@
-﻿namespace NMBP___OR.Bolnica {
-    partial class NovaEdit {
+﻿namespace NMBP___OR.Presentation {
+    partial class BolnicaNewEdit {
         /// <summary>
         /// Required designer variable.
         /// </summary>

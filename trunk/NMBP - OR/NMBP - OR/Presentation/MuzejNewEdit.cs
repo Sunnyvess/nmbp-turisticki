@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR.Muzej {
-    public partial class NoviEdit : Form {
-        public Muzej muzej;
+namespace NMBP___OR.Presentation {
+    public partial class MuzejNewEdit : Form {
+        public Logic.Muzej muzej;
         public bool accepted = false;
 
-        public NoviEdit () {
+        public MuzejNewEdit () {
             InitializeComponent ();
-            muzej = new Muzej ();
+            muzej = new Logic.Muzej ();
             this.Name = "Novi muzej";
             NapuniTipMuzeja ();
         }
-        public NoviEdit (Muzej muzejToEdit) {
+        public MuzejNewEdit (Logic.Muzej muzejToEdit) {
             InitializeComponent ();
             muzej = muzejToEdit;
             this.Name = "Izmjena muzeja";
@@ -26,7 +26,7 @@ namespace NMBP___OR.Muzej {
         }
         void NapuniTipMuzeja () {
             tipMuzejaCB.Items.Clear ();
-            foreach (TipMuzeja tip in Enum.GetValues (typeof (TipMuzeja))) {
+            foreach (Logic.TipMuzeja tip in Enum.GetValues (typeof (Logic.TipMuzeja))) {
                 tipMuzejaCB.Items.Add (tip.ToString());
             }
         }

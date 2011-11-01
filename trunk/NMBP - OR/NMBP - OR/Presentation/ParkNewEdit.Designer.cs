@@ -1,5 +1,5 @@
-﻿namespace NMBP___OR.Park {
-    partial class NoviEdit {
+﻿namespace NMBP___OR.Presentation {
+    partial class ParkNewEdit {
         /// <summary>
         /// Required designer variable.
         /// </summary>

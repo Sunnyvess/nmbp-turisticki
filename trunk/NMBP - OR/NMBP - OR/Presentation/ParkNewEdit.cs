@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR.Bolnica {
-    public partial class NovaEdit : Form {
-        public Bolnica bolnica;
+namespace NMBP___OR.Presentation {
+    public partial class ParkNewEdit : Form {
+        public Logic.Park park;
         public bool accepted = false;
 
-        public NovaEdit () {
+        public ParkNewEdit () {
             InitializeComponent ();
-            bolnica = new Bolnica ();
-            this.Name = "Nova bolnica";
+            park = new Logic.Park ();
+            this.Name = "Novi park";
         }
-        public NovaEdit (Bolnica bolnicaToEdit) {
+        public ParkNewEdit (Logic.Park parkToEdit) {
             InitializeComponent ();
-            bolnica = bolnicaToEdit;
-            this.Name = "Izmjena bolnice";
+            park = parkToEdit;
+            this.Name = "Izmjena parka";
         }
 
         private void prihvatiBTN_Click (object sender, EventArgs e) {

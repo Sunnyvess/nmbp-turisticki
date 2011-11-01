@@ -1,4 +1,4 @@
-﻿namespace NMBP___OR
+﻿namespace NMBP___OR.Presentation
 {
     partial class VodicForm
     {

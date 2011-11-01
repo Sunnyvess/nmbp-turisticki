@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NMBP___OR.Znamenitost {
+namespace NMBP___OR.Logic {
     public class Znamenitost : ILokacija {
         public TipZnamenitosti tip;
         public DateTime datumIzgradnje;
@@ -12,14 +12,14 @@ namespace NMBP___OR.Znamenitost {
             throw new NotImplementedException ();
         }
         public void Izmijeni () {
-            NoviEdit znamemEdit = new NoviEdit (this);
+            Presentation.ZnamenitostNewEdit znamemEdit = new Presentation.ZnamenitostNewEdit (this);
             znamemEdit.ShowDialog ();
             if (znamemEdit.accepted) {
                 //izmijena u bazi i izmijena klase
             }        
         }
         public void PrikaziInfo () {
-            Info znamenInfo = new Info (this);
+            Presentation.ZnamenitostInfo znamenInfo = new Presentation.ZnamenitostInfo (this);
             znamenInfo.ShowDialog ();
         }
 
