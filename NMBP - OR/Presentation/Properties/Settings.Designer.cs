@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NMBP___OP__WPF_.Properties {
+namespace Presentation.Properties {
 
 
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute ()]
