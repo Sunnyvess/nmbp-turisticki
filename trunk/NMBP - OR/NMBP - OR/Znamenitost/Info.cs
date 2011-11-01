@@ -7,13 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
+namespace NMBP___OR.Znamenitost {
+    public partial class Info : Form {
+        public Info (Znamenitost znamenitost) {
+            InitializeComponent ();
         }
     }
 }

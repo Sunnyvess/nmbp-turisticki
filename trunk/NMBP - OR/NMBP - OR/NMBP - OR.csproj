@@ -46,17 +46,90 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
-    <Compile Include="Class3.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Bolnica\Bolnica.cs" />
+    <Compile Include="Bolnica\Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Bolnica\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bolnica\NovaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bolnica\NovaEdit.Designer.cs">
+      <DependentUpon>NovaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grad\Adresa.cs" />
+    <Compile Include="Grad\Grad.cs" />
+    <Compile Include="ILokacija.cs" />
+    <Compile Include="Muzej\Muzej.cs" />
+    <Compile Include="Park\Park.cs" />
+    <Compile Include="VodicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VodicForm.Designer.cs">
+      <DependentUpon>VodicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Muzej\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Muzej\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Muzej\NoviEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Muzej\NoviEdit.Designer.cs">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Park\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Park\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Park\NoviEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Park\NoviEdit.Designer.cs">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Znamenitost\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Znamenitost\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Znamenitost\NoviEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Znamenitost\NoviEdit.Designer.cs">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Znamenitost\Znamenitost.cs" />
+    <EmbeddedResource Include="Bolnica\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bolnica\NovaEdit.resx">
+      <DependentUpon>NovaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Muzej\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Muzej\NoviEdit.resx">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Park\NoviEdit.resx">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VodicForm.resx">
+      <DependentUpon>VodicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Park\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,7 +138,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Znamenitost\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Znamenitost\NoviEdit.resx">
+      <DependentUpon>NoviEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +155,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\add1.png" />
+    <None Include="Resources\statue.png" />
+    <None Include="Resources\znamenitost.png" />
+    <None Include="Resources\park.png" />
+    <None Include="Resources\muzej.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\bolnica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
