@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace NMBP___OR.Logic {
-    public class Bolnica : ILokacija {
+    public class Bolnica : Logic.ILokacija {
         public bool dezurna = false;
 
         public void Obrisi () {

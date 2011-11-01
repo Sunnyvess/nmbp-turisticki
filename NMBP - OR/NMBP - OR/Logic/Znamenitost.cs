@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace NMBP___OR.Logic {
-    public class Znamenitost : ILokacija {
+    public class Znamenitost : Logic.ILokacija {
         public TipZnamenitosti tip;
         public DateTime datumIzgradnje;
 

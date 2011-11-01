@@ -61,7 +61,7 @@
     </Compile>
     <Compile Include="Logic\Adresa.cs" />
     <Compile Include="Logic\Grad.cs" />
-    <Compile Include="ILokacija.cs" />
+    <Compile Include="Logic\ILokacija.cs" />
     <Compile Include="Logic\Muzej.cs" />
     <Compile Include="Logic\Park.cs" />
     <Compile Include="Presentation\VodicForm.cs">
