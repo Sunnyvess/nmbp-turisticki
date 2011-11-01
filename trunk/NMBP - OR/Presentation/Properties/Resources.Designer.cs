@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NMBP___OP__WPF_.Properties {
+namespace Presentation.Properties {
 
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace NMBP___OP__WPF_.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager ("NMBP___OP__WPF_.Properties.Resources", typeof (Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager ("Presentation.Properties.Resources", typeof (Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
