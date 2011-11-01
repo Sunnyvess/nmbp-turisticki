@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR.Znamenitost {
-    public partial class NoviEdit : Form {
-        public Znamenitost znamen;
+namespace NMBP___OR.Presentation {
+    public partial class ZnamenitostNewEdit : Form {
+        public Logic.Znamenitost znamen;
         public bool accepted = false;
 
-        public NoviEdit () {
+        public ZnamenitostNewEdit () {
             InitializeComponent ();
-            znamen = new Znamenitost ();
+            znamen = new Logic.Znamenitost ();
             this.Name = "Nova znamenitost";
             NapuniTipoveZnamenitosti ();
         }
-        public NoviEdit (Znamenitost znamenitostToEdit) {
+        public ZnamenitostNewEdit (Logic.Znamenitost znamenitostToEdit) {
             InitializeComponent ();
             znamen = znamenitostToEdit;
             this.Name = "Izmjena znamenitosti";
@@ -26,7 +26,7 @@ namespace NMBP___OR.Znamenitost {
         }
         void NapuniTipoveZnamenitosti () {
             tipZnamenCB.Items.Clear ();
-            foreach (TipZnamenitosti tip in Enum.GetValues (typeof (TipZnamenitosti))) {
+            foreach (Logic.TipZnamenitosti tip in Enum.GetValues (typeof (Logic.TipZnamenitosti))) {
                 tipZnamenCB.Items.Add (tip.ToString ());
             }
         }

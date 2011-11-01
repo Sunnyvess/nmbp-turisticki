@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR.Znamenitost {
-    public partial class Info : Form {
-        public Info (Znamenitost znamenitost) {
+namespace NMBP___OR.Presentation {
+    public partial class ParkInfo : Form {
+        public ParkInfo (Logic.Park park) {
             InitializeComponent ();
         }
     }

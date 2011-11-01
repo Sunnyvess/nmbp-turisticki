@@ -15,7 +15,7 @@ namespace NMBP___OR
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VodicForm());
+            Application.Run(new Presentation.VodicForm());
 
             
         }

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NMBP___OR.Bolnica {
-    public partial class Info : Form {
-        public Info (Bolnica bolnica) {
+namespace NMBP___OR.Presentation {
+    public partial class BolnicaInfo : Form {
+        public BolnicaInfo (Logic.Bolnica bolnica) {
             InitializeComponent ();
         }
     }

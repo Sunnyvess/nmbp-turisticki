@@ -1,5 +1,5 @@
-﻿namespace NMBP___OR.Znamenitost {
-    partial class Info {
+﻿namespace NMBP___OR.Presentation {
+    partial class ParkInfo {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -31,7 +31,7 @@
             this.nameLabel = new System.Windows.Forms.Label ();
             this.panel1 = new System.Windows.Forms.Panel ();
             this.label2 = new System.Windows.Forms.Label ();
-            this.tipZnamenLabel = new System.Windows.Forms.Label ();
+            this.dezurstvoLabel = new System.Windows.Forms.Label ();
             this.SuspendLayout ();
             // 
             // slikaPanel
@@ -39,7 +39,7 @@
             this.slikaPanel.Location = new System.Drawing.Point (12, 82);
             this.slikaPanel.Name = "slikaPanel";
             this.slikaPanel.Size = new System.Drawing.Size (140, 119);
-            this.slikaPanel.TabIndex = 33;
+            this.slikaPanel.TabIndex = 24;
             // 
             // radnoVrijemeLabel
             // 
@@ -48,7 +48,7 @@
             this.radnoVrijemeLabel.Location = new System.Drawing.Point (12, 252);
             this.radnoVrijemeLabel.Name = "radnoVrijemeLabel";
             this.radnoVrijemeLabel.Size = new System.Drawing.Size (93, 16);
-            this.radnoVrijemeLabel.TabIndex = 32;
+            this.radnoVrijemeLabel.TabIndex = 22;
             this.radnoVrijemeLabel.Text = "09:30 - 21:00";
             // 
             // label1
@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point (13, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size (99, 16);
-            this.label1.TabIndex = 31;
+            this.label1.TabIndex = 21;
             this.label1.Text = "Radno vrijeme:";
             // 
             // opisLabel
@@ -68,7 +68,7 @@
             this.opisLabel.Location = new System.Drawing.Point (158, 82);
             this.opisLabel.Name = "opisLabel";
             this.opisLabel.Size = new System.Drawing.Size (84, 15);
-            this.opisLabel.TabIndex = 30;
+            this.opisLabel.TabIndex = 20;
             this.opisLabel.Text = "Ovdje ide opis";
             // 
             // adresaLabel
@@ -78,7 +78,7 @@
             this.adresaLabel.Location = new System.Drawing.Point (12, 39);
             this.adresaLabel.Name = "adresaLabel";
             this.adresaLabel.Size = new System.Drawing.Size (159, 16);
-            this.adresaLabel.TabIndex = 29;
+            this.adresaLabel.TabIndex = 19;
             this.adresaLabel.Text = "Draškovićeva 19, Zagreb";
             // 
             // nameLabel
@@ -88,7 +88,7 @@
             this.nameLabel.Location = new System.Drawing.Point (12, 9);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size (106, 20);
-            this.nameLabel.TabIndex = 28;
+            this.nameLabel.TabIndex = 18;
             this.nameLabel.Text = "Park prirode";
             // 
             // panel1
@@ -98,35 +98,35 @@
             this.panel1.Location = new System.Drawing.Point (357, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size (50, 50);
-            this.panel1.TabIndex = 27;
+            this.panel1.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font ("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.label2.Location = new System.Drawing.Point (299, 232);
+            this.label2.Location = new System.Drawing.Point (311, 247);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size (108, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Tip znamenitosti:";
+            this.label2.Size = new System.Drawing.Size (58, 16);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Otvoren:";
             // 
-            // tipZnamenLabel
+            // dezurstvoLabel
             // 
-            this.tipZnamenLabel.AutoSize = true;
-            this.tipZnamenLabel.Font = new System.Drawing.Font ("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
-            this.tipZnamenLabel.Location = new System.Drawing.Point (299, 253);
-            this.tipZnamenLabel.Name = "tipZnamenLabel";
-            this.tipZnamenLabel.Size = new System.Drawing.Size (77, 16);
-            this.tipZnamenLabel.TabIndex = 17;
-            this.tipZnamenLabel.Text = "Spomenik";
+            this.dezurstvoLabel.AutoSize = true;
+            this.dezurstvoLabel.Font = new System.Drawing.Font ("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+            this.dezurstvoLabel.Location = new System.Drawing.Point (375, 248);
+            this.dezurstvoLabel.Name = "dezurstvoLabel";
+            this.dezurstvoLabel.Size = new System.Drawing.Size (29, 16);
+            this.dezurstvoLabel.TabIndex = 25;
+            this.dezurstvoLabel.Text = "DA";
             // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size (415, 278);
+            this.ClientSize = new System.Drawing.Size (414, 272);
             this.Controls.Add (this.label2);
-            this.Controls.Add (this.tipZnamenLabel);
+            this.Controls.Add (this.dezurstvoLabel);
             this.Controls.Add (this.slikaPanel);
             this.Controls.Add (this.radnoVrijemeLabel);
             this.Controls.Add (this.label1);
@@ -135,7 +135,7 @@
             this.Controls.Add (this.nameLabel);
             this.Controls.Add (this.panel1);
             this.Name = "Info";
-            this.Text = "Informacije o znamenitosti";
+            this.Text = "Informacije o parku";
             this.ResumeLayout (false);
             this.PerformLayout ();
 
@@ -151,7 +151,7 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label tipZnamenLabel;
+        private System.Windows.Forms.Label dezurstvoLabel;
 
     }
 }

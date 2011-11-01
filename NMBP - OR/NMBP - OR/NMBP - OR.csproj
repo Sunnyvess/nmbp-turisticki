@@ -46,89 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bolnica\Bolnica.cs" />
-    <Compile Include="Bolnica\Info.cs">
+    <Compile Include="Logic\Bolnica.cs" />
+    <Compile Include="Presentation\BolnicaInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bolnica\Info.Designer.cs">
-      <DependentUpon>Info.cs</DependentUpon>
+    <Compile Include="Presentation\BolnicaInfo.Designer.cs">
+      <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bolnica\NovaEdit.cs">
+    <Compile Include="Presentation\BolnicaNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bolnica\NovaEdit.Designer.cs">
-      <DependentUpon>NovaEdit.cs</DependentUpon>
+    <Compile Include="Presentation\BolnicaNewEdit.Designer.cs">
+      <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grad\Adresa.cs" />
-    <Compile Include="Grad\Grad.cs" />
+    <Compile Include="Logic\Adresa.cs" />
+    <Compile Include="Logic\Grad.cs" />
     <Compile Include="ILokacija.cs" />
-    <Compile Include="Muzej\Muzej.cs" />
-    <Compile Include="Park\Park.cs" />
-    <Compile Include="VodicForm.cs">
+    <Compile Include="Logic\Muzej.cs" />
+    <Compile Include="Logic\Park.cs" />
+    <Compile Include="Presentation\VodicForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VodicForm.Designer.cs">
+    <Compile Include="Presentation\VodicForm.Designer.cs">
       <DependentUpon>VodicForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Muzej\Info.cs">
+    <Compile Include="Presentation\MuzejInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Muzej\Info.Designer.cs">
-      <DependentUpon>Info.cs</DependentUpon>
+    <Compile Include="Presentation\MuzejInfo.Designer.cs">
+      <DependentUpon>MuzejInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Muzej\NoviEdit.cs">
+    <Compile Include="Presentation\MuzejNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Muzej\NoviEdit.Designer.cs">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <Compile Include="Presentation\MuzejNewEdit.Designer.cs">
+      <DependentUpon>MuzejNewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Park\Info.cs">
+    <Compile Include="Presentation\ParkInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Park\Info.Designer.cs">
-      <DependentUpon>Info.cs</DependentUpon>
+    <Compile Include="Presentation\ParkInfo.Designer.cs">
+      <DependentUpon>ParkInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Park\NoviEdit.cs">
+    <Compile Include="Presentation\ParkNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Park\NoviEdit.Designer.cs">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <Compile Include="Presentation\ParkNewEdit.Designer.cs">
+      <DependentUpon>ParkNewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Znamenitost\Info.cs">
+    <Compile Include="Presentation\ZnamenitostInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Znamenitost\Info.Designer.cs">
-      <DependentUpon>Info.cs</DependentUpon>
+    <Compile Include="Presentation\ZnamenitostInfo.Designer.cs">
+      <DependentUpon>ZnamenitostInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Znamenitost\NoviEdit.cs">
+    <Compile Include="Presentation\ZnamenitostNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Znamenitost\NoviEdit.Designer.cs">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <Compile Include="Presentation\ZnamenitostNewEdit.Designer.cs">
+      <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Znamenitost\Znamenitost.cs" />
-    <EmbeddedResource Include="Bolnica\Info.resx">
-      <DependentUpon>Info.cs</DependentUpon>
+    <Compile Include="Logic\Znamenitost.cs" />
+    <EmbeddedResource Include="Presentation\BolnicaInfo.resx">
+      <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bolnica\NovaEdit.resx">
-      <DependentUpon>NovaEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\BolnicaNewEdit.resx">
+      <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Muzej\Info.resx">
-      <DependentUpon>Info.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\MuzejInfo.resx">
+      <DependentUpon>MuzejInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Muzej\NoviEdit.resx">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\MuzejNewEdit.resx">
+      <DependentUpon>MuzejNewEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Park\NoviEdit.resx">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ParkNewEdit.resx">
+      <DependentUpon>ParkNewEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VodicForm.resx">
+    <EmbeddedResource Include="Presentation\VodicForm.resx">
       <DependentUpon>VodicForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Park\Info.resx">
-      <DependentUpon>Info.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ParkInfo.resx">
+      <DependentUpon>ParkInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,11 +140,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Znamenitost\Info.resx">
-      <DependentUpon>Info.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ZnamenitostInfo.resx">
+      <DependentUpon>ZnamenitostInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Znamenitost\NoviEdit.resx">
-      <DependentUpon>NoviEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ZnamenitostNewEdit.resx">
+      <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +169,7 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\bolnica.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

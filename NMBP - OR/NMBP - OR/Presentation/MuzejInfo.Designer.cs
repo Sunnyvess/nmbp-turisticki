@@ -1,5 +1,5 @@
-﻿namespace NMBP___OR.Muzej {
-    partial class Info {
+﻿namespace NMBP___OR.Presentation {
+    partial class MuzejInfo {
         /// <summary>
         /// Required designer variable.
         /// </summary>
