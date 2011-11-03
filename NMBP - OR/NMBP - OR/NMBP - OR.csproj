@@ -34,8 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.336.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.PostgreSql, Version=5.50.237.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\PostgreSQL\Npgsql\ms.net4.0\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\PostgreSQL\Npgsql\ms.net4.0\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bolnicaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Bolnica.cs" />
+    <Compile Include="muzejDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ORDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ORDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\BolnicaInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +154,7 @@
     <EmbeddedResource Include="Presentation\ParkInfo.resx">
       <DependentUpon>ParkInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -146,6 +171,40 @@
     <EmbeddedResource Include="Presentation\ZnamenitostNewEdit.resx">
       <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="bolnicaDataSet1.xsc">
+      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bolnicaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bolnicaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bolnicaDataSet1.xss">
+      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="muzejDataSet1.xsc">
+      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="muzejDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>muzejDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="muzejDataSet1.xss">
+      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ORDDataSet.xsc">
+      <DependentUpon>ORDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ORDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ORDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ORDDataSet.xss">
+      <DependentUpon>ORDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
