@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.masterLista = new System.Windows.Forms.ListBox();
-            this.lokacijaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDDataSet1 = new NMBP___OR.ORDDataSet();
             this.gradBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDDataSet = new NMBP___OR.ORDDataSet();
             this.gradoviComboBox = new System.Windows.Forms.ComboBox();
@@ -41,9 +39,6 @@
             this.editBTN = new System.Windows.Forms.Button();
             this.addBTN = new System.Windows.Forms.Button();
             this.gradTableAdapter = new NMBP___OR.ORDDataSetTableAdapters.gradTableAdapter();
-            this.lokacijaTableAdapter = new NMBP___OR.ORDDataSetTableAdapters.lokacijaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.lokacijaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDDataSet)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +46,6 @@
             // masterLista
             // 
             this.masterLista.BackColor = System.Drawing.Color.LightGray;
-            this.masterLista.DataSource = this.lokacijaBindingSource;
-            this.masterLista.DisplayMember = "naziv";
             this.masterLista.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.masterLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.masterLista.FormattingEnabled = true;
@@ -61,19 +54,7 @@
             this.masterLista.Name = "masterLista";
             this.masterLista.Size = new System.Drawing.Size(318, 274);
             this.masterLista.TabIndex = 0;
-            this.masterLista.SelectedIndexChanged += new System.EventHandler(this.masterLista_SelectedIndexChanged);
-            this.masterLista.DoubleClick += new System.EventHandler(this.masterLista_DoubleClick);
             this.masterLista.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.masterLista_MouseDoubleClick);
-            // 
-            // lokacijaBindingSource
-            // 
-            this.lokacijaBindingSource.DataMember = "lokacija";
-            this.lokacijaBindingSource.DataSource = this.oRDDataSet1;
-            // 
-            // oRDDataSet1
-            // 
-            this.oRDDataSet1.DataSetName = "ORDDataSet";
-            this.oRDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gradBindingSource
             // 
@@ -100,16 +81,16 @@
             // 
             // lokacijaComboBox
             // 
-            this.lokacijaComboBox.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lokacijaComboBox.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lokacijaComboBox.FormattingEnabled = true;
             this.lokacijaComboBox.Items.AddRange(new object[] {
             "Muzej",
             "Bolnica",
             "Znamenitost",
             "Park"});
-            this.lokacijaComboBox.Location = new System.Drawing.Point(179, 16);
+            this.lokacijaComboBox.Location = new System.Drawing.Point(179, 12);
             this.lokacijaComboBox.Name = "lokacijaComboBox";
-            this.lokacijaComboBox.Size = new System.Drawing.Size(151, 27);
+            this.lokacijaComboBox.Size = new System.Drawing.Size(151, 31);
             this.lokacijaComboBox.TabIndex = 2;
             this.lokacijaComboBox.SelectedIndexChanged += new System.EventHandler(this.lokacijaComboBox_SelectedIndexChanged);
             // 
@@ -153,10 +134,6 @@
             // 
             this.gradTableAdapter.ClearBeforeFill = true;
             // 
-            // lokacijaTableAdapter
-            // 
-            this.lokacijaTableAdapter.ClearBeforeFill = true;
-            // 
             // VodicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,8 +148,6 @@
             this.Name = "VodicForm";
             this.Text = "Turistički vodič";
             this.Load += new System.EventHandler(this.VodicForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lokacijaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -191,9 +166,6 @@
         private ORDDataSet oRDDataSet;
         private System.Windows.Forms.BindingSource gradBindingSource;
         private ORDDataSetTableAdapters.gradTableAdapter gradTableAdapter;
-        private ORDDataSet oRDDataSet1;
-        private System.Windows.Forms.BindingSource lokacijaBindingSource;
-        private ORDDataSetTableAdapters.lokacijaTableAdapter lokacijaTableAdapter;
 
     }
 }

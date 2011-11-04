@@ -23,14 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
-            this.components = new System.ComponentModel.Container();
             this.nazivTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.adresaTB = new System.Windows.Forms.TextBox();
+            this.ulicaTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.opisTB = new System.Windows.Forms.TextBox();
             this.slikaPanel = new System.Windows.Forms.Panel();
+            this.bolnicaPB = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.radnoVrijemeTB = new System.Windows.Forms.TextBox();
             this.dezurna = new System.Windows.Forms.CheckBox();
@@ -38,14 +38,10 @@
             this.odustaniBTN = new System.Windows.Forms.Button();
             this.prihvatiBTN = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bolnicaDataSet1 = new NMBP___OR.bolnicaDataSet1();
-            this.bolnicaTableAdapter = new NMBP___OR.bolnicaDataSet1TableAdapters.bolnicaTableAdapter();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.gradTableAdapter = new NMBP___OR.bolnicaDataSet1TableAdapters.gradTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolnicaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            this.gradComboBox = new System.Windows.Forms.ComboBox();
+            this.brojTB = new System.Windows.Forms.TextBox();
+            this.slikaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolnicaPB)).BeginInit();
             this.SuspendLayout();
             // 
             // nazivTB
@@ -76,19 +72,19 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Adresa";
             // 
-            // adresaTB
+            // ulicaTB
             // 
-            this.adresaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.adresaTB.Location = new System.Drawing.Point(53, 86);
-            this.adresaTB.Name = "adresaTB";
-            this.adresaTB.Size = new System.Drawing.Size(260, 24);
-            this.adresaTB.TabIndex = 4;
+            this.ulicaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ulicaTB.Location = new System.Drawing.Point(53, 86);
+            this.ulicaTB.Name = "ulicaTB";
+            this.ulicaTB.Size = new System.Drawing.Size(186, 24);
+            this.ulicaTB.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(53, 215);
+            this.label3.Location = new System.Drawing.Point(53, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 7;
@@ -97,7 +93,7 @@
             // opisTB
             // 
             this.opisTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisTB.Location = new System.Drawing.Point(56, 233);
+            this.opisTB.Location = new System.Drawing.Point(55, 250);
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
             this.opisTB.Size = new System.Drawing.Size(459, 46);
@@ -105,18 +101,29 @@
             // 
             // slikaPanel
             // 
+            this.slikaPanel.AutoScroll = true;
             this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.slikaPanel.Controls.Add(this.bolnicaPB);
             this.slikaPanel.Location = new System.Drawing.Point(335, 31);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(180, 180);
+            this.slikaPanel.Size = new System.Drawing.Size(180, 196);
             this.slikaPanel.TabIndex = 8;
+            // 
+            // bolnicaPB
+            // 
+            this.bolnicaPB.Location = new System.Drawing.Point(0, 0);
+            this.bolnicaPB.Name = "bolnicaPB";
+            this.bolnicaPB.Size = new System.Drawing.Size(180, 196);
+            this.bolnicaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.bolnicaPB.TabIndex = 0;
+            this.bolnicaPB.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(53, 124);
+            this.label4.Location = new System.Drawing.Point(53, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 10;
@@ -125,10 +132,10 @@
             // radnoVrijemeTB
             // 
             this.radnoVrijemeTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radnoVrijemeTB.Location = new System.Drawing.Point(53, 143);
+            this.radnoVrijemeTB.Location = new System.Drawing.Point(53, 178);
             this.radnoVrijemeTB.Multiline = true;
             this.radnoVrijemeTB.Name = "radnoVrijemeTB";
-            this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 65);
+            this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 49);
             this.radnoVrijemeTB.TabIndex = 9;
             // 
             // dezurna
@@ -150,12 +157,13 @@
             this.ucitajSlikuBTN.TabIndex = 12;
             this.ucitajSlikuBTN.Text = "Ucitaj sliku";
             this.ucitajSlikuBTN.UseVisualStyleBackColor = true;
+            
             // 
             // odustaniBTN
             // 
             this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
             this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.odustaniBTN.Location = new System.Drawing.Point(471, 285);
+            this.odustaniBTN.Location = new System.Drawing.Point(471, 302);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
             this.odustaniBTN.TabIndex = 14;
@@ -166,7 +174,7 @@
             // 
             this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
             this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.prihvatiBTN.Location = new System.Drawing.Point(422, 285);
+            this.prihvatiBTN.Location = new System.Drawing.Point(422, 302);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
             this.prihvatiBTN.TabIndex = 13;
@@ -182,34 +190,30 @@
             this.panel1.Size = new System.Drawing.Size(25, 30);
             this.panel1.TabIndex = 1;
             // 
-            // bindingSource1
+            // gradComboBox
             // 
-            this.bindingSource1.DataMember = "bolnica";
-            this.bindingSource1.DataSource = this.bolnicaDataSet1;
+            this.gradComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gradComboBox.FormattingEnabled = true;
+            this.gradComboBox.Location = new System.Drawing.Point(53, 116);
+            this.gradComboBox.Name = "gradComboBox";
+            this.gradComboBox.Size = new System.Drawing.Size(120, 24);
+            this.gradComboBox.TabIndex = 15;
             // 
-            // bolnicaDataSet1
+            // brojTB
             // 
-            this.bolnicaDataSet1.DataSetName = "bolnicaDataSet1";
-            this.bolnicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bolnicaTableAdapter
-            // 
-            this.bolnicaTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataMember = "grad";
-            this.bindingSource2.DataSource = this.bolnicaDataSet1;
-            // 
-            // gradTableAdapter
-            // 
-            this.gradTableAdapter.ClearBeforeFill = true;
+            this.brojTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brojTB.Location = new System.Drawing.Point(248, 86);
+            this.brojTB.Name = "brojTB";
+            this.brojTB.Size = new System.Drawing.Size(65, 24);
+            this.brojTB.TabIndex = 16;
             // 
             // BolnicaNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 339);
+            this.ClientSize = new System.Drawing.Size(526, 357);
+            this.Controls.Add(this.brojTB);
+            this.Controls.Add(this.gradComboBox);
             this.Controls.Add(this.odustaniBTN);
             this.Controls.Add(this.prihvatiBTN);
             this.Controls.Add(this.ucitajSlikuBTN);
@@ -220,16 +224,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.opisTB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.adresaTB);
+            this.Controls.Add(this.ulicaTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nazivTB);
             this.Controls.Add(this.panel1);
             this.Name = "BolnicaNewEdit";
             this.Text = "Nova bolnica";
             this.Load += new System.EventHandler(this.BolnicaNewEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolnicaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            this.slikaPanel.ResumeLayout(false);
+            this.slikaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolnicaPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +245,7 @@
         private System.Windows.Forms.TextBox nazivTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox adresaTB;
+        private System.Windows.Forms.TextBox ulicaTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox opisTB;
         private System.Windows.Forms.Panel slikaPanel;
@@ -251,10 +255,8 @@
         private System.Windows.Forms.Button ucitajSlikuBTN;
         private System.Windows.Forms.Button prihvatiBTN;
         private System.Windows.Forms.Button odustaniBTN;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private bolnicaDataSet1 bolnicaDataSet1;
-        private bolnicaDataSet1TableAdapters.bolnicaTableAdapter bolnicaTableAdapter;
-        private System.Windows.Forms.BindingSource bindingSource2;
-        private bolnicaDataSet1TableAdapters.gradTableAdapter gradTableAdapter;
+        private System.Windows.Forms.ComboBox gradComboBox;
+        private System.Windows.Forms.TextBox brojTB;
+        private System.Windows.Forms.PictureBox bolnicaPB;
     }
 }
