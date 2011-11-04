@@ -10,7 +10,14 @@ using Npgsql;
 
 namespace NMBP___OR.Presentation {
     public partial class BolnicaInfo : Form {
+
+        static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
+        NpgsqlConnection conn = new NpgsqlConnection (connString);
+        DataSet da = new DataSet ();
+        BindingSource bolnicaBinding;
+        BindingSource gradBinding;
         private int Sifra;
+
         public BolnicaInfo () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -19,13 +26,7 @@ namespace NMBP___OR.Presentation {
         {
             get { return Sifra; }
             set { Sifra = value; }
-        }
-        static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
-
-        NpgsqlConnection conn = new NpgsqlConnection(connString);
-        DataSet da = new DataSet();
-        BindingSource bolnicaBinding;
-        BindingSource gradBinding;
+        }       
         private void BolnicaInfo_Load(object sender, EventArgs e)
         {
             string sqlBolnica = "SELECT * FROM bolnica";
