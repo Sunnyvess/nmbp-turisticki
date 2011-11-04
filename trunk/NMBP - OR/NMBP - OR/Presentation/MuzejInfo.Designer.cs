@@ -23,8 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
-            this.components = new System.ComponentModel.Container();
             this.slikaPanel = new System.Windows.Forms.Panel();
+            this.muzejPB = new System.Windows.Forms.PictureBox();
             this.tipMuzejaLabel = new System.Windows.Forms.Label();
             this.radnoVrijemeLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -33,28 +33,33 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.bindingSourceMuzej = new System.Windows.Forms.BindingSource(this.components);
-            this.muzejDataSet1 = new NMBP___OR.muzejDataSet1();
-            this.muzejTableAdapter = new NMBP___OR.muzejDataSet1TableAdapters.muzejTableAdapter();
-            this.bindingSourceGrad = new System.Windows.Forms.BindingSource(this.components);
-            this.gradTableAdapter = new NMBP___OR.muzejDataSet1TableAdapters.gradTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMuzej)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.muzejDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGrad)).BeginInit();
+            this.slikaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.muzejPB)).BeginInit();
             this.SuspendLayout();
             // 
             // slikaPanel
             // 
+            this.slikaPanel.AutoScroll = true;
+            this.slikaPanel.Controls.Add(this.muzejPB);
             this.slikaPanel.Location = new System.Drawing.Point(12, 82);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(140, 119);
+            this.slikaPanel.Size = new System.Drawing.Size(211, 157);
             this.slikaPanel.TabIndex = 15;
+            // 
+            // muzejPB
+            // 
+            this.muzejPB.Location = new System.Drawing.Point(0, 0);
+            this.muzejPB.Name = "muzejPB";
+            this.muzejPB.Size = new System.Drawing.Size(211, 157);
+            this.muzejPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.muzejPB.TabIndex = 0;
+            this.muzejPB.TabStop = false;
             // 
             // tipMuzejaLabel
             // 
             this.tipMuzejaLabel.AutoSize = true;
             this.tipMuzejaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tipMuzejaLabel.Location = new System.Drawing.Point(302, 252);
+            this.tipMuzejaLabel.Location = new System.Drawing.Point(306, 248);
             this.tipMuzejaLabel.Name = "tipMuzejaLabel";
             this.tipMuzejaLabel.Size = new System.Drawing.Size(100, 16);
             this.tipMuzejaLabel.TabIndex = 14;
@@ -64,7 +69,7 @@
             // 
             this.radnoVrijemeLabel.AutoSize = true;
             this.radnoVrijemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radnoVrijemeLabel.Location = new System.Drawing.Point(12, 252);
+            this.radnoVrijemeLabel.Location = new System.Drawing.Point(105, 248);
             this.radnoVrijemeLabel.Name = "radnoVrijemeLabel";
             this.radnoVrijemeLabel.Size = new System.Drawing.Size(93, 16);
             this.radnoVrijemeLabel.TabIndex = 13;
@@ -74,7 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(13, 232);
+            this.label1.Location = new System.Drawing.Point(9, 248);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 12;
@@ -84,7 +89,7 @@
             // 
             this.opisLabel.AutoSize = true;
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(158, 82);
+            this.opisLabel.Location = new System.Drawing.Point(232, 82);
             this.opisLabel.Name = "opisLabel";
             this.opisLabel.Size = new System.Drawing.Size(84, 15);
             this.opisLabel.TabIndex = 11;
@@ -123,34 +128,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(302, 232);
+            this.label2.Location = new System.Drawing.Point(232, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tip muzeja:";
-            // 
-            // bindingSourceMuzej
-            // 
-            this.bindingSourceMuzej.DataMember = "muzej";
-            this.bindingSourceMuzej.DataSource = this.muzejDataSet1;
-            // 
-            // muzejDataSet1
-            // 
-            this.muzejDataSet1.DataSetName = "muzejDataSet1";
-            this.muzejDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // muzejTableAdapter
-            // 
-            this.muzejTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSourceGrad
-            // 
-            this.bindingSourceGrad.DataMember = "grad";
-            this.bindingSourceGrad.DataSource = this.muzejDataSet1;
-            // 
-            // gradTableAdapter
-            // 
-            this.gradTableAdapter.ClearBeforeFill = true;
             // 
             // MuzejInfo
             // 
@@ -169,9 +151,9 @@
             this.Name = "MuzejInfo";
             this.Text = "Informacije o muzeju";
             this.Load += new System.EventHandler(this.MuzejInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMuzej)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.muzejDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGrad)).EndInit();
+            this.slikaPanel.ResumeLayout(false);
+            this.slikaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.muzejPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,11 +170,7 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource bindingSourceMuzej;
-        private muzejDataSet1 muzejDataSet1;
-        private muzejDataSet1TableAdapters.muzejTableAdapter muzejTableAdapter;
-        private System.Windows.Forms.BindingSource bindingSourceGrad;
-        private muzejDataSet1TableAdapters.gradTableAdapter gradTableAdapter;
+        private System.Windows.Forms.PictureBox muzejPB;
 
     }
 }

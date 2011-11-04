@@ -24,45 +24,56 @@ namespace NMBP___OR.Presentation {
 
         NpgsqlConnection conn = new NpgsqlConnection(connString);
         DataSet da = new DataSet();
+        BindingSource bolnicaBinding;
+        BindingSource gradBinding;
         private void BolnicaInfo_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bolnicaDataSet1.grad' table. You can move, or remove it, as needed.
-            this.gradTableAdapter.Fill(this.bolnicaDataSet1.grad);
-            // TODO: This line of code loads data into the 'bolnicaDataSet1.bolnica' table. You can move, or remove it, as needed.
-            this.bolnicaTableAdapter.Fill(this.bolnicaDataSet1.bolnica);
-           /*
-                string sql = "SELECT * FROM bolnica" + " WHERE sifra=" + Sifra.ToString(); ;
-
-                NpgsqlDataAdapter bolnicaData = new NpgsqlDataAdapter(sql, conn);
+            string sqlBolnica = "SELECT * FROM bolnica";
+            string sqlGrad = "SELECT * FROM grad";
+            try
+            {
+                conn.Open();
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
                 da.Reset();
-                bolnicaData.Fill(da);*/
-                bindingSource1.Position = bindingSource1.Find("sifra",Sifra);
+                adapter.SelectCommand = new NpgsqlCommand(sqlBolnica, conn);
+                adapter.Fill(da, "bolnica");
+                adapter.SelectCommand.CommandText = sqlGrad;
+                adapter.Fill(da, "grad");
+                conn.Close();
+                bolnicaBinding = new BindingSource(da, "bolnica");
+                gradBinding = new BindingSource(da, "grad");
+                bolnicaBinding.Position = bolnicaBinding.Find("sifra", Sifra);
                 BindData();
-                //conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
         private void BindData()
         {
-            nameLabel.DataBindings.Add("Text",bindingSource1, "naziv");
-
+            nameLabel.DataBindings.Add("Text",bolnicaBinding, "naziv");
             adresaLabel.Text = getAdresa();
-            radnoVrijemeLabel.DataBindings.Add("Text", bindingSource1, "radnovrijeme");
-            opisLabel.DataBindings.Add("Text",bindingSource1, "opis");
-            string dezurstvo = Convert.ToString(bolnicaDataSet1.Tables[0].Rows[bindingSource1.Find("sifra",Sifra)][6]);
-           
-            if (dezurstvo == "1")
+            radnoVrijemeLabel.DataBindings.Add("Text", bolnicaBinding, "radnovrijeme");
+            opisLabel.DataBindings.Add("Text",bolnicaBinding, "opis");
+            string dezurstvo = Convert.ToString(da.Tables[0].Rows[bolnicaBinding.Find("sifra", Sifra)][6]);
+            
+            if (dezurstvo == "True")
                 dezurstvoLabel.Text = "DA";
             else
                 dezurstvoLabel.Text = "NE";
         }
         private string getAdresa()
         {
-            string adresa = bolnicaDataSet1.Tables[0].Rows[bindingSource1.Find("sifra", Sifra)]["adresa"].ToString();
+            string adresa = da.Tables[0].Rows[bolnicaBinding.Find("sifra", sifra)]["adresa"].ToString();
             adresa = adresa.Substring(1, adresa.IndexOf(")") - 1);
-            string ulica = adresa.Substring(0, adresa.IndexOf(","));
-            int pbr = Convert.ToInt32(adresa.Substring(adresa.IndexOf(",") + 1));
-            string grad = bolnicaDataSet1.Tables[1].Rows[bindingSource2.Find("postanskibroj", pbr)]["ime"].ToString();
-            return adresa + " " + grad;
+            string[] adress = adresa.Split(',');
+            adress[0] = adress[0].Replace("\"", "");
+            int pbr = Convert.ToInt32(adress[2]);
+            string grad = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["ime"].ToString();
+            return adress[0] + " " + adress[1] + ", " + adress[2] + " " + grad;
         }
     }
 }

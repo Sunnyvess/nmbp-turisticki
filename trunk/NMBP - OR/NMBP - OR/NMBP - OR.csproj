@@ -55,17 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bolnicaDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Logic\Bolnica.cs" />
-    <Compile Include="muzejDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ORDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,11 +72,6 @@
     <Compile Include="Presentation\BolnicaNewEdit.Designer.cs">
       <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Adresa.cs" />
-    <Compile Include="Logic\Grad.cs" />
-    <Compile Include="Logic\ILokacija.cs" />
-    <Compile Include="Logic\Muzej.cs" />
-    <Compile Include="Logic\Park.cs" />
     <Compile Include="Presentation\VodicForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,7 +116,6 @@
     <Compile Include="Presentation\ZnamenitostNewEdit.Designer.cs">
       <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Znamenitost.cs" />
     <EmbeddedResource Include="Presentation\BolnicaInfo.resx">
       <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,28 +155,6 @@
       <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="bolnicaDataSet1.xsc">
-      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="bolnicaDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bolnicaDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bolnicaDataSet1.xss">
-      <DependentUpon>bolnicaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="muzejDataSet1.xsc">
-      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="muzejDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>muzejDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="muzejDataSet1.xss">
-      <DependentUpon>muzejDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="ORDDataSet.xsc">
       <DependentUpon>ORDDataSet.xsd</DependentUpon>
     </None>
