@@ -11,16 +11,31 @@ using Npgsql;
 namespace NMBP___OR.Presentation {
     public partial class VodicForm : Form {
 
-        static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
-        NpgsqlConnection connection = new NpgsqlConnection (connString);
-        DataSet lokacijaDataSet = new DataSet ();
-
+        
         public VodicForm () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+
+
+        static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
+        NpgsqlConnection connection = new NpgsqlConnection(connString);
+        DataSet lokacijaDataSet = new DataSet();
+        DataSet grad = new DataSet();
+        
         private void VodicForm_Load (object sender, EventArgs e) {
             this.gradTableAdapter.Fill (this.oRDDataSet.grad);
+
+            //string sqlString = "SELECT * FROM grad";
+            //NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
+            //NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+
+            //grad.Reset();
+            //adapter.SelectCommand = comm;
+            //adapter.Fill(grad);
+            //gradoviComboBox.DataSource = grad.Tables[0];
+            //gradoviComboBox.DisplayMember = "ime";
+            //gradoviComboBox.ValueMember = "postanskibroj";
             lokacijaComboBox.SelectedIndex = 0;
             gradoviComboBox.SelectedIndex = 0;
             showDetails ();
