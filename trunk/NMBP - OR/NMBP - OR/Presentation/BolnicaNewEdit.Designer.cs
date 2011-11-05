@@ -50,7 +50,7 @@
             this.nazivTB.Location = new System.Drawing.Point(53, 31);
             this.nazivTB.Name = "nazivTB";
             this.nazivTB.Size = new System.Drawing.Size(260, 26);
-            this.nazivTB.TabIndex = 2;
+            this.nazivTB.TabIndex = 0;
             // 
             // label1
             // 
@@ -78,7 +78,7 @@
             this.ulicaTB.Location = new System.Drawing.Point(53, 86);
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(186, 24);
-            this.ulicaTB.TabIndex = 4;
+            this.ulicaTB.TabIndex = 1;
             // 
             // label3
             // 
@@ -97,7 +97,7 @@
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
             this.opisTB.Size = new System.Drawing.Size(459, 46);
-            this.opisTB.TabIndex = 6;
+            this.opisTB.TabIndex = 5;
             // 
             // slikaPanel
             // 
@@ -136,7 +136,7 @@
             this.radnoVrijemeTB.Multiline = true;
             this.radnoVrijemeTB.Name = "radnoVrijemeTB";
             this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 49);
-            this.radnoVrijemeTB.TabIndex = 9;
+            this.radnoVrijemeTB.TabIndex = 4;
             // 
             // dezurna
             // 
@@ -145,7 +145,7 @@
             this.dezurna.Location = new System.Drawing.Point(230, 6);
             this.dezurna.Name = "dezurna";
             this.dezurna.Size = new System.Drawing.Size(83, 22);
-            this.dezurna.TabIndex = 11;
+            this.dezurna.TabIndex = 6;
             this.dezurna.Text = "Dežurna";
             this.dezurna.UseVisualStyleBackColor = true;
             // 
@@ -154,10 +154,9 @@
             this.ucitajSlikuBTN.Location = new System.Drawing.Point(440, 6);
             this.ucitajSlikuBTN.Name = "ucitajSlikuBTN";
             this.ucitajSlikuBTN.Size = new System.Drawing.Size(75, 23);
-            this.ucitajSlikuBTN.TabIndex = 12;
+            this.ucitajSlikuBTN.TabIndex = 7;
             this.ucitajSlikuBTN.Text = "Ucitaj sliku";
             this.ucitajSlikuBTN.UseVisualStyleBackColor = true;
-            
             // 
             // odustaniBTN
             // 
@@ -166,7 +165,7 @@
             this.odustaniBTN.Location = new System.Drawing.Point(471, 302);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
-            this.odustaniBTN.TabIndex = 14;
+            this.odustaniBTN.TabIndex = 9;
             this.odustaniBTN.UseVisualStyleBackColor = true;
             this.odustaniBTN.Click += new System.EventHandler(this.odustaniBTN_Click);
             // 
@@ -177,7 +176,7 @@
             this.prihvatiBTN.Location = new System.Drawing.Point(422, 302);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
-            this.prihvatiBTN.TabIndex = 13;
+            this.prihvatiBTN.TabIndex = 8;
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler(this.prihvatiBTN_Click);
             // 
@@ -197,7 +196,7 @@
             this.gradComboBox.Location = new System.Drawing.Point(53, 116);
             this.gradComboBox.Name = "gradComboBox";
             this.gradComboBox.Size = new System.Drawing.Size(120, 24);
-            this.gradComboBox.TabIndex = 15;
+            this.gradComboBox.TabIndex = 3;
             // 
             // brojTB
             // 
@@ -205,7 +204,7 @@
             this.brojTB.Location = new System.Drawing.Point(248, 86);
             this.brojTB.Name = "brojTB";
             this.brojTB.Size = new System.Drawing.Size(65, 24);
-            this.brojTB.TabIndex = 16;
+            this.brojTB.TabIndex = 2;
             // 
             // BolnicaNewEdit
             // 

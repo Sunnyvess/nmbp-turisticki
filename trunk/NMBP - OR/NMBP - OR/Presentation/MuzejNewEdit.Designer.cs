@@ -68,14 +68,14 @@
             this.tipMuzejaCB.Location = new System.Drawing.Point(53, 261);
             this.tipMuzejaCB.Name = "tipMuzejaCB";
             this.tipMuzejaCB.Size = new System.Drawing.Size(260, 24);
-            this.tipMuzejaCB.TabIndex = 41;
+            this.tipMuzejaCB.TabIndex = 5;
             // 
             // ucitajSlikuTB
             // 
             this.ucitajSlikuTB.Location = new System.Drawing.Point(440, 10);
             this.ucitajSlikuTB.Name = "ucitajSlikuTB";
             this.ucitajSlikuTB.Size = new System.Drawing.Size(75, 23);
-            this.ucitajSlikuTB.TabIndex = 40;
+            this.ucitajSlikuTB.TabIndex = 7;
             this.ucitajSlikuTB.Text = "Ucitaj sliku";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
             // 
@@ -96,7 +96,7 @@
             this.radnoVrijemeTB.Multiline = true;
             this.radnoVrijemeTB.Name = "radnoVrijemeTB";
             this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 49);
-            this.radnoVrijemeTB.TabIndex = 37;
+            this.radnoVrijemeTB.TabIndex = 4;
             // 
             // slikaPanel
             // 
@@ -135,7 +135,7 @@
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
             this.opisTB.Size = new System.Drawing.Size(459, 46);
-            this.opisTB.TabIndex = 34;
+            this.opisTB.TabIndex = 6;
             // 
             // label2
             // 
@@ -153,7 +153,7 @@
             this.ulicaTB.Location = new System.Drawing.Point(53, 90);
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(186, 24);
-            this.ulicaTB.TabIndex = 32;
+            this.ulicaTB.TabIndex = 1;
             // 
             // label1
             // 
@@ -171,7 +171,7 @@
             this.nazivTB.Location = new System.Drawing.Point(53, 35);
             this.nazivTB.Name = "nazivTB";
             this.nazivTB.Size = new System.Drawing.Size(260, 26);
-            this.nazivTB.TabIndex = 30;
+            this.nazivTB.TabIndex = 0;
             // 
             // panel1
             // 
@@ -189,7 +189,7 @@
             this.odustaniBTN.Location = new System.Drawing.Point(469, 359);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
-            this.odustaniBTN.TabIndex = 45;
+            this.odustaniBTN.TabIndex = 9;
             this.odustaniBTN.UseVisualStyleBackColor = true;
             this.odustaniBTN.Click += new System.EventHandler(this.odustaniBTN_Click);
             // 
@@ -200,7 +200,7 @@
             this.prihvatiBTN.Location = new System.Drawing.Point(420, 359);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
-            this.prihvatiBTN.TabIndex = 44;
+            this.prihvatiBTN.TabIndex = 8;
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler(this.prihvatiBTN_Click);
             // 
@@ -210,7 +210,7 @@
             this.brojTB.Location = new System.Drawing.Point(248, 90);
             this.brojTB.Name = "brojTB";
             this.brojTB.Size = new System.Drawing.Size(65, 24);
-            this.brojTB.TabIndex = 46;
+            this.brojTB.TabIndex = 2;
             // 
             // gradComboBox
             // 
@@ -219,7 +219,7 @@
             this.gradComboBox.Location = new System.Drawing.Point(53, 120);
             this.gradComboBox.Name = "gradComboBox";
             this.gradComboBox.Size = new System.Drawing.Size(120, 24);
-            this.gradComboBox.TabIndex = 47;
+            this.gradComboBox.TabIndex = 3;
             // 
             // MuzejNewEdit
             // 

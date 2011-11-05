@@ -27,6 +27,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.radnoVrijemeTB = new System.Windows.Forms.TextBox();
             this.slikaPanel = new System.Windows.Forms.Panel();
+            this.znamPB = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.opisTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.prihvatiBTN = new System.Windows.Forms.Button();
             this.brojTB = new System.Windows.Forms.TextBox();
             this.gradComboBox = new System.Windows.Forms.ComboBox();
-            this.znamPB = new System.Windows.Forms.PictureBox();
             this.slikaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.znamPB)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.ucitajSlikuTB.Location = new System.Drawing.Point(440, 7);
             this.ucitajSlikuTB.Name = "ucitajSlikuTB";
             this.ucitajSlikuTB.Size = new System.Drawing.Size(75, 23);
-            this.ucitajSlikuTB.TabIndex = 24;
+            this.ucitajSlikuTB.TabIndex = 8;
             this.ucitajSlikuTB.Text = "Ucitaj sliku";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
             // 
@@ -73,7 +73,7 @@
             this.radnoVrijemeTB.Multiline = true;
             this.radnoVrijemeTB.Name = "radnoVrijemeTB";
             this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 49);
-            this.radnoVrijemeTB.TabIndex = 21;
+            this.radnoVrijemeTB.TabIndex = 4;
             // 
             // slikaPanel
             // 
@@ -85,6 +85,15 @@
             this.slikaPanel.Name = "slikaPanel";
             this.slikaPanel.Size = new System.Drawing.Size(180, 196);
             this.slikaPanel.TabIndex = 20;
+            // 
+            // znamPB
+            // 
+            this.znamPB.Location = new System.Drawing.Point(0, 0);
+            this.znamPB.Name = "znamPB";
+            this.znamPB.Size = new System.Drawing.Size(180, 196);
+            this.znamPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.znamPB.TabIndex = 0;
+            this.znamPB.TabStop = false;
             // 
             // label3
             // 
@@ -103,7 +112,7 @@
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
             this.opisTB.Size = new System.Drawing.Size(462, 46);
-            this.opisTB.TabIndex = 18;
+            this.opisTB.TabIndex = 7;
             // 
             // label2
             // 
@@ -121,7 +130,7 @@
             this.ulicaTB.Location = new System.Drawing.Point(53, 87);
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(186, 24);
-            this.ulicaTB.TabIndex = 16;
+            this.ulicaTB.TabIndex = 1;
             // 
             // label1
             // 
@@ -139,7 +148,7 @@
             this.nazivTB.Location = new System.Drawing.Point(53, 32);
             this.nazivTB.Name = "nazivTB";
             this.nazivTB.Size = new System.Drawing.Size(260, 26);
-            this.nazivTB.TabIndex = 14;
+            this.nazivTB.TabIndex = 0;
             // 
             // panel1
             // 
@@ -161,7 +170,7 @@
             this.tipZnamenCB.Location = new System.Drawing.Point(53, 258);
             this.tipZnamenCB.Name = "tipZnamenCB";
             this.tipZnamenCB.Size = new System.Drawing.Size(257, 24);
-            this.tipZnamenCB.TabIndex = 25;
+            this.tipZnamenCB.TabIndex = 5;
             // 
             // datumIzgradnje
             // 
@@ -169,7 +178,7 @@
             this.datumIzgradnje.Location = new System.Drawing.Point(334, 258);
             this.datumIzgradnje.Name = "datumIzgradnje";
             this.datumIzgradnje.Size = new System.Drawing.Size(180, 22);
-            this.datumIzgradnje.TabIndex = 26;
+            this.datumIzgradnje.TabIndex = 6;
             // 
             // label5
             // 
@@ -198,7 +207,7 @@
             this.odustaniBTN.Location = new System.Drawing.Point(472, 356);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
-            this.odustaniBTN.TabIndex = 30;
+            this.odustaniBTN.TabIndex = 10;
             this.odustaniBTN.UseVisualStyleBackColor = true;
             this.odustaniBTN.Click += new System.EventHandler(this.odustaniBTN_Click);
             // 
@@ -209,7 +218,7 @@
             this.prihvatiBTN.Location = new System.Drawing.Point(423, 356);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
-            this.prihvatiBTN.TabIndex = 29;
+            this.prihvatiBTN.TabIndex = 9;
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler(this.prihvatiBTN_Click);
             // 
@@ -219,7 +228,7 @@
             this.brojTB.Location = new System.Drawing.Point(245, 87);
             this.brojTB.Name = "brojTB";
             this.brojTB.Size = new System.Drawing.Size(65, 24);
-            this.brojTB.TabIndex = 31;
+            this.brojTB.TabIndex = 2;
             // 
             // gradComboBox
             // 
@@ -228,16 +237,7 @@
             this.gradComboBox.Location = new System.Drawing.Point(53, 117);
             this.gradComboBox.Name = "gradComboBox";
             this.gradComboBox.Size = new System.Drawing.Size(120, 24);
-            this.gradComboBox.TabIndex = 32;
-            // 
-            // znamPB
-            // 
-            this.znamPB.Location = new System.Drawing.Point(0, 0);
-            this.znamPB.Name = "znamPB";
-            this.znamPB.Size = new System.Drawing.Size(180, 196);
-            this.znamPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.znamPB.TabIndex = 0;
-            this.znamPB.TabStop = false;
+            this.gradComboBox.TabIndex = 3;
             // 
             // ZnamenitostNewEdit
             // 
