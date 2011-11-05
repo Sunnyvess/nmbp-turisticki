@@ -77,11 +77,10 @@
             // 
             // opisLabel
             // 
-            this.opisLabel.AutoSize = true;
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.opisLabel.Location = new System.Drawing.Point(229, 82);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(84, 15);
+            this.opisLabel.Size = new System.Drawing.Size(178, 157);
             this.opisLabel.TabIndex = 20;
             this.opisLabel.Text = "Ovdje ide opis";
             // 
