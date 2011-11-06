@@ -7,10 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Npgsql;
+using System.IO;
 
 namespace NMBP___OR.Presentation {
     public partial class ParkInfo : Form {
         private int Sifra;
+        private int indeksSlike = 1;
+        private string type = "park";
+        Slika slika = new Slika();
+        private int BrojSlika = 0;
         public ParkInfo () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -57,6 +62,7 @@ namespace NMBP___OR.Presentation {
         {
             nameLabel.DataBindings.Add("Text", parkBinding, "naziv");
             adresaLabel.Text = getAdresa();
+            if (slika.getBrojSlika(type, sifra) != 0) parkPB.Image = slika.getSlika(type, indeksSlike, sifra);
             radnoVrijemeLabel.DataBindings.Add("Text", parkBinding, "radnovrijeme");
             opisLabel.DataBindings.Add("Text", parkBinding, "opis");
             string otvoren = Convert.ToString(da.Tables[0].Rows[parkBinding.Find("sifra", Sifra)][6]);
@@ -65,6 +71,11 @@ namespace NMBP___OR.Presentation {
                 otvorenLabel.Text = "DA";
             else
                 otvorenLabel.Text = "NE";
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
            
         }
         private string getAdresa()
@@ -76,6 +87,34 @@ namespace NMBP___OR.Presentation {
             int pbr = Convert.ToInt32(adress[2]);
             string grad = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["ime"].ToString();
             return adress[0] + " " + adress[1] + ", " + adress[2] + " " + grad;
+        }
+
+        private void nextPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == brojSlika) indeksSlike = 1;
+                else indeksSlike++;
+                parkPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
+        }
+
+        private void previousPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == 1) indeksSlike = brojSlika;
+                else indeksSlike--;
+                parkPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
+        }
+
+        private void parkPB_DoubleClick(object sender, EventArgs e)
+        {
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
         }
     }
 }

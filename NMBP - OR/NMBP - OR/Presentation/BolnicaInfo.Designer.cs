@@ -32,9 +32,9 @@
             this.slikaPanel = new System.Windows.Forms.Panel();
             this.bolnicaPB = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.nextPictureButton = new System.Windows.Forms.Button();
             this.previousPictureButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.slikaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bolnicaPB)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,7 @@
             this.bolnicaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.bolnicaPB.TabIndex = 0;
             this.bolnicaPB.TabStop = false;
+            this.bolnicaPB.DoubleClick += new System.EventHandler(this.bolnicaPB_DoubleClick);
             // 
             // label2
             // 
@@ -126,18 +127,9 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Dežurna:";
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(366, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 50);
-            this.panel1.TabIndex = 0;
-            // 
             // nextPictureButton
             // 
-            this.nextPictureButton.Location = new System.Drawing.Point(148, 248);
+            this.nextPictureButton.Location = new System.Drawing.Point(148, 247);
             this.nextPictureButton.Name = "nextPictureButton";
             this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
             this.nextPictureButton.TabIndex = 9;
@@ -154,6 +146,15 @@
             this.previousPictureButton.Text = "Prethodna";
             this.previousPictureButton.UseVisualStyleBackColor = true;
             this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(366, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 50);
+            this.panel1.TabIndex = 0;
             // 
             // BolnicaInfo
             // 

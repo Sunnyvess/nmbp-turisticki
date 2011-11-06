@@ -33,6 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.otvorenLabel = new System.Windows.Forms.Label();
+            this.previousPictureButton = new System.Windows.Forms.Button();
+            this.nextPictureButton = new System.Windows.Forms.Button();
             this.slikaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parkPB)).BeginInit();
             this.SuspendLayout();
@@ -54,12 +56,13 @@
             this.parkPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.parkPB.TabIndex = 0;
             this.parkPB.TabStop = false;
+            this.parkPB.DoubleClick += new System.EventHandler(this.parkPB_DoubleClick);
             // 
             // radnoVrijemeLabel
             // 
             this.radnoVrijemeLabel.AutoSize = true;
             this.radnoVrijemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radnoVrijemeLabel.Location = new System.Drawing.Point(105, 248);
+            this.radnoVrijemeLabel.Location = new System.Drawing.Point(102, 289);
             this.radnoVrijemeLabel.Name = "radnoVrijemeLabel";
             this.radnoVrijemeLabel.Size = new System.Drawing.Size(93, 16);
             this.radnoVrijemeLabel.TabIndex = 22;
@@ -69,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(9, 248);
+            this.label1.Location = new System.Drawing.Point(9, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 21;
@@ -117,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(316, 248);
+            this.label2.Location = new System.Drawing.Point(318, 289);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 26;
@@ -127,17 +130,39 @@
             // 
             this.otvorenLabel.AutoSize = true;
             this.otvorenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.otvorenLabel.Location = new System.Drawing.Point(371, 248);
+            this.otvorenLabel.Location = new System.Drawing.Point(378, 289);
             this.otvorenLabel.Name = "otvorenLabel";
             this.otvorenLabel.Size = new System.Drawing.Size(29, 16);
             this.otvorenLabel.TabIndex = 25;
             this.otvorenLabel.Text = "DA";
             // 
+            // previousPictureButton
+            // 
+            this.previousPictureButton.Location = new System.Drawing.Point(12, 246);
+            this.previousPictureButton.Name = "previousPictureButton";
+            this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previousPictureButton.TabIndex = 27;
+            this.previousPictureButton.Text = "Prethodna";
+            this.previousPictureButton.UseVisualStyleBackColor = true;
+            this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
+            // 
+            // nextPictureButton
+            // 
+            this.nextPictureButton.Location = new System.Drawing.Point(148, 246);
+            this.nextPictureButton.Name = "nextPictureButton";
+            this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPictureButton.TabIndex = 28;
+            this.nextPictureButton.Text = "Sljedeća";
+            this.nextPictureButton.UseVisualStyleBackColor = true;
+            this.nextPictureButton.Click += new System.EventHandler(this.nextPictureButton_Click);
+            // 
             // ParkInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 272);
+            this.ClientSize = new System.Drawing.Size(419, 314);
+            this.Controls.Add(this.nextPictureButton);
+            this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.otvorenLabel);
             this.Controls.Add(this.slikaPanel);
@@ -170,6 +195,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label otvorenLabel;
         private System.Windows.Forms.PictureBox parkPB;
+        private System.Windows.Forms.Button previousPictureButton;
+        private System.Windows.Forms.Button nextPictureButton;
 
     }
 }
