@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.masterLista = new System.Windows.Forms.ListBox();
+            this.gradoviComboBox = new System.Windows.Forms.ComboBox();
             this.gradBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDDataSet = new NMBP___OR.ORDDataSet();
-            this.gradoviComboBox = new System.Windows.Forms.ComboBox();
             this.lokacijaComboBox = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.deleteBTN = new System.Windows.Forms.Button();
@@ -53,18 +53,8 @@
             this.masterLista.Location = new System.Drawing.Point(12, 63);
             this.masterLista.Name = "masterLista";
             this.masterLista.Size = new System.Drawing.Size(318, 274);
-            this.masterLista.TabIndex = 0;
+            this.masterLista.TabIndex = 2;
             this.masterLista.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.masterLista_MouseDoubleClick);
-            // 
-            // gradBindingSource
-            // 
-            this.gradBindingSource.DataMember = "grad";
-            this.gradBindingSource.DataSource = this.oRDDataSet;
-            // 
-            // oRDDataSet
-            // 
-            this.oRDDataSet.DataSetName = "ORDDataSet";
-            this.oRDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gradoviComboBox
             // 
@@ -75,9 +65,19 @@
             this.gradoviComboBox.Location = new System.Drawing.Point(12, 12);
             this.gradoviComboBox.Name = "gradoviComboBox";
             this.gradoviComboBox.Size = new System.Drawing.Size(161, 31);
-            this.gradoviComboBox.TabIndex = 1;
+            this.gradoviComboBox.TabIndex = 0;
             this.gradoviComboBox.ValueMember = "postanskibroj";
             this.gradoviComboBox.SelectedIndexChanged += new System.EventHandler(this.gradoviComboBox_SelectedIndexChanged);
+            // 
+            // gradBindingSource
+            // 
+            this.gradBindingSource.DataMember = "grad";
+            this.gradBindingSource.DataSource = this.oRDDataSet;
+            // 
+            // oRDDataSet
+            // 
+            this.oRDDataSet.DataSetName = "ORDDataSet";
+            this.oRDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lokacijaComboBox
             // 
@@ -91,7 +91,7 @@
             this.lokacijaComboBox.Location = new System.Drawing.Point(179, 12);
             this.lokacijaComboBox.Name = "lokacijaComboBox";
             this.lokacijaComboBox.Size = new System.Drawing.Size(151, 31);
-            this.lokacijaComboBox.TabIndex = 2;
+            this.lokacijaComboBox.TabIndex = 1;
             this.lokacijaComboBox.SelectedIndexChanged += new System.EventHandler(this.lokacijaComboBox_SelectedIndexChanged);
             // 
             // deleteBTN
@@ -163,8 +163,8 @@
         private System.Windows.Forms.Button editBTN;
         private System.Windows.Forms.Button deleteBTN;
         private System.Windows.Forms.ToolTip toolTip1;
-        private ORDDataSet oRDDataSet;
         private System.Windows.Forms.BindingSource gradBindingSource;
+        private ORDDataSet oRDDataSet;
         private ORDDataSetTableAdapters.gradTableAdapter gradTableAdapter;
 
     }
