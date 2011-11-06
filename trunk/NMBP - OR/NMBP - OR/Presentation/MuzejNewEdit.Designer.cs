@@ -41,6 +41,10 @@
             this.prihvatiBTN = new System.Windows.Forms.Button();
             this.brojTB = new System.Windows.Forms.TextBox();
             this.gradComboBox = new System.Windows.Forms.ComboBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.ZamijeniButton = new System.Windows.Forms.Button();
+            this.previousPictureButton = new System.Windows.Forms.Button();
+            this.nextPictureButton = new System.Windows.Forms.Button();
             this.slikaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.muzejPB)).BeginInit();
             this.SuspendLayout();
@@ -72,12 +76,13 @@
             // 
             // ucitajSlikuTB
             // 
-            this.ucitajSlikuTB.Location = new System.Drawing.Point(440, 10);
+            this.ucitajSlikuTB.Location = new System.Drawing.Point(461, 6);
             this.ucitajSlikuTB.Name = "ucitajSlikuTB";
-            this.ucitajSlikuTB.Size = new System.Drawing.Size(75, 23);
+            this.ucitajSlikuTB.Size = new System.Drawing.Size(54, 23);
             this.ucitajSlikuTB.TabIndex = 7;
-            this.ucitajSlikuTB.Text = "Ucitaj sliku";
+            this.ucitajSlikuTB.Text = "Učitaj";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
+            this.ucitajSlikuTB.Click += new System.EventHandler(this.ucitajSlikuTB_Click);
             // 
             // label4
             // 
@@ -117,6 +122,7 @@
             this.muzejPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.muzejPB.TabIndex = 0;
             this.muzejPB.TabStop = false;
+            this.muzejPB.DoubleClick += new System.EventHandler(this.muzejPB_DoubleClick);
             // 
             // label3
             // 
@@ -221,11 +227,55 @@
             this.gradComboBox.Size = new System.Drawing.Size(120, 24);
             this.gradComboBox.TabIndex = 3;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(395, 6);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(60, 23);
+            this.DeleteButton.TabIndex = 44;
+            this.DeleteButton.Text = "Izbiši";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // ZamijeniButton
+            // 
+            this.ZamijeniButton.Location = new System.Drawing.Point(335, 6);
+            this.ZamijeniButton.Name = "ZamijeniButton";
+            this.ZamijeniButton.Size = new System.Drawing.Size(54, 23);
+            this.ZamijeniButton.TabIndex = 45;
+            this.ZamijeniButton.Text = "Zamijeni";
+            this.ZamijeniButton.UseVisualStyleBackColor = true;
+            this.ZamijeniButton.Click += new System.EventHandler(this.ZamijeniButton_Click);
+            // 
+            // previousPictureButton
+            // 
+            this.previousPictureButton.Location = new System.Drawing.Point(335, 237);
+            this.previousPictureButton.Name = "previousPictureButton";
+            this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previousPictureButton.TabIndex = 46;
+            this.previousPictureButton.Text = "Prethodna";
+            this.previousPictureButton.UseVisualStyleBackColor = true;
+            this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
+            // 
+            // nextPictureButton
+            // 
+            this.nextPictureButton.Location = new System.Drawing.Point(440, 237);
+            this.nextPictureButton.Name = "nextPictureButton";
+            this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPictureButton.TabIndex = 47;
+            this.nextPictureButton.Text = "Sljedeća";
+            this.nextPictureButton.UseVisualStyleBackColor = true;
+            this.nextPictureButton.Click += new System.EventHandler(this.nextPictureButton_Click);
+            // 
             // MuzejNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 411);
+            this.Controls.Add(this.nextPictureButton);
+            this.Controls.Add(this.previousPictureButton);
+            this.Controls.Add(this.ZamijeniButton);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.gradComboBox);
             this.Controls.Add(this.brojTB);
             this.Controls.Add(this.odustaniBTN);
@@ -274,6 +324,10 @@
         private System.Windows.Forms.TextBox brojTB;
         private System.Windows.Forms.ComboBox gradComboBox;
         private System.Windows.Forms.PictureBox muzejPB;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button ZamijeniButton;
+        private System.Windows.Forms.Button previousPictureButton;
+        private System.Windows.Forms.Button nextPictureButton;
 
     }
 }

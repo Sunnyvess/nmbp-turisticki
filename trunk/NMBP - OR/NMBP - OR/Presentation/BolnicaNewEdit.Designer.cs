@@ -38,11 +38,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gradComboBox = new System.Windows.Forms.ComboBox();
             this.brojTB = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ucitajSliku2BTN = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.slikaPanel = new System.Windows.Forms.Panel();
+            this.bolnicaPB = new System.Windows.Forms.PictureBox();
+            this.previousPictureButton = new System.Windows.Forms.Button();
+            this.nextPictureButton = new System.Windows.Forms.Button();
+            this.ZamijeniButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.slikaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolnicaPB)).BeginInit();
             this.SuspendLayout();
             // 
             // nazivTB
@@ -85,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(53, 231);
+            this.label3.Location = new System.Drawing.Point(53, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 7;
@@ -94,7 +97,7 @@
             // opisTB
             // 
             this.opisTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisTB.Location = new System.Drawing.Point(55, 250);
+            this.opisTB.Location = new System.Drawing.Point(53, 257);
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
             this.opisTB.Size = new System.Drawing.Size(459, 46);
@@ -132,11 +135,11 @@
             // 
             // ucitajSlikuBTN
             // 
-            this.ucitajSlikuBTN.Location = new System.Drawing.Point(335, 38);
+            this.ucitajSlikuBTN.Location = new System.Drawing.Point(460, 6);
             this.ucitajSlikuBTN.Name = "ucitajSlikuBTN";
-            this.ucitajSlikuBTN.Size = new System.Drawing.Size(75, 23);
+            this.ucitajSlikuBTN.Size = new System.Drawing.Size(54, 23);
             this.ucitajSlikuBTN.TabIndex = 7;
-            this.ucitajSlikuBTN.Text = "Ucitaj sliku 1";
+            this.ucitajSlikuBTN.Text = "Učitaj";
             this.ucitajSlikuBTN.UseVisualStyleBackColor = true;
             this.ucitajSlikuBTN.Click += new System.EventHandler(this.ucitajSlikuBTN_Click);
             // 
@@ -144,7 +147,7 @@
             // 
             this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
             this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.odustaniBTN.Location = new System.Drawing.Point(471, 302);
+            this.odustaniBTN.Location = new System.Drawing.Point(471, 309);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
             this.odustaniBTN.TabIndex = 11;
@@ -155,7 +158,7 @@
             // 
             this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
             this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.prihvatiBTN.Location = new System.Drawing.Point(422, 302);
+            this.prihvatiBTN.Location = new System.Drawing.Point(422, 309);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
             this.prihvatiBTN.TabIndex = 10;
@@ -188,60 +191,77 @@
             this.brojTB.Size = new System.Drawing.Size(65, 24);
             this.brojTB.TabIndex = 2;
             // 
-            // label5
+            // slikaPanel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(416, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 17;
+            this.slikaPanel.AutoScroll = true;
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.slikaPanel.Controls.Add(this.bolnicaPB);
+            this.slikaPanel.Location = new System.Drawing.Point(334, 34);
+            this.slikaPanel.Name = "slikaPanel";
+            this.slikaPanel.Size = new System.Drawing.Size(180, 193);
+            this.slikaPanel.TabIndex = 37;
             // 
-            // ucitajSliku2BTN
+            // bolnicaPB
             // 
-            this.ucitajSliku2BTN.Location = new System.Drawing.Point(334, 67);
-            this.ucitajSliku2BTN.Name = "ucitajSliku2BTN";
-            this.ucitajSliku2BTN.Size = new System.Drawing.Size(75, 23);
-            this.ucitajSliku2BTN.TabIndex = 8;
-            this.ucitajSliku2BTN.Text = "Učitaj sliku 2";
-            this.ucitajSliku2BTN.UseVisualStyleBackColor = true;
-            this.ucitajSliku2BTN.Click += new System.EventHandler(this.ucitajSliku2BTN_Click);
+            this.bolnicaPB.Location = new System.Drawing.Point(0, 0);
+            this.bolnicaPB.Name = "bolnicaPB";
+            this.bolnicaPB.Size = new System.Drawing.Size(180, 193);
+            this.bolnicaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.bolnicaPB.TabIndex = 0;
+            this.bolnicaPB.TabStop = false;
+            this.bolnicaPB.DoubleClick += new System.EventHandler(this.bolnicaPB_DoubleClick);
             // 
-            // label6
+            // previousPictureButton
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(416, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 19;
+            this.previousPictureButton.Location = new System.Drawing.Point(334, 228);
+            this.previousPictureButton.Name = "previousPictureButton";
+            this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previousPictureButton.TabIndex = 38;
+            this.previousPictureButton.Text = "Prethodna";
+            this.previousPictureButton.UseVisualStyleBackColor = true;
+            this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
             // 
-            // button1
+            // nextPictureButton
             // 
-            this.button1.Location = new System.Drawing.Point(334, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Učitaj sliku 3";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nextPictureButton.Location = new System.Drawing.Point(437, 228);
+            this.nextPictureButton.Name = "nextPictureButton";
+            this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPictureButton.TabIndex = 39;
+            this.nextPictureButton.Text = "Sljedeća";
+            this.nextPictureButton.UseVisualStyleBackColor = true;
+            this.nextPictureButton.Click += new System.EventHandler(this.nextPictureButton_Click);
             // 
-            // label7
+            // ZamijeniButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(416, 105);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 13);
-            this.label7.TabIndex = 21;
+            this.ZamijeniButton.Location = new System.Drawing.Point(334, 6);
+            this.ZamijeniButton.Name = "ZamijeniButton";
+            this.ZamijeniButton.Size = new System.Drawing.Size(54, 23);
+            this.ZamijeniButton.TabIndex = 40;
+            this.ZamijeniButton.Text = "Zamijeni";
+            this.ZamijeniButton.UseVisualStyleBackColor = true;
+            this.ZamijeniButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(394, 6);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(60, 23);
+            this.DeleteButton.TabIndex = 41;
+            this.DeleteButton.Text = "Izbiši";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // BolnicaNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 357);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.ucitajSliku2BTN);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.ZamijeniButton);
+            this.Controls.Add(this.nextPictureButton);
+            this.Controls.Add(this.previousPictureButton);
+            this.Controls.Add(this.slikaPanel);
             this.Controls.Add(this.brojTB);
             this.Controls.Add(this.gradComboBox);
             this.Controls.Add(this.odustaniBTN);
@@ -260,6 +280,9 @@
             this.Name = "BolnicaNewEdit";
             this.Text = "Nova bolnica";
             this.Load += new System.EventHandler(this.BolnicaNewEdit_Load);
+            this.slikaPanel.ResumeLayout(false);
+            this.slikaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolnicaPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,10 +305,11 @@
         private System.Windows.Forms.Button odustaniBTN;
         private System.Windows.Forms.ComboBox gradComboBox;
         private System.Windows.Forms.TextBox brojTB;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button ucitajSliku2BTN;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel slikaPanel;
+        private System.Windows.Forms.PictureBox bolnicaPB;
+        private System.Windows.Forms.Button previousPictureButton;
+        private System.Windows.Forms.Button nextPictureButton;
+        private System.Windows.Forms.Button ZamijeniButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }

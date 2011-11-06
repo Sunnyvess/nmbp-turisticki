@@ -13,23 +13,23 @@ using Npgsql;
 
 namespace NMBP___OR.Presentation {
     public partial class BolnicaNewEdit : Form {
+        private string type = "bolnica";
         
-        public bool accepted = false;
         private int sifra;
+        private int indeksSlike = 1;
         private String slika1Naziv = null;
-        private byte[] slika1Byte;
+        List<byte[]> slike;
+        private int BrojSlika = 0;
         private String slika2Naziv = null;
-        private byte[] slika2Byte;
         private String slika3Naziv = null;
-        private byte[] slika3Byte;
+        
         bool isNew = false;
+
+        Slika slika = new Slika();
         
         public BolnicaNewEdit (){
             isNew = true;
-            slika1Byte = null;
-            slika2Byte = null;
-            slika3Byte = null;
-
+            slike = new List<byte[]>();
             this.Name = "Nova bolnica";
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -39,16 +39,17 @@ namespace NMBP___OR.Presentation {
             if (sifra == 0)
             {
                 isNew = true;
-                slika1Byte = null;
-                slika2Byte = null;
-                slika3Byte = null;
+                slike = new List<byte[]>();
             }
             else
             {
                 isNew = false;
-                slika1Byte = getSlikaBytes(1, sifra);
-                slika2Byte = getSlikaBytes(2, sifra);
-                slika3Byte = getSlikaBytes(3, sifra);
+                slike = new List<byte[]>();
+                for (int i = 1; i <= 3; i++)
+                {
+                    if (slika.getSlikaBytes(type, i, sifra) != null)
+                        slike.Add(slika.getSlikaBytes(type, i, sifra));
+                }
             }
             this.Name = "Izmjena bolnice";
             this.sifra = sifra;
@@ -107,8 +108,8 @@ namespace NMBP___OR.Presentation {
             int pbr = Convert.ToInt32(adress[2]);
 
             gradComboBox.SelectedValue = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["postanskibroj"];
-
-            
+            //if (slika.getBrojSlika(type, sifra) != 0) bolnicaPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            if (slike.Count != 0) bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike-1]);   
             ulicaTB.Text = adress[0];
             brojTB.Text = adress[1];
             radnoVrijemeTB.DataBindings.Add("Text", bolnicaBinding, "radnovrijeme");
@@ -121,11 +122,21 @@ namespace NMBP___OR.Presentation {
             else
                 dezurna.Checked = false;
 
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
+
         }
        
         private void prihvatiBTN_Click (object sender, EventArgs e) {
             if (isNew)
             {
+                for (int i = slike.Count; i < 3; i++)
+                    slike.Add(null);
+
+                
                 string sqlString = "INSERT INTO bolnica (naziv, opis, radnoVrijeme, dezurstvo, adresa, slika[1], slika[2], slika[3]) VALUES " +
                     "(@naziv, @opis, @radnoVrijeme, @dezurstvo, @adresa, (@slika1Naziv, @slika1Byte), (@slika2Naziv, @slika2Byte), (@slika3Naziv, @slika3Byte))";
                 try
@@ -139,11 +150,11 @@ namespace NMBP___OR.Presentation {
                     
                     comm.Parameters.AddWithValue("@adresa", adresa);
                     comm.Parameters.AddWithValue("@slika1Naziv", slika1Naziv);
-                    comm.Parameters.AddWithValue("@slika1Byte", (object)slika1Byte);
+                    comm.Parameters.AddWithValue("@slika1Byte", (object)slike[0]);
                     comm.Parameters.AddWithValue("@slika2Naziv", slika2Naziv);
-                    comm.Parameters.AddWithValue("@slika2Byte", (object)slika2Byte);
+                    comm.Parameters.AddWithValue("@slika2Byte", (object)slike[1]);
                     comm.Parameters.AddWithValue("@slika3Naziv", slika3Naziv);
-                    comm.Parameters.AddWithValue("@slika3Byte", (object)slika3Byte);
+                    comm.Parameters.AddWithValue("@slika3Byte", (object)slike[2]);
                     comm.Parameters.AddWithValue("@radnoVrijeme", radnoVrijemeTB.Text);
                     comm.Parameters.AddWithValue("@dezurstvo", dezurna.Checked);
                     comm.ExecuteNonQuery();
@@ -158,6 +169,11 @@ namespace NMBP___OR.Presentation {
            
             else
             {
+                for (int i = slike.Count; i < 3; i++)
+                    slike.Add(null);
+
+                
+                
                 string sqlString = "UPDATE bolnica SET naziv = @naziv, opis = @opis, radnovrijeme = @radnoVrijeme, " +
                     "dezurstvo = @dezurstvo, adresa = @adresa, slika[1]=(@slika1Naziv, @slika1Byte), slika[2]=(@slika2Naziv, @slika2Byte), " +
                     "slika[3]=(@slika3Naziv, @slika3Byte) WHERE sifra = @sifra";
@@ -173,11 +189,11 @@ namespace NMBP___OR.Presentation {
                     comm.Parameters.AddWithValue("@sifra", sifra);
                     comm.Parameters.AddWithValue("@dezurstvo", dezurna.Checked);
                     comm.Parameters.AddWithValue("@slika1Naziv", slika1Naziv);
-                    comm.Parameters.AddWithValue("@slika1Byte", (object)slika1Byte);
+                    comm.Parameters.AddWithValue("@slika1Byte", (object)slike[0]);
                     comm.Parameters.AddWithValue("@slika2Naziv", slika2Naziv);
-                    comm.Parameters.AddWithValue("@slika2Byte", (object)slika2Byte);
+                    comm.Parameters.AddWithValue("@slika2Byte", (object)slike[1]);
                     comm.Parameters.AddWithValue("@slika3Naziv", slika3Naziv);
-                    comm.Parameters.AddWithValue("@slika3Byte", (object)slika3Byte);
+                    comm.Parameters.AddWithValue("@slika3Byte", (object)slike[2]);
                     comm.ExecuteNonQuery();
                     conn.Close();
                 }
@@ -190,94 +206,112 @@ namespace NMBP___OR.Presentation {
             this.Close();
         }
         private void odustaniBTN_Click (object sender, EventArgs e) {
-            accepted = false;
+            
             this.Close ();
         }
-
-        
+       
         private void ucitajSlikuBTN_Click(object sender, EventArgs e)
         {
+            
+            if (slike.Count == 3)
+            {
+                MessageBox.Show("Nije moguće učitati više od 3 slike za jedan zapis");
+                return;
+            }
             try
             {
                 OpenFileDialog open = new OpenFileDialog();
                 open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                    //bolnicaPB.Image = Image.FromFile(open.FileName);
-                    label5.Text = "Slika 1 učitana";
                     slika1Naziv = "test";
                     FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
                     BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                    slika1Byte = br.ReadBytes((Int32)fs.Length);         
+                    if (isNew)
+                    {
+                        slike.Add(br.ReadBytes((Int32)fs.Length));                      
+                        bolnicaPB.Image = new Bitmap(open.FileName);  
+                    }
+
+                    else
+                    {
+                        slike.Add(br.ReadBytes((Int32)fs.Length));
+                        bolnicaPB.Image = new Bitmap(open.FileName);
+                       
+                    }
+   
                 }
 
             }
             catch (Exception)
             {
-                throw new ApplicationException("Failed loading image");
+                
+                MessageBox.Show("Neuspjelo učitavanje slike");
             }
         
         }
 
-        private void ucitajSliku2BTN_Click(object sender, EventArgs e)
+        private void previousPictureButton_Click(object sender, EventArgs e)
         {
-            try
+            int brojSlika = BrojSlika;
+            
+            if (brojSlika != 0)
             {
-                OpenFileDialog open = new OpenFileDialog();
-                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                    //bolnicaPB.Image = Image.FromFile(open.FileName);
-                    label6.Text = "Slika 2 učitana";
-                    slika2Naziv = "test";
-                    FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                    slika2Byte = br.ReadBytes((Int32)fs.Length);
-                }
-
+                 if (indeksSlike == 1) indeksSlike = brojSlika;
+                 else indeksSlike--;
+                 if(isNew)
+                   
+                     bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                 else
+                     bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                     
+                
             }
-            catch (Exception)
+        }
+
+        private void nextPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+
+            if (brojSlika != 0)
             {
-                throw new ApplicationException("Failed loading image");
+                if (indeksSlike == brojSlika) indeksSlike = 1;
+                else indeksSlike++;
+                if (isNew)
+                    
+                    bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                else
+                    bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                    
+
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                OpenFileDialog open = new OpenFileDialog();
+            OpenFileDialog open = new OpenFileDialog();
                 open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                    //bolnicaPB.Image = Image.FromFile(open.FileName);
-                    label7.Text = "Slika 3 učitana";
-                    slika3Naziv = "test";
+                    slika1Naziv = "test";
                     FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
                     BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                    slika3Byte = br.ReadBytes((Int32)fs.Length);
+                    bolnicaPB.Image = new Bitmap(open.FileName);
+                    slike[indeksSlike - 1] = br.ReadBytes((Int32)fs.Length);
                 }
-
-            }
-            catch (Exception)
-            {
-                throw new ApplicationException("Failed loading image");
-            }
         }
 
-        private byte[] getSlikaBytes(int indeks, int sifra)
+        private void bolnicaPB_DoubleClick(object sender, EventArgs e)
         {
-            conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT slika[" + indeks + "].slika FROM bolnica where sifra = " + sifra, conn);
-            object result = command.ExecuteScalar();
-            conn.Close();
-
-            if (result is byte[])
-            {
-                byte[] slika = (byte[])result;
-                return slika;
-            }
-            else return null;
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            slike[indeksSlike - 1] = null;
+            bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+        }
+
     }
 }

@@ -13,8 +13,9 @@ namespace NMBP___OR.Presentation {
     public partial class BolnicaInfo : Form {
         private int Sifra;
         private int indeksSlike = 1;
-        private int brojSlika = 0;
-
+        private string type = "bolnica";
+        Slika slika = new Slika();
+        private int BrojSlika = 0;
         public BolnicaInfo () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -24,6 +25,7 @@ namespace NMBP___OR.Presentation {
             get { return Sifra; }
             set { Sifra = value; }
         }
+
         static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
 
         NpgsqlConnection conn = new NpgsqlConnection(connString);
@@ -60,7 +62,7 @@ namespace NMBP___OR.Presentation {
         {
             nameLabel.DataBindings.Add("Text",bolnicaBinding, "naziv");
             adresaLabel.Text = getAdresa();
-            if(getBrojSlika()!=0) bolnicaPB.Image = getSlika(indeksSlike);                        
+            if (slika.getBrojSlika(type, sifra) != 0) bolnicaPB.Image = slika.getSlika(type, indeksSlike, sifra);                        
             radnoVrijemeLabel.DataBindings.Add("Text", bolnicaBinding, "radnovrijeme");
             opisLabel.DataBindings.Add("Text",bolnicaBinding, "opis");
             string dezurstvo = Convert.ToString(da.Tables[0].Rows[bolnicaBinding.Find("sifra", Sifra)][5]);
@@ -69,6 +71,12 @@ namespace NMBP___OR.Presentation {
                 dezurstvoLabel.Text = "DA";
             else
                 dezurstvoLabel.Text = "NE";
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
+
         }
         private string getAdresa()
         {
@@ -80,58 +88,34 @@ namespace NMBP___OR.Presentation {
             string grad = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["ime"].ToString();
             return adress[0] + " " + adress[1] + ", " + adress[2] + " " + grad;
         }
-
-        private int getBrojSlika()
-        {
-            conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT array_length(slika, 1) AS brojSlika FROM bolnica where sifra = " + sifra, conn);
-            object brojSlika1 = command.ExecuteScalar();
-            conn.Close();
-
-            return (brojSlika1 is int) ? (Int32)brojSlika1 : 0;
-        }
-
-        private Image getSlika(int indeks)
-        {
-            conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT slika[" + indeks + "].slika FROM bolnica where sifra = " +  sifra, conn);
-            object result = command.ExecuteScalar();
-            conn.Close();
-
-            Image image;
-            if (result is byte[])
-            {
-                byte[] slika = (byte[])result;
-                using (MemoryStream ms = new MemoryStream(slika, 0, slika.Length))
-                {
-                    ms.Write(slika, 0, slika.Length);
-                    image = Image.FromStream(ms, true);
-                }
-
-                return image;
-            }
-            else return null;
-        }
-
+       
         private void nextPictureButton_Click(object sender, EventArgs e)
         {
-            if (getBrojSlika() != 0)
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
             {
-                if (indeksSlike == getBrojSlika()) indeksSlike = 1;
+                if (indeksSlike == brojSlika) indeksSlike = 1;
                 else indeksSlike++;
-                bolnicaPB.Image = getSlika(indeksSlike);
+                bolnicaPB.Image = slika.getSlika(type, indeksSlike, sifra);
             }
 
         }
 
         private void previousPictureButton_Click(object sender, EventArgs e)
         {
-            if (getBrojSlika() != 0)
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
             {
-                if (indeksSlike == 1) indeksSlike = getBrojSlika();
+                if (indeksSlike == 1) indeksSlike = brojSlika;
                 else indeksSlike--;
-                bolnicaPB.Image = getSlika(indeksSlike);
+                bolnicaPB.Image = slika.getSlika(type, indeksSlike, sifra);
             }
+        }
+
+        private void bolnicaPB_DoubleClick(object sender, EventArgs e)
+        {
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
         }
     }
 }

@@ -7,10 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Npgsql;
+using System.IO;
+
 
 namespace NMBP___OR.Presentation {
     public partial class ZnamenitostInfo : Form {
         private int Sifra;
+        private int indeksSlike = 1;
+        private string type = "znamenitost";
+        Slika slika = new Slika();
+        private int BrojSlika = 0;
         public ZnamenitostInfo () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -56,11 +62,18 @@ namespace NMBP___OR.Presentation {
         {
             nameLabel.DataBindings.Add("Text", znamenitostBinding, "naziv");
             adresaLabel.Text = getAdresa();
+            if (slika.getBrojSlika(type, sifra) != 0) znamPB.Image = slika.getSlika(type, indeksSlike, sifra);  
             radnoVrijemeLabel.DataBindings.Add("Text", znamenitostBinding, "radnovrijeme");
             opisLabel.DataBindings.Add("Text", znamenitostBinding, "opis");
             DateTime datum = DateTime.Parse(da.Tables[0].Rows[znamenitostBinding.Find("sifra", sifra)]["datumizgradnje"].ToString());
             datumizgradnjeLB.Text = datum.ToShortDateString().ToString();
             tipZnamenLabel.DataBindings.Add("Text", znamenitostBinding, "tipznamenitosti");
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
+
         }
         private string getAdresa()
         {
@@ -71,6 +84,34 @@ namespace NMBP___OR.Presentation {
             int pbr = Convert.ToInt32(adress[2]);
             string grad = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["ime"].ToString();
             return adress[0] + " " + adress[1] + ", " + adress[2] + " " + grad;
+        }
+
+        private void nextPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == brojSlika) indeksSlike = 1;
+                else indeksSlike++;
+                znamPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
+        }
+
+        private void previousPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == 1) indeksSlike = brojSlika;
+                else indeksSlike--;
+                znamPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
+        }
+
+        private void znamPB_DoubleClick(object sender, EventArgs e)
+        {
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
         }
 
     }

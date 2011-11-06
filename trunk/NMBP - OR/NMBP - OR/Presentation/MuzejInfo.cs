@@ -11,6 +11,10 @@ using Npgsql;
 namespace NMBP___OR.Presentation {
     public partial class MuzejInfo : Form {
         private int Sifra;
+        private int indeksSlike = 1;
+        private string type = "muzej";
+        Slika slika = new Slika();
+        private int BrojSlika = 0;
         public MuzejInfo () {
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -56,9 +60,15 @@ namespace NMBP___OR.Presentation {
         {
             nameLabel.DataBindings.Add("Text", muzejBinding, "naziv");
             adresaLabel.Text = getAdresa();
+            if (slika.getBrojSlika(type, sifra) != 0) muzejPB.Image = slika.getSlika(type, indeksSlike, sifra);
             radnoVrijemeLabel.DataBindings.Add("Text", muzejBinding, "radnovrijeme");
             opisLabel.DataBindings.Add("Text", muzejBinding, "opis");
             tipMuzejaLabel.DataBindings.Add("Text", muzejBinding, "tipmuzeja");
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
             
         }
         private string getAdresa()
@@ -70,6 +80,34 @@ namespace NMBP___OR.Presentation {
             int pbr = Convert.ToInt32(adress[2]);
             string grad = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["ime"].ToString();
             return adress[0] + " " + adress[1] + ", " + adress[2] + " " + grad;
+        }
+
+        private void muzejPB_DoubleClick(object sender, EventArgs e)
+        {
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
+        }
+
+        private void previousPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == 1) indeksSlike = brojSlika;
+                else indeksSlike--;
+                muzejPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
+        }
+
+        private void nextPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == brojSlika) indeksSlike = 1;
+                else indeksSlike++;
+                muzejPB.Image = slika.getSlika(type, indeksSlike, sifra);
+            }
         }
 
     }

@@ -6,27 +6,50 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Imaging;
 using Npgsql;
 
 namespace NMBP___OR.Presentation {
     public partial class ParkNewEdit : Form {
-       
-        public bool accepted = false;
+
+        private string type = "park";
+
         private int sifra;
+        private int indeksSlike = 1;
+        private String slika1Naziv = null;
+        List<byte[]> slike;
+        private int BrojSlika = 0;
+        private String slika2Naziv = null;
+        private String slika3Naziv = null;
+
         bool isNew = false;
-        
+
+        Slika slika = new Slika();
 
         public ParkNewEdit () {
             isNew = true;
+            slike = new List<byte[]>();
             this.Name = "Novi park";
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         public ParkNewEdit (int sifra) {
             if (sifra == 0)
+            {
                 isNew = true;
+                slike = new List<byte[]>();
+            }
             else
+            {
                 isNew = false;
+                slike = new List<byte[]>();
+                for (int i = 1; i <= 3; i++)
+                {
+                    if (slika.getSlikaBytes(type, i, sifra) != null)
+                        slike.Add(slika.getSlikaBytes(type, i, sifra));
+                }
+            }
             this.Name = "Izmjena parka";
             this.sifra = sifra;
             InitializeComponent();
@@ -81,7 +104,7 @@ namespace NMBP___OR.Presentation {
             int pbr = Convert.ToInt32(adress[2]);
 
             gradComboBox.SelectedValue = da.Tables[1].Rows[gradBinding.Find("postanskibroj", pbr)]["postanskibroj"];
-
+            if (slike.Count != 0) parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]); 
 
             ulicaTB.Text = adress[0];
             brojTB.Text = adress[1];
@@ -95,13 +118,21 @@ namespace NMBP___OR.Presentation {
             else
                 otvoren.Checked = false;
 
+            for (int i = 1; i <= 3; i++)
+            {
+                if (slika.getSlikaBytes(type, i, sifra) != null)
+                    BrojSlika++;
+            }
+
         }
         
         private void prihvatiBTN_Click (object sender, EventArgs e) {
             if (isNew)
             {
-                string sqlString = "INSERT INTO park (naziv, opis, radnoVrijeme, otvoren, adresa) VALUES " +
-                    "(@naziv, @opis, @radnoVrijeme, @otvoren, @adresa)";
+                for (int i = slike.Count; i < 3; i++)
+                    slike.Add(null);
+                string sqlString = "INSERT INTO park (naziv, opis, radnoVrijeme, otvoren, adresa, slika[1], slika[2], slika[3]) VALUES " +
+                    "(@naziv, @opis, @radnoVrijeme, @otvoren, @adresa, (@slika1Naziv, @slika1Byte), (@slika2Naziv, @slika2Byte), (@slika3Naziv, @slika3Byte))";
                 try
                 {
                     conn.Open();
@@ -110,6 +141,12 @@ namespace NMBP___OR.Presentation {
                     comm.Parameters.AddWithValue("@opis", opisTB.Text);
                     string adresa = "(" + ulicaTB.Text + "," + brojTB.Text + "," + gradComboBox.SelectedValue.ToString() + ")";
                     comm.Parameters.AddWithValue("@adresa", adresa);
+                    comm.Parameters.AddWithValue("@slika1Naziv", slika1Naziv);
+                    comm.Parameters.AddWithValue("@slika1Byte", (object)slike[0]);
+                    comm.Parameters.AddWithValue("@slika2Naziv", slika2Naziv);
+                    comm.Parameters.AddWithValue("@slika2Byte", (object)slike[1]);
+                    comm.Parameters.AddWithValue("@slika3Naziv", slika3Naziv);
+                    comm.Parameters.AddWithValue("@slika3Byte", (object)slike[2]);
                     comm.Parameters.AddWithValue("@radnoVrijeme", radnoVrijemeTB.Text);
                     comm.Parameters.AddWithValue("@otvoren", otvoren.Checked);
                     comm.ExecuteNonQuery();
@@ -124,7 +161,10 @@ namespace NMBP___OR.Presentation {
 
             else
             {
-                string sqlString = "UPDATE park SET naziv = @naziv, opis = @opis, radnovrijeme = @radnoVrijeme, otvoren = @otvoren, adresa = @adresa " +
+                for (int i = slike.Count; i < 3; i++)
+                    slike.Add(null);
+                string sqlString = "UPDATE park SET naziv = @naziv, opis = @opis, radnovrijeme = @radnoVrijeme, otvoren = @otvoren, adresa = @adresa, " +
+                    "slika[1]=(@slika1Naziv, @slika1Byte), slika[2]=(@slika2Naziv, @slika2Byte), slika[3]=(@slika3Naziv, @slika3Byte) " +
                     "WHERE sifra = @sifra";
                 try
                 {
@@ -137,6 +177,12 @@ namespace NMBP___OR.Presentation {
                     comm.Parameters.AddWithValue("@radnoVrijeme", radnoVrijemeTB.Text);
                     comm.Parameters.AddWithValue("@sifra", sifra);
                     comm.Parameters.AddWithValue("@otvoren", otvoren.Checked);
+                    comm.Parameters.AddWithValue("@slika1Naziv", slika1Naziv);
+                    comm.Parameters.AddWithValue("@slika1Byte", (object)slike[0]);
+                    comm.Parameters.AddWithValue("@slika2Naziv", slika2Naziv);
+                    comm.Parameters.AddWithValue("@slika2Byte", (object)slike[1]);
+                    comm.Parameters.AddWithValue("@slika3Naziv", slika3Naziv);
+                    comm.Parameters.AddWithValue("@slika3Byte", (object)slike[2]);
                     comm.ExecuteNonQuery();
                     conn.Close();
                 }
@@ -149,8 +195,109 @@ namespace NMBP___OR.Presentation {
             this.Close();
         }
         private void odustaniBTN_Click (object sender, EventArgs e) {
-            accepted = false;
+           
             this.Close ();
+        }
+
+        private void ucitajSlikuTB_Click(object sender, EventArgs e)
+        {
+            if (slike.Count == 3)
+            {
+                MessageBox.Show("Nije moguće učitati više od 3 slike za jedan zapis");
+                return;
+            }
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    slika1Naziv = "test";
+                    FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(new BufferedStream(fs));
+                    if (isNew)
+                    {
+                        slike.Add(br.ReadBytes((Int32)fs.Length));
+                        parkPB.Image = new Bitmap(open.FileName);
+                    }
+
+                    else
+                    {
+                        slike.Add(br.ReadBytes((Int32)fs.Length));
+                        parkPB.Image = new Bitmap(open.FileName);
+
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Neuspjelo učitavanje slike");
+            }
+        
+        }
+
+        private void previousPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == 1) indeksSlike = brojSlika;
+                else indeksSlike--;
+                if (isNew)
+
+                    parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                else
+                    parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+
+
+            }
+        }
+
+        private void nextPictureButton_Click(object sender, EventArgs e)
+        {
+            int brojSlika = BrojSlika;
+
+            if (brojSlika != 0)
+            {
+                if (indeksSlike == brojSlika) indeksSlike = 1;
+                else indeksSlike++;
+                if (isNew)
+
+                    parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                else
+                    parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+
+
+            }
+        }
+
+        private void ZamijeniButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                slika1Naziv = "test";
+                FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(new BufferedStream(fs));
+                parkPB.Image = new Bitmap(open.FileName);
+                slike[indeksSlike - 1] = br.ReadBytes((Int32)fs.Length);
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            slike[indeksSlike - 1] = null;
+            parkPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+        }
+
+        private void parkPB_DoubleClick(object sender, EventArgs e)
+        {
+            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+            slikaForm.ShowDialog();
         }
     }
 }

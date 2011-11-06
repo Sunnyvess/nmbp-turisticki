@@ -71,6 +71,12 @@
     <Compile Include="Presentation\BolnicaNewEdit.Designer.cs">
       <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\SlikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\SlikaForm.Designer.cs">
+      <DependentUpon>SlikaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\VodicForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,7 @@
     <Compile Include="Presentation\ZnamenitostNewEdit.Designer.cs">
       <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Slika.cs" />
     <EmbeddedResource Include="Presentation\BolnicaInfo.resx">
       <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ParkNewEdit.resx">
       <DependentUpon>ParkNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\SlikaForm.resx">
+      <DependentUpon>SlikaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\VodicForm.resx">
       <DependentUpon>VodicForm.cs</DependentUpon>

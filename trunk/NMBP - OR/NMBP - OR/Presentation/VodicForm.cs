@@ -18,6 +18,7 @@ namespace NMBP___OR.Presentation {
         static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
         NpgsqlConnection conn = new NpgsqlConnection(connString);
         DataSet lokacijaDataSet = new DataSet();
+        string type;
         
         private void VodicForm_Load(object sender, EventArgs e)
         {
@@ -106,7 +107,7 @@ namespace NMBP___OR.Presentation {
         private void showDetails()
         {
             
-            string type = lokacijaComboBox.SelectedItem.ToString().ToLower();
+            
             string sqlString = "SELECT naziv, sifra FROM " + type +" WHERE (adresa).grad = @adresa";
             NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
             comm.Parameters.Clear();
@@ -128,21 +129,27 @@ namespace NMBP___OR.Presentation {
             showForm(Convert.ToInt32(masterLista.SelectedValue), "NewEdit");
         }
         private void deleteBTN_Click (object sender, EventArgs e) {
-            string type = lokacijaComboBox.SelectedItem.ToString().ToLower();
-            string sqlString = "DELETE FROM " + type + " WHERE sifra = @sifra"; 
+            if (masterLista.SelectedIndex < 0)
+                return;
+            if (MessageBox.Show("Jeste li sigurni?", "Potvrda brisanja", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                
+                string sqlString = "DELETE FROM " + type + " WHERE sifra = @sifra";
 
-            Npgsql.NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
-            comm.Parameters.Clear();
-            
-            comm.Parameters.AddWithValue("@sifra", int.Parse (masterLista.SelectedValue.ToString()));
-            conn.Open();
-            comm.ExecuteNonQuery();
-            conn.Close();
-            showDetails();
+                Npgsql.NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
+                comm.Parameters.Clear();
+
+                comm.Parameters.AddWithValue("@sifra", int.Parse(masterLista.SelectedValue.ToString()));
+                conn.Open();
+                comm.ExecuteNonQuery();
+                conn.Close();
+                showDetails();
+            }
         }
 
         private void lokacijaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            type = lokacijaComboBox.SelectedItem.ToString().ToLower();
             showDetails();
         }
 
