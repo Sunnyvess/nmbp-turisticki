@@ -47,14 +47,14 @@
             this.slikaPanel.Controls.Add(this.znamPB);
             this.slikaPanel.Location = new System.Drawing.Point(16, 118);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(275, 287);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 33;
             // 
             // znamPB
             // 
             this.znamPB.Location = new System.Drawing.Point(0, 0);
             this.znamPB.Name = "znamPB";
-            this.znamPB.Size = new System.Drawing.Size(275, 287);
+            this.znamPB.Size = new System.Drawing.Size(376, 291);
             this.znamPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.znamPB.TabIndex = 0;
             this.znamPB.TabStop = false;
@@ -83,9 +83,9 @@
             // opisLabel
             // 
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(297, 118);
+            this.opisLabel.Location = new System.Drawing.Point(398, 118);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(278, 287);
+            this.opisLabel.Size = new System.Drawing.Size(233, 291);
             this.opisLabel.TabIndex = 30;
             this.opisLabel.Text = "Ovdje ide opis";
             // 
@@ -113,7 +113,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(521, 5);
+            this.panel1.Location = new System.Drawing.Point(581, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 50);
             this.panel1.TabIndex = 27;
@@ -122,7 +122,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(435, 426);
+            this.label2.Location = new System.Drawing.Point(523, 426);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 18;
@@ -132,7 +132,7 @@
             // 
             this.tipZnamenLabel.AutoSize = true;
             this.tipZnamenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tipZnamenLabel.Location = new System.Drawing.Point(451, 445);
+            this.tipZnamenLabel.Location = new System.Drawing.Point(537, 445);
             this.tipZnamenLabel.Name = "tipZnamenLabel";
             this.tipZnamenLabel.Size = new System.Drawing.Size(77, 16);
             this.tipZnamenLabel.TabIndex = 17;
@@ -142,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(221, 426);
+            this.label3.Location = new System.Drawing.Point(268, 426);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 16);
             this.label3.TabIndex = 34;
@@ -152,7 +152,7 @@
             // 
             this.datumizgradnjeLB.AutoSize = true;
             this.datumizgradnjeLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datumizgradnjeLB.Location = new System.Drawing.Point(232, 445);
+            this.datumizgradnjeLB.Location = new System.Drawing.Point(278, 444);
             this.datumizgradnjeLB.Name = "datumizgradnjeLB";
             this.datumizgradnjeLB.Size = new System.Drawing.Size(83, 15);
             this.datumizgradnjeLB.TabIndex = 35;
@@ -183,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(583, 469);
+            this.ClientSize = new System.Drawing.Size(639, 469);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.datumizgradnjeLB);

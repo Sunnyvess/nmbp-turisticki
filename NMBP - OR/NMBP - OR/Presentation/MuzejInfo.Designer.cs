@@ -45,14 +45,14 @@
             this.slikaPanel.Controls.Add(this.muzejPB);
             this.slikaPanel.Location = new System.Drawing.Point(16, 118);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(275, 287);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 15;
             // 
             // muzejPB
             // 
-            this.muzejPB.Location = new System.Drawing.Point(0, 0);
+            this.muzejPB.Location = new System.Drawing.Point(-1, 0);
             this.muzejPB.Name = "muzejPB";
-            this.muzejPB.Size = new System.Drawing.Size(275, 287);
+            this.muzejPB.Size = new System.Drawing.Size(376, 291);
             this.muzejPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.muzejPB.TabIndex = 0;
             this.muzejPB.TabStop = false;
@@ -62,7 +62,7 @@
             // 
             this.tipMuzejaLabel.AutoSize = true;
             this.tipMuzejaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tipMuzejaLabel.Location = new System.Drawing.Point(475, 444);
+            this.tipMuzejaLabel.Location = new System.Drawing.Point(530, 444);
             this.tipMuzejaLabel.Name = "tipMuzejaLabel";
             this.tipMuzejaLabel.Size = new System.Drawing.Size(100, 16);
             this.tipMuzejaLabel.TabIndex = 14;
@@ -91,9 +91,9 @@
             // opisLabel
             // 
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(297, 118);
+            this.opisLabel.Location = new System.Drawing.Point(397, 118);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(278, 287);
+            this.opisLabel.Size = new System.Drawing.Size(233, 291);
             this.opisLabel.TabIndex = 11;
             this.opisLabel.Text = "Ovdje ide opis";
             // 
@@ -121,7 +121,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(525, 9);
+            this.panel1.Location = new System.Drawing.Point(580, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 50);
             this.panel1.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(402, 444);
+            this.label2.Location = new System.Drawing.Point(457, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 16;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(583, 469);
+            this.ClientSize = new System.Drawing.Size(639, 469);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.label2);

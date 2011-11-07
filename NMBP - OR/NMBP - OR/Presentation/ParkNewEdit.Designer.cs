@@ -280,7 +280,7 @@
             this.Controls.Add(this.nazivTB);
             this.Controls.Add(this.panel1);
             this.Name = "ParkNewEdit";
-            this.Text = "Novi park";
+            this.Text = "Unos/Izmjena parka";
             this.Load += new System.EventHandler(this.ParkNewEdit_Load);
             this.slikaPanel.ResumeLayout(false);
             this.slikaPanel.PerformLayout();

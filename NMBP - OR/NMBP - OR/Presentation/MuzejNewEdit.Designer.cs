@@ -296,7 +296,7 @@
             this.Controls.Add(this.nazivTB);
             this.Controls.Add(this.panel1);
             this.Name = "MuzejNewEdit";
-            this.Text = "Novi muzej";
+            this.Text = "Unos/Izmjena muzeja";
             this.Load += new System.EventHandler(this.MuzejNewEdit_Load);
             this.slikaPanel.ResumeLayout(false);
             this.slikaPanel.PerformLayout();

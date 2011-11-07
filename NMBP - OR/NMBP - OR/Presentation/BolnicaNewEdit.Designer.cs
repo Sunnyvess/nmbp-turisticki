@@ -280,7 +280,7 @@
             this.Controls.Add(this.nazivTB);
             this.Controls.Add(this.panel1);
             this.Name = "BolnicaNewEdit";
-            this.Text = "Nova bolnica";
+            this.Text = "Unos/Izmjena bolnice";
             this.Load += new System.EventHandler(this.BolnicaNewEdit_Load);
             this.slikaPanel.ResumeLayout(false);
             this.slikaPanel.PerformLayout();
