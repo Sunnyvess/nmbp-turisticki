@@ -34,7 +34,7 @@ namespace NMBP___OR.Presentation {
             InitializeComponent ();
             isNew = true;
             slike = new List<byte[]> ();
-            this.Name = "Novi muzej";
+            this.Text = "Novi muzej";
             this.StartPosition = FormStartPosition.CenterScreen;
             FillGradCB ();
             gradComboBox.SelectedValue = int.Parse (pbr);
@@ -48,7 +48,7 @@ namespace NMBP___OR.Presentation {
                     slike.Add (slika.getSlikaBytes (type, i, sifra));
             }
 
-            this.Name = "Izmjena muzeja";
+            this.Text = "Izmjena muzeja";
             this.sifra = sifra;
             this.StartPosition = FormStartPosition.CenterScreen;
             FillGradCB ();

@@ -33,7 +33,7 @@ namespace NMBP___OR.Presentation {
         public ParkNewEdit (string pbr) {
             isNew = true;
             slike = new List<byte[]> ();
-            this.Name = "Novi park";
+            this.Text = "Novi park";
             InitializeComponent ();
             this.StartPosition = FormStartPosition.CenterScreen;
             FillGradCB ();
@@ -48,7 +48,7 @@ namespace NMBP___OR.Presentation {
                     slike.Add (slika.getSlikaBytes (type, i, sifra));
             }
 
-            this.Name = "Izmjena parka";
+            this.Text = "Izmjena parka";
             this.sifra = sifra;
             this.StartPosition = FormStartPosition.CenterScreen;
             FillGradCB ();
