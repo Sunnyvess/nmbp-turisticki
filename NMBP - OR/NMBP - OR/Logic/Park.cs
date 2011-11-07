@@ -13,6 +13,8 @@ namespace Logic {
             editPark.ShowDialog ();
         }
         public void PrikaziInfo (int sifra) {
+            NMBP___OR.Presentation.ParkInfo infoMuzej = new NMBP___OR.Presentation.ParkInfo(sifra);
+            infoMuzej.ShowDialog();
         }
         public void Dodaj (int postanskiBroj) {
             NMBP___OR.Presentation.ParkNewEdit editPark = new NMBP___OR.Presentation.ParkNewEdit (postanskiBroj.ToString());

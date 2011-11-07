@@ -13,6 +13,8 @@ namespace Logic {
             editBolnica.ShowDialog ();
         }
         public void PrikaziInfo (int sifra) {
+            NMBP___OR.Presentation.BolnicaInfo infoMuzej = new NMBP___OR.Presentation.BolnicaInfo(sifra);
+            infoMuzej.ShowDialog();
         }
         public void Dodaj (int postanskiBroj) {
             NMBP___OR.Presentation.BolnicaNewEdit editBolnica = new NMBP___OR.Presentation.BolnicaNewEdit (postanskiBroj.ToString());
