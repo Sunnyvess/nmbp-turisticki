@@ -76,11 +76,11 @@
             // 
             // ucitajSlikuTB
             // 
-            this.ucitajSlikuTB.Location = new System.Drawing.Point(461, 6);
+            this.ucitajSlikuTB.Location = new System.Drawing.Point(626, 4);
             this.ucitajSlikuTB.Name = "ucitajSlikuTB";
-            this.ucitajSlikuTB.Size = new System.Drawing.Size(54, 23);
+            this.ucitajSlikuTB.Size = new System.Drawing.Size(85, 26);
             this.ucitajSlikuTB.TabIndex = 7;
-            this.ucitajSlikuTB.Text = "Učitaj";
+            this.ucitajSlikuTB.Text = "Učitaj sliku";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
             this.ucitajSlikuTB.Click += new System.EventHandler(this.ucitajSlikuTB_Click);
             // 
@@ -106,19 +106,19 @@
             // slikaPanel
             // 
             this.slikaPanel.AutoScroll = true;
-            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.Control;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Controls.Add(this.muzejPB);
-            this.slikaPanel.Location = new System.Drawing.Point(335, 35);
+            this.slikaPanel.Location = new System.Drawing.Point(335, 32);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(180, 196);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 36;
             // 
             // muzejPB
             // 
             this.muzejPB.Location = new System.Drawing.Point(0, 0);
             this.muzejPB.Name = "muzejPB";
-            this.muzejPB.Size = new System.Drawing.Size(180, 196);
+            this.muzejPB.Size = new System.Drawing.Size(376, 291);
             this.muzejPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.muzejPB.TabIndex = 0;
             this.muzejPB.TabStop = false;
@@ -128,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(53, 288);
+            this.label3.Location = new System.Drawing.Point(53, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 35;
@@ -137,10 +137,11 @@
             // opisTB
             // 
             this.opisTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisTB.Location = new System.Drawing.Point(53, 307);
+            this.opisTB.Location = new System.Drawing.Point(53, 331);
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
-            this.opisTB.Size = new System.Drawing.Size(459, 46);
+            this.opisTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.opisTB.Size = new System.Drawing.Size(535, 126);
             this.opisTB.TabIndex = 6;
             // 
             // label2
@@ -183,7 +184,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.muzej;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 30);
             this.panel1.TabIndex = 29;
@@ -192,7 +193,7 @@
             // 
             this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
             this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.odustaniBTN.Location = new System.Drawing.Point(469, 359);
+            this.odustaniBTN.Location = new System.Drawing.Point(668, 414);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
             this.odustaniBTN.TabIndex = 9;
@@ -203,7 +204,7 @@
             // 
             this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
             this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.prihvatiBTN.Location = new System.Drawing.Point(420, 359);
+            this.prihvatiBTN.Location = new System.Drawing.Point(619, 414);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
             this.prihvatiBTN.TabIndex = 8;
@@ -229,41 +230,41 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(395, 6);
+            this.DeleteButton.Location = new System.Drawing.Point(535, 4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(60, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(85, 26);
             this.DeleteButton.TabIndex = 44;
-            this.DeleteButton.Text = "Izbiši";
+            this.DeleteButton.Text = "Obriši sliku";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // ZamijeniButton
             // 
-            this.ZamijeniButton.Location = new System.Drawing.Point(335, 6);
+            this.ZamijeniButton.Location = new System.Drawing.Point(444, 4);
             this.ZamijeniButton.Name = "ZamijeniButton";
-            this.ZamijeniButton.Size = new System.Drawing.Size(54, 23);
+            this.ZamijeniButton.Size = new System.Drawing.Size(85, 26);
             this.ZamijeniButton.TabIndex = 45;
-            this.ZamijeniButton.Text = "Zamijeni";
+            this.ZamijeniButton.Text = "Zamijeni sliku";
             this.ZamijeniButton.UseVisualStyleBackColor = true;
             this.ZamijeniButton.Click += new System.EventHandler(this.ZamijeniButton_Click);
             // 
             // previousPictureButton
             // 
-            this.previousPictureButton.Location = new System.Drawing.Point(335, 237);
+            this.previousPictureButton.Location = new System.Drawing.Point(335, 4);
             this.previousPictureButton.Name = "previousPictureButton";
-            this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previousPictureButton.Size = new System.Drawing.Size(38, 26);
             this.previousPictureButton.TabIndex = 46;
-            this.previousPictureButton.Text = "Prethodna";
+            this.previousPictureButton.Text = "<";
             this.previousPictureButton.UseVisualStyleBackColor = true;
             this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
             // 
             // nextPictureButton
             // 
-            this.nextPictureButton.Location = new System.Drawing.Point(440, 237);
+            this.nextPictureButton.Location = new System.Drawing.Point(379, 4);
             this.nextPictureButton.Name = "nextPictureButton";
-            this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPictureButton.Size = new System.Drawing.Size(38, 26);
             this.nextPictureButton.TabIndex = 47;
-            this.nextPictureButton.Text = "Sljedeća";
+            this.nextPictureButton.Text = ">";
             this.nextPictureButton.UseVisualStyleBackColor = true;
             this.nextPictureButton.Click += new System.EventHandler(this.nextPictureButton_Click);
             // 
@@ -271,7 +272,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 411);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(723, 469);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.ZamijeniButton);

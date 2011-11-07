@@ -191,7 +191,7 @@ namespace NMBP___OR.Presentation {
 
         private void ucitajSlikuTB_Click(object sender, EventArgs e)
         {
-            if (slike.Count == 3)
+            if (BrojSlika == 3)
             {
                 MessageBox.Show("Nije moguće učitati više od 3 slike za jedan zapis");
                 return;
@@ -205,18 +205,10 @@ namespace NMBP___OR.Presentation {
                     slika1Naziv = "test";
                     FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
                     BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                    if (isNew)
-                    {
-                        slike.Add(br.ReadBytes((Int32)fs.Length));
-                        muzejPB.Image = new Bitmap(open.FileName);
-                    }
-
-                    else
-                    {
-                        slike.Add(br.ReadBytes((Int32)fs.Length));
-                        muzejPB.Image = new Bitmap(open.FileName);
-
-                    }
+                    slike.Add(br.ReadBytes((Int32)fs.Length));
+                    muzejPB.Image = new Bitmap(open.FileName);
+                    BrojSlika++;
+                    indeksSlike = BrojSlika;
 
                 }
 
@@ -235,11 +227,7 @@ namespace NMBP___OR.Presentation {
             {
                 if (indeksSlike == 1) indeksSlike = brojSlika;
                 else indeksSlike--;
-                if (isNew)
-
-                    muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                else
-                    muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
 
 
             }
@@ -253,38 +241,48 @@ namespace NMBP___OR.Presentation {
             {
                 if (indeksSlike == brojSlika) indeksSlike = 1;
                 else indeksSlike++;
-                if (isNew)
-
-                    muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                else
-                    muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+                muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
             }
         }
 
         private void ZamijeniButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
+            if (BrojSlika > 0)
             {
-                slika1Naziv = "test";
-                FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                muzejPB.Image = new Bitmap(open.FileName);
-                slike[indeksSlike - 1] = br.ReadBytes((Int32)fs.Length);
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    slika1Naziv = "test";
+                    FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(new BufferedStream(fs));
+                    muzejPB.Image = new Bitmap(open.FileName);
+                    slike[indeksSlike - 1] = br.ReadBytes((Int32)fs.Length);
+                }
             }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            slike[indeksSlike - 1] = null;
-            muzejPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+            if (BrojSlika > 0)
+            {
+                slike.RemoveAt(indeksSlike - 1);
+                BrojSlika--;
+                indeksSlike = BrojSlika;
+                if (BrojSlika > 0)
+                    muzejPB.Image = slika.pretvoriSlika(slike[BrojSlika - 1]);
+                else
+                    muzejPB.Image = null;
+            }
         }
 
         private void muzejPB_DoubleClick(object sender, EventArgs e)
         {
-            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
-            slikaForm.ShowDialog();
+            if (BrojSlika != 0)
+            {
+                SlikaForm slikaForm = new SlikaForm(slike, BrojSlika);
+                slikaForm.ShowDialog();
+            }
         }
 
     }

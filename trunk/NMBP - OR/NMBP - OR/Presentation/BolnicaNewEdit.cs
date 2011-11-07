@@ -22,9 +22,7 @@ namespace NMBP___OR.Presentation {
         private int BrojSlika = 0;
         private String slika2Naziv = null;
         private String slika3Naziv = null;
-        
         bool isNew = false;
-
         Slika slika = new Slika();
         
         public BolnicaNewEdit (){
@@ -213,7 +211,7 @@ namespace NMBP___OR.Presentation {
         private void ucitajSlikuBTN_Click(object sender, EventArgs e)
         {
             
-            if (slike.Count == 3)
+            if (BrojSlika == 3)
             {
                 MessageBox.Show("Nije moguće učitati više od 3 slike za jedan zapis");
                 return;
@@ -227,19 +225,10 @@ namespace NMBP___OR.Presentation {
                     slika1Naziv = "test";
                     FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read);
                     BinaryReader br = new BinaryReader(new BufferedStream(fs));
-                    if (isNew)
-                    {
-                        slike.Add(br.ReadBytes((Int32)fs.Length));                      
-                        bolnicaPB.Image = new Bitmap(open.FileName);  
-                    }
-
-                    else
-                    {
-                        slike.Add(br.ReadBytes((Int32)fs.Length));
-                        bolnicaPB.Image = new Bitmap(open.FileName);
-                       
-                    }
-   
+                    slike.Add(br.ReadBytes((Int32)fs.Length));                      
+                    bolnicaPB.Image = new Bitmap(open.FileName);
+                    BrojSlika++;
+                    indeksSlike = BrojSlika;
                 }
 
             }
@@ -259,13 +248,7 @@ namespace NMBP___OR.Presentation {
             {
                  if (indeksSlike == 1) indeksSlike = brojSlika;
                  else indeksSlike--;
-                 if(isNew)
-                   
-                     bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                 else
-                     bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                     
-                
+                 bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);  
             }
         }
 
@@ -277,19 +260,16 @@ namespace NMBP___OR.Presentation {
             {
                 if (indeksSlike == brojSlika) indeksSlike = 1;
                 else indeksSlike++;
-                if (isNew)
-                    
-                    bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                else
-                    bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
-                    
-
+                bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ZamijeniButtton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
+
+            if (BrojSlika > 0)
+            {
+                OpenFileDialog open = new OpenFileDialog();
                 open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
@@ -299,18 +279,30 @@ namespace NMBP___OR.Presentation {
                     bolnicaPB.Image = new Bitmap(open.FileName);
                     slike[indeksSlike - 1] = br.ReadBytes((Int32)fs.Length);
                 }
+            }
         }
 
         private void bolnicaPB_DoubleClick(object sender, EventArgs e)
         {
-            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
-            slikaForm.ShowDialog();
+            if (BrojSlika != 0)
+            {
+                SlikaForm slikaForm = new SlikaForm(slike,BrojSlika);
+                slikaForm.ShowDialog();
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            slike[indeksSlike - 1] = null;
-            bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+            if (BrojSlika > 0)
+            {
+                slike.RemoveAt(indeksSlike - 1);
+                BrojSlika--;
+                indeksSlike = BrojSlika;
+            }
+            if (BrojSlika > 0)
+                bolnicaPB.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
+            else
+                bolnicaPB.Image = null;
         }
 
     }

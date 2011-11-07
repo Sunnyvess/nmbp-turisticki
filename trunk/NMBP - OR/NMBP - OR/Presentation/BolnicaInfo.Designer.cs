@@ -61,10 +61,10 @@
             // 
             // opisLabel
             // 
-            this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(229, 85);
+            this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.opisLabel.Location = new System.Drawing.Point(297, 118);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(187, 157);
+            this.opisLabel.Size = new System.Drawing.Size(278, 287);
             this.opisLabel.TabIndex = 3;
             this.opisLabel.Text = "Ovdje ide opis bolnice";
             // 
@@ -72,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(9, 289);
+            this.label1.Location = new System.Drawing.Point(9, 444);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             this.radnoVrijemeLabel.AutoSize = true;
             this.radnoVrijemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radnoVrijemeLabel.Location = new System.Drawing.Point(104, 289);
+            this.radnoVrijemeLabel.Location = new System.Drawing.Point(104, 444);
             this.radnoVrijemeLabel.Name = "radnoVrijemeLabel";
             this.radnoVrijemeLabel.Size = new System.Drawing.Size(93, 16);
             this.radnoVrijemeLabel.TabIndex = 5;
@@ -92,7 +92,7 @@
             // 
             this.dezurstvoLabel.AutoSize = true;
             this.dezurstvoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dezurstvoLabel.Location = new System.Drawing.Point(375, 289);
+            this.dezurstvoLabel.Location = new System.Drawing.Point(542, 444);
             this.dezurstvoLabel.Name = "dezurstvoLabel";
             this.dezurstvoLabel.Size = new System.Drawing.Size(29, 16);
             this.dezurstvoLabel.TabIndex = 6;
@@ -102,16 +102,16 @@
             // 
             this.slikaPanel.AutoScroll = true;
             this.slikaPanel.Controls.Add(this.bolnicaPB);
-            this.slikaPanel.Location = new System.Drawing.Point(12, 85);
+            this.slikaPanel.Location = new System.Drawing.Point(16, 118);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(211, 157);
+            this.slikaPanel.Size = new System.Drawing.Size(275, 287);
             this.slikaPanel.TabIndex = 7;
             // 
             // bolnicaPB
             // 
             this.bolnicaPB.Location = new System.Drawing.Point(0, 0);
             this.bolnicaPB.Name = "bolnicaPB";
-            this.bolnicaPB.Size = new System.Drawing.Size(211, 157);
+            this.bolnicaPB.Size = new System.Drawing.Size(275, 287);
             this.bolnicaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.bolnicaPB.TabIndex = 0;
             this.bolnicaPB.TabStop = false;
@@ -121,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(318, 289);
+            this.label2.Location = new System.Drawing.Point(475, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             // nextPictureButton
             // 
-            this.nextPictureButton.Location = new System.Drawing.Point(148, 247);
+            this.nextPictureButton.Location = new System.Drawing.Point(96, 89);
             this.nextPictureButton.Name = "nextPictureButton";
             this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
             this.nextPictureButton.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             // previousPictureButton
             // 
-            this.previousPictureButton.Location = new System.Drawing.Point(12, 247);
+            this.previousPictureButton.Location = new System.Drawing.Point(16, 89);
             this.previousPictureButton.Name = "previousPictureButton";
             this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
             this.previousPictureButton.TabIndex = 10;
@@ -151,7 +151,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(366, 12);
+            this.panel1.Location = new System.Drawing.Point(525, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 50);
             this.panel1.TabIndex = 0;
@@ -160,7 +160,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 314);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(583, 469);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.label2);

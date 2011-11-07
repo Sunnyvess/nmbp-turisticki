@@ -14,6 +14,7 @@ namespace NMBP___OR.Presentation {
         private int Sifra;
         private int indeksSlike = 1;
         private string type = "bolnica";
+        
         Slika slika = new Slika();
         private int BrojSlika = 0;
         public BolnicaInfo () {
@@ -114,8 +115,11 @@ namespace NMBP___OR.Presentation {
 
         private void bolnicaPB_DoubleClick(object sender, EventArgs e)
         {
-            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
-            slikaForm.ShowDialog();
+            if (BrojSlika != 0)
+            {
+                SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+                slikaForm.ShowDialog();
+            }
         }
     }
 }
