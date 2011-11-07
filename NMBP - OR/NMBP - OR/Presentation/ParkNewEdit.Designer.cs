@@ -50,11 +50,11 @@
             // 
             // ucitajSlikuTB
             // 
-            this.ucitajSlikuTB.Location = new System.Drawing.Point(457, 6);
+            this.ucitajSlikuTB.Location = new System.Drawing.Point(626, 3);
             this.ucitajSlikuTB.Name = "ucitajSlikuTB";
-            this.ucitajSlikuTB.Size = new System.Drawing.Size(57, 23);
+            this.ucitajSlikuTB.Size = new System.Drawing.Size(85, 26);
             this.ucitajSlikuTB.TabIndex = 7;
-            this.ucitajSlikuTB.Text = "Učitaj";
+            this.ucitajSlikuTB.Text = "Učitaj sliku";
             this.ucitajSlikuTB.UseVisualStyleBackColor = true;
             this.ucitajSlikuTB.Click += new System.EventHandler(this.ucitajSlikuTB_Click);
             // 
@@ -62,7 +62,7 @@
             // 
             this.otvoren.AutoSize = true;
             this.otvoren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.otvoren.Location = new System.Drawing.Point(230, 7);
+            this.otvoren.Location = new System.Drawing.Point(59, 253);
             this.otvoren.Name = "otvoren";
             this.otvoren.Size = new System.Drawing.Size(80, 22);
             this.otvoren.TabIndex = 6;
@@ -85,25 +85,25 @@
             this.radnoVrijemeTB.Location = new System.Drawing.Point(56, 179);
             this.radnoVrijemeTB.Multiline = true;
             this.radnoVrijemeTB.Name = "radnoVrijemeTB";
-            this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 49);
+            this.radnoVrijemeTB.Size = new System.Drawing.Size(260, 43);
             this.radnoVrijemeTB.TabIndex = 4;
             // 
             // slikaPanel
             // 
             this.slikaPanel.AutoScroll = true;
-            this.slikaPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.slikaPanel.BackColor = System.Drawing.SystemColors.Control;
             this.slikaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.slikaPanel.Controls.Add(this.parkPB);
             this.slikaPanel.Location = new System.Drawing.Point(335, 32);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(180, 196);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 20;
             // 
             // parkPB
             // 
-            this.parkPB.Location = new System.Drawing.Point(0, 0);
+            this.parkPB.Location = new System.Drawing.Point(0, -1);
             this.parkPB.Name = "parkPB";
-            this.parkPB.Size = new System.Drawing.Size(180, 196);
+            this.parkPB.Size = new System.Drawing.Size(376, 291);
             this.parkPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.parkPB.TabIndex = 0;
             this.parkPB.TabStop = false;
@@ -113,7 +113,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(56, 240);
+            this.label3.Location = new System.Drawing.Point(56, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 19;
@@ -122,10 +122,11 @@
             // opisTB
             // 
             this.opisTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisTB.Location = new System.Drawing.Point(56, 259);
+            this.opisTB.Location = new System.Drawing.Point(56, 331);
             this.opisTB.Multiline = true;
             this.opisTB.Name = "opisTB";
-            this.opisTB.Size = new System.Drawing.Size(459, 46);
+            this.opisTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.opisTB.Size = new System.Drawing.Size(535, 126);
             this.opisTB.TabIndex = 5;
             // 
             // label2
@@ -168,7 +169,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.park;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 28);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 30);
             this.panel1.TabIndex = 13;
@@ -177,7 +178,7 @@
             // 
             this.odustaniBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.cancel;
             this.odustaniBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.odustaniBTN.Location = new System.Drawing.Point(471, 311);
+            this.odustaniBTN.Location = new System.Drawing.Point(668, 414);
             this.odustaniBTN.Name = "odustaniBTN";
             this.odustaniBTN.Size = new System.Drawing.Size(43, 43);
             this.odustaniBTN.TabIndex = 9;
@@ -188,7 +189,7 @@
             // 
             this.prihvatiBTN.BackgroundImage = global::NMBP___OR.Properties.Resources.accept;
             this.prihvatiBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.prihvatiBTN.Location = new System.Drawing.Point(422, 311);
+            this.prihvatiBTN.Location = new System.Drawing.Point(619, 414);
             this.prihvatiBTN.Name = "prihvatiBTN";
             this.prihvatiBTN.Size = new System.Drawing.Size(43, 43);
             this.prihvatiBTN.TabIndex = 8;
@@ -214,41 +215,41 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(395, 6);
+            this.DeleteButton.Location = new System.Drawing.Point(535, 3);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(60, 23);
+            this.DeleteButton.Size = new System.Drawing.Size(85, 26);
             this.DeleteButton.TabIndex = 42;
-            this.DeleteButton.Text = "Izbiši";
+            this.DeleteButton.Text = "Obriši sliku";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // ZamijeniButton
             // 
-            this.ZamijeniButton.Location = new System.Drawing.Point(335, 6);
+            this.ZamijeniButton.Location = new System.Drawing.Point(444, 3);
             this.ZamijeniButton.Name = "ZamijeniButton";
-            this.ZamijeniButton.Size = new System.Drawing.Size(54, 23);
+            this.ZamijeniButton.Size = new System.Drawing.Size(85, 26);
             this.ZamijeniButton.TabIndex = 43;
-            this.ZamijeniButton.Text = "Zamijeni";
+            this.ZamijeniButton.Text = "Zamijeni sliku";
             this.ZamijeniButton.UseVisualStyleBackColor = true;
             this.ZamijeniButton.Click += new System.EventHandler(this.ZamijeniButton_Click);
             // 
             // previousPictureButton
             // 
-            this.previousPictureButton.Location = new System.Drawing.Point(335, 230);
+            this.previousPictureButton.Location = new System.Drawing.Point(335, 3);
             this.previousPictureButton.Name = "previousPictureButton";
-            this.previousPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previousPictureButton.Size = new System.Drawing.Size(38, 26);
             this.previousPictureButton.TabIndex = 44;
-            this.previousPictureButton.Text = "Prethodna";
+            this.previousPictureButton.Text = "<";
             this.previousPictureButton.UseVisualStyleBackColor = true;
             this.previousPictureButton.Click += new System.EventHandler(this.previousPictureButton_Click);
             // 
             // nextPictureButton
             // 
-            this.nextPictureButton.Location = new System.Drawing.Point(440, 230);
+            this.nextPictureButton.Location = new System.Drawing.Point(379, 3);
             this.nextPictureButton.Name = "nextPictureButton";
-            this.nextPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPictureButton.Size = new System.Drawing.Size(38, 26);
             this.nextPictureButton.TabIndex = 45;
-            this.nextPictureButton.Text = "Sljedeća";
+            this.nextPictureButton.Text = ">";
             this.nextPictureButton.UseVisualStyleBackColor = true;
             this.nextPictureButton.Click += new System.EventHandler(this.nextPictureButton_Click);
             // 
@@ -256,7 +257,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 357);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(723, 469);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.ZamijeniButton);

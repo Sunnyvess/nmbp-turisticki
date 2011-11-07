@@ -54,11 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseManager.cs" />
-    <Compile Include="ORDDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ORDDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\BolnicaInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,17 +159,6 @@
       <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="ORDDataSet.xsc">
-      <DependentUpon>ORDDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ORDDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ORDDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ORDDataSet.xss">
-      <DependentUpon>ORDDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -18,13 +18,28 @@ namespace NMBP___OR.Presentation {
         static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
         NpgsqlConnection conn = new NpgsqlConnection(connString);
         DataSet lokacijaDataSet = new DataSet();
+        DataSet grad = new DataSet();
+        NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
         string type;
         
         private void VodicForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'oRDDataSet.grad' table. You can move, or remove it, as needed.
-            this.gradTableAdapter.Fill(this.oRDDataSet.grad);
+           
+            string sqlString = "SELECT * FROM grad";
+            NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
+
+            grad.Reset();
+            adapter.SelectCommand = comm;
+            adapter.Fill(grad);
+            gradoviComboBox.DataSource = grad.Tables[0];
+
+            gradoviComboBox.DisplayMember = "ime";
+            gradoviComboBox.ValueMember = "postanskibroj";
             
+            lokacijaComboBox.Items.Add("Muzej");
+            lokacijaComboBox.Items.Add("Bolnica");
+            lokacijaComboBox.Items.Add("Park");
+            lokacijaComboBox.Items.Add("Znamenitost");
             lokacijaComboBox.SelectedIndex = 0;
             gradoviComboBox.SelectedIndex = 0;
             showDetails();
@@ -106,8 +121,9 @@ namespace NMBP___OR.Presentation {
         
         private void showDetails()
         {
-            
-            
+
+            if (lokacijaComboBox.SelectedItem == null)
+                return;
             string sqlString = "SELECT naziv, sifra FROM " + type +" WHERE (adresa).grad = @adresa";
             NpgsqlCommand comm = new NpgsqlCommand(sqlString, conn);
             comm.Parameters.Clear();

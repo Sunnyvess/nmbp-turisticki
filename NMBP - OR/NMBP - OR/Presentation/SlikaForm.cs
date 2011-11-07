@@ -19,60 +19,44 @@ namespace NMBP___OR.Presentation
         private string type;
         private int indeksSlike = 1;
         private int BrojSlika;
-        
+        List<byte[]> slike;
+        int zastavica = 0;
         Slika slika = new Slika();
         
         public SlikaForm(string type, int sifra, int brojSlika)
         {
+            zastavica = 0;
             this.sifra = sifra;
             this.type = type;
             this.BrojSlika = brojSlika;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-       
-        
+        public SlikaForm(List<byte[]> slike, int brojSlika)
+        {
+            zastavica = 1;
+            this.slike = slike;
+            this.BrojSlika = brojSlika;
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
         static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
 
         NpgsqlConnection conn = new NpgsqlConnection(connString);
         private void SlikaForm_Load(object sender, EventArgs e)
         {
-            if (slika.getBrojSlika(type , sifra) != 0) pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
-        }
-        
-        /*
-        private int getBrojSlika()
-        {
-            conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT array_length(slika, 1) AS brojSlika FROM " +type + " where sifra = " + sifra, conn);
-            object brojSlika1 = command.ExecuteScalar();
-            conn.Close();
-
-            return (brojSlika1 is int) ? (Int32)brojSlika1 : 0;
-        }
-        
-        private Image getSlika(int indeks)
-        {
-            conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT slika[" + indeks + "].slika FROM bolnica where sifra = " + sifra, conn);
-            object result = command.ExecuteScalar();
-            conn.Close();
-
-            Image image;
-            if (result is byte[])
+            if (zastavica == 0)
             {
-                byte[] slika = (byte[])result;
-                using (MemoryStream ms = new MemoryStream(slika, 0, slika.Length))
-                {
-                    ms.Write(slika, 0, slika.Length);
-                    image = Image.FromStream(ms, true);
-                }
-
-                return image;
+                if (slika.getBrojSlika(type, sifra) != 0) pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
             }
-            else return null;
+            else
+            {
+                if (slike.Count != 0) pictureBox.Image = slika.pretvoriSlika(slike[0]);
+            }
+            
         }
-        */
+
         private void nextPictureButton_Click(object sender, EventArgs e)
         {
             int brojSlika = BrojSlika;
@@ -80,7 +64,10 @@ namespace NMBP___OR.Presentation
             {
                 if (indeksSlike == brojSlika) indeksSlike = 1;
                 else indeksSlike++;
-                pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
+                if(zastavica == 0)
+                    pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
+                else
+                    pictureBox.Image = slika.pretvoriSlika(slike[indeksSlike-1]);
             }
         }
 
@@ -91,29 +78,11 @@ namespace NMBP___OR.Presentation
             {
                 if (indeksSlike == 1) indeksSlike = brojSlika;
                 else indeksSlike--;
-                pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
-            }
-        }/*
-        private void nextPictureButton_Click(object sender, EventArgs e)
-        {
-            if (getBrojSlika() != 0)
-            {
-                if (indeksSlike == getBrojSlika()) indeksSlike = 1;
-                else indeksSlike++;
-                pictureBox.Image = getSlika(indeksSlike);
+                if (zastavica == 0)
+                    pictureBox.Image = slika.getSlika(type, indeksSlike, sifra);
+                else
+                    pictureBox.Image = slika.pretvoriSlika(slike[indeksSlike - 1]);
             }
         }
-
-        private void previousPictureButton_Click(object sender, EventArgs e)
-        {
-            if (getBrojSlika() != 0)
-            {
-                if (indeksSlike == 1) indeksSlike = getBrojSlika();
-                else indeksSlike--;
-                pictureBox.Image = getSlika(indeksSlike);
-            }
-        }
-        */
-        
     }
 }

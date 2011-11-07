@@ -113,8 +113,11 @@ namespace NMBP___OR.Presentation {
 
         private void parkPB_DoubleClick(object sender, EventArgs e)
         {
-            SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
-            slikaForm.ShowDialog();
+            if (BrojSlika != 0)
+            {
+                SlikaForm slikaForm = new SlikaForm(type, sifra, BrojSlika);
+                slikaForm.ShowDialog();
+            }
         }
     }
 }
