@@ -316,7 +316,7 @@
             this.Controls.Add(this.nazivTB);
             this.Controls.Add(this.panel1);
             this.Name = "ZnamenitostNewEdit";
-            this.Text = "Nova znamenitost";
+            this.Text = "Unos/Izmjena znamenitosti";
             this.Load += new System.EventHandler(this.ZnamenitostNewEdit_Load);
             this.slikaPanel.ResumeLayout(false);
             this.slikaPanel.PerformLayout();

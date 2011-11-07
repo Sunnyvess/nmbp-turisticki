@@ -62,9 +62,9 @@
             // opisLabel
             // 
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(297, 118);
+            this.opisLabel.Location = new System.Drawing.Point(398, 118);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(278, 287);
+            this.opisLabel.Size = new System.Drawing.Size(233, 291);
             this.opisLabel.TabIndex = 3;
             this.opisLabel.Text = "Ovdje ide opis bolnice";
             // 
@@ -92,7 +92,7 @@
             // 
             this.dezurstvoLabel.AutoSize = true;
             this.dezurstvoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dezurstvoLabel.Location = new System.Drawing.Point(542, 444);
+            this.dezurstvoLabel.Location = new System.Drawing.Point(602, 444);
             this.dezurstvoLabel.Name = "dezurstvoLabel";
             this.dezurstvoLabel.Size = new System.Drawing.Size(29, 16);
             this.dezurstvoLabel.TabIndex = 6;
@@ -104,14 +104,14 @@
             this.slikaPanel.Controls.Add(this.bolnicaPB);
             this.slikaPanel.Location = new System.Drawing.Point(16, 118);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(275, 287);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 7;
             // 
             // bolnicaPB
             // 
             this.bolnicaPB.Location = new System.Drawing.Point(0, 0);
             this.bolnicaPB.Name = "bolnicaPB";
-            this.bolnicaPB.Size = new System.Drawing.Size(275, 287);
+            this.bolnicaPB.Size = new System.Drawing.Size(376, 291);
             this.bolnicaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.bolnicaPB.TabIndex = 0;
             this.bolnicaPB.TabStop = false;
@@ -121,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(475, 444);
+            this.label2.Location = new System.Drawing.Point(545, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 8;
@@ -151,7 +151,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(525, 12);
+            this.panel1.Location = new System.Drawing.Point(581, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 50);
             this.panel1.TabIndex = 0;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(583, 469);
+            this.ClientSize = new System.Drawing.Size(639, 469);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.label2);

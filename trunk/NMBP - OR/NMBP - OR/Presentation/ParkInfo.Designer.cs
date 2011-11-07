@@ -45,14 +45,14 @@
             this.slikaPanel.Controls.Add(this.parkPB);
             this.slikaPanel.Location = new System.Drawing.Point(16, 118);
             this.slikaPanel.Name = "slikaPanel";
-            this.slikaPanel.Size = new System.Drawing.Size(275, 287);
+            this.slikaPanel.Size = new System.Drawing.Size(376, 291);
             this.slikaPanel.TabIndex = 24;
             // 
             // parkPB
             // 
-            this.parkPB.Location = new System.Drawing.Point(0, 0);
+            this.parkPB.Location = new System.Drawing.Point(-1, 0);
             this.parkPB.Name = "parkPB";
-            this.parkPB.Size = new System.Drawing.Size(275, 287);
+            this.parkPB.Size = new System.Drawing.Size(376, 291);
             this.parkPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.parkPB.TabIndex = 0;
             this.parkPB.TabStop = false;
@@ -81,9 +81,9 @@
             // opisLabel
             // 
             this.opisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.opisLabel.Location = new System.Drawing.Point(297, 118);
+            this.opisLabel.Location = new System.Drawing.Point(398, 118);
             this.opisLabel.Name = "opisLabel";
-            this.opisLabel.Size = new System.Drawing.Size(278, 287);
+            this.opisLabel.Size = new System.Drawing.Size(233, 291);
             this.opisLabel.TabIndex = 20;
             this.opisLabel.Text = "Ovdje ide opis";
             // 
@@ -111,7 +111,7 @@
             // 
             this.panel1.BackgroundImage = global::NMBP___OR.Properties.Resources.info;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(521, 9);
+            this.panel1.Location = new System.Drawing.Point(581, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 50);
             this.panel1.TabIndex = 17;
@@ -120,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(478, 444);
+            this.label2.Location = new System.Drawing.Point(549, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 26;
@@ -130,7 +130,7 @@
             // 
             this.otvorenLabel.AutoSize = true;
             this.otvorenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.otvorenLabel.Location = new System.Drawing.Point(542, 444);
+            this.otvorenLabel.Location = new System.Drawing.Point(602, 444);
             this.otvorenLabel.Name = "otvorenLabel";
             this.otvorenLabel.Size = new System.Drawing.Size(29, 16);
             this.otvorenLabel.TabIndex = 25;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(583, 469);
+            this.ClientSize = new System.Drawing.Size(639, 469);
             this.Controls.Add(this.nextPictureButton);
             this.Controls.Add(this.previousPictureButton);
             this.Controls.Add(this.label2);
