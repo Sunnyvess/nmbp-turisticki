@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Logic\Bolnica.cs" />
+    <Compile Include="Logic\ILokacija.cs" />
+    <Compile Include="Logic\Muzej.cs" />
+    <Compile Include="Logic\Park.cs" />
+    <Compile Include="Logic\Znamenitost.cs" />
     <Compile Include="Presentation\BolnicaInfo.cs">
       <SubType>Form</SubType>
     </Compile>

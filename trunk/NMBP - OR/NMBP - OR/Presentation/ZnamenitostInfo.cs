@@ -12,26 +12,24 @@ using System.IO;
 
 namespace NMBP___OR.Presentation {
     public partial class ZnamenitostInfo : Form {
-        private int Sifra;
-        private int indeksSlike = 1;
         private string type = "znamenitost";
-        Slika slika = new Slika();
-        private int BrojSlika = 0;
-        public ZnamenitostInfo () {
-            InitializeComponent ();
-            this.StartPosition = FormStartPosition.CenterScreen;
-        }
-        public int sifra
-        {
-            get { return Sifra; }
-            set { Sifra = value; }
-        }
-        static string connString = "Server=dado.dyndns-home.com;Port=5432;User Id=postgres;Password=postgres;Database=ORD";
+        static string connString = DatabaseManager.connString;
 
-        NpgsqlConnection conn = new NpgsqlConnection(connString);
-        DataSet da = new DataSet();
+        NpgsqlConnection conn = new NpgsqlConnection (connString);
+        DataSet da = new DataSet ();
         BindingSource znamenitostBinding;
         BindingSource gradBinding;
+        private int sifra;
+        private int indeksSlike = 1;
+        Slika slika = new Slika();
+        private int BrojSlika = 0;
+
+        public ZnamenitostInfo (int sifra) {
+            InitializeComponent ();
+            this.sifra = sifra;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+        
         private void ZnamenitostInfo_Load(object sender, EventArgs e)
         {
             string sqlZnamenitost = "SELECT * FROM znamenitost";
@@ -48,7 +46,7 @@ namespace NMBP___OR.Presentation {
                 conn.Close();
                 znamenitostBinding = new BindingSource(da, "znamenitost");
                 gradBinding = new BindingSource(da, "grad");
-                znamenitostBinding.Position = znamenitostBinding.Find("sifra", Sifra);
+                znamenitostBinding.Position = znamenitostBinding.Find("sifra", sifra);
                 BindData();
 
             }
@@ -96,7 +94,6 @@ namespace NMBP___OR.Presentation {
                 znamPB.Image = slika.getSlika(type, indeksSlike, sifra);
             }
         }
-
         private void previousPictureButton_Click(object sender, EventArgs e)
         {
             int brojSlika = BrojSlika;
@@ -107,7 +104,6 @@ namespace NMBP___OR.Presentation {
                 znamPB.Image = slika.getSlika(type, indeksSlike, sifra);
             }
         }
-
         private void znamPB_DoubleClick(object sender, EventArgs e)
         {
             if (BrojSlika != 0)
