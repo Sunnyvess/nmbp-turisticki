@@ -217,5 +217,35 @@ namespace NMBP___OR.Presentation {
         private void odustaniBTN_Click (object sender, EventArgs e) {
             this.Close ();
         }
+
+        private void nazivTB_Validating(object sender, CancelEventArgs e)
+        {
+          if (nazivTB.Text.Trim() == String.Empty)
+          {
+            prihvatiBTN.Enabled = false;
+            errorProvider1.SetError(nazivTB, "Naziv ne može biti prazan");
+          }
+          else 
+          {
+            prihvatiBTN.Enabled = true;
+            errorProvider1.Clear();
+          }
+        }
+
+        private void brojTB_Validating(object sender, CancelEventArgs e)
+        {
+          try 
+          {
+            Int32.Parse(brojTB.Text.ToString());
+            prihvatiBTN.Enabled = true;
+            errorProvider2.Clear();
+          }
+          catch
+          {
+            prihvatiBTN.Enabled = false;
+            errorProvider2.SetError(nazivTB, "Unesite brojčanu vrijednost");
+          }
+
+        }
     }
 }
