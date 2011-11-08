@@ -198,7 +198,7 @@ namespace NMBP___OR {
             string sqlString = "INSERT INTO znamenitost (naziv, opis, radnoVrijeme, adresa, datumizgradnje, tipznamenitosti, slika[1], slika[2], slika[3]) VALUES " +
                     "(@naziv, @opis, @radnoVrijeme, @adresa, @datumizgradnje, @tipznamenitosti, (@slika1Naziv, @slika1Byte), (@slika2Naziv, @slika2Byte), (@slika3Naziv, @slika3Byte))";
 
-            connection.Open ();
+            
             command = new NpgsqlCommand (sqlString, connection);
             command.Parameters.AddWithValue ("@naziv", naziv);
             command.Parameters.AddWithValue ("@opis", opis);
@@ -219,7 +219,7 @@ namespace NMBP___OR {
                 string sqlString = "UPDATE znamenitost SET naziv = @naziv, opis = @opis, radnovrijeme = @radnoVrijeme, adresa = @adresa, " +
                         "datumizgradnje = @datumizgradnje, tipznamenitosti = @tipznamenitosti, slika[1]=(@slika1Naziv, @slika1Byte), slika[2]=(@slika2Naziv, @slika2Byte), slika[3]=(@slika3Naziv, @slika3Byte) WHERE sifra = @sifra";
 
-            connection.Open ();
+            
             command = new NpgsqlCommand (sqlString, connection);
             command.Parameters.AddWithValue ("@naziv", naziv);
             command.Parameters.AddWithValue ("@opis", opis);
