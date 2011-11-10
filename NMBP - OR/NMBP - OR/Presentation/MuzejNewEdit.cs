@@ -242,8 +242,12 @@ namespace NMBP___OR.Presentation {
           }
           catch
           {
-            prihvatiBTN.Enabled = false;
-            errorProvider2.SetError(brojTB, "Unesite brojčanu vrijednost");
+              if (brojTB.Text.ToString() == String.Empty) prihvatiBTN.Enabled = true;
+              else
+              {
+                  prihvatiBTN.Enabled = false;
+                  errorProvider2.SetError(brojTB, "Unesite brojčanu vrijednost");
+              }
           }
         }
     }
