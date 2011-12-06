@@ -9,9 +9,9 @@
                 <xs:sequence>
                   <xs:element name="PostanskiBr" type="xs:int" minOccurs="0" />
                   <xs:element name="Ime" type="xs:string" minOccurs="0" />
-				</xs:sequence>
-			  </xs:complexType>
-			 </xs:element>
+				        </xs:sequence>
+			        </xs:complexType>
+			      </xs:element>
           </xs:choice>
         </xs:complexType>
       </xs:element>
