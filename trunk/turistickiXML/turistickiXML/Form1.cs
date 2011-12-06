@@ -20,7 +20,7 @@ namespace turistickiXML
         {
             InitializeComponent();
             DataSet ds = new DataSet();
-            string filePath = ".\\XML\\proba.xml";
+            string filePath = "..\\..\\XML\\proba.xml";
             ds.ReadXml(filePath);
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "Grad";
