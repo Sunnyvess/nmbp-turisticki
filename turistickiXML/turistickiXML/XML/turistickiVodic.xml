@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+
+<turistickiVodic
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="schema.xsd">
+	<gradovi>
+		<grad pbr="10000">
+			<nazivGrad>Zagreb</nazivGrad>
+		</grad>
+		<grad pbr="21000">
+			<nazivGrad>Split</nazivGrad>
+		</grad>
+	</gradovi>
+	<tipoviMuzeja>
+		<tipMuzej idTipMuzej="1">
+			<nazivTipMuzej>Prirodoslovni</nazivTipMuzej>
+		</tipMuzej>
+		<tipMuzej idTipMuzej="2">
+			<nazivTipMuzej>Arheološki</nazivTipMuzej>
+		</tipMuzej>
+		<tipMuzej idTipMuzej="3">
+			<nazivTipMuzej>Tehnički</nazivTipMuzej>
+		</tipMuzej>
+		<tipMuzej idTipMuzej="4">
+			<nazivTipMuzej>Povijesni</nazivTipMuzej>
+		</tipMuzej>
+		<tipMuzej idTipMuzej="5">
+			<nazivTipMuzej>Umjetnički</nazivTipMuzej>
+		</tipMuzej>
+	</tipoviMuzeja>
+	<tipoviZnamenitosti>
+		<tipZnamenitost idTipZnamenitost="1">
+			<nazivTipZnamenitost>Tvrđava</nazivTipZnamenitost>
+		</tipZnamenitost>
+		<tipZnamenitost idTipZnamenitost="2">
+			<nazivTipZnamenitost>Spomenik</nazivTipZnamenitost>
+		</tipZnamenitost>
+		<tipZnamenitost idTipZnamenitost="3">
+			<nazivTipZnamenitost>Crkva</nazivTipZnamenitost>
+		</tipZnamenitost>
+	</tipoviZnamenitosti>
+	<bolnice>
+		<bolnica idBolnica="1" pbr="10000" dezurstvo="DA">
+			<naziv>Rebro</naziv>
+			<ulica>Jukićeva 33</ulica>
+			<opis>Ovo je opis bolnice Rebro.</opis>
+			<radnoVrijeme>0-24</radnoVrijeme>
+		</bolnica>
+	</bolnice>
+	<muzeji>
+		<muzej idMuzej="1" pbr="10000" tipMuzeja="1">
+			<naziv>Muzej suvremene umjetnosti</naziv>
+			<ulica>Trg hrvatskih velikana 7</ulica>
+			<opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
+			<radnoVrijeme>8-20</radnoVrijeme>
+		</muzej>
+	</muzeji>
+	<znamenitosti>
+		<znamenitost idZnamenitost="1" pbr="21000" tipZnamenitost="1">
+			<naziv>Dioklecijanova palača</naziv>
+			<ulica>Ante Starčevića 68</ulica>
+			<opis>Ovo je opis Dioklecijanove palače.</opis>
+			<radnoVrijeme>0-24</radnoVrijeme>
+			<datumIzgradnje>295.g.</datumIzgradnje>
+		</znamenitost>
+	</znamenitosti>
+	<parkovi>
+		<park idPark="1" pbr="10000" otvoren="DA">
+			<naziv>Zrinjevac</naziv>
+			<ulica>Zrinjevac 8</ulica>
+			<opis>Ovo je opis Zrinjevca.</opis>
+			<radnoVrijeme>0-24</radnoVrijeme>
+		</park>
+	</parkovi>
+</turistickiVodic>
