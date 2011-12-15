@@ -27,7 +27,7 @@
 			<xs:field xpath="@pbr"/>
 		</xs:key>
     <xs:keyref name="lokacijaGradConstraint" refer="gradKeyConstraint">
-      <xs:selector xpath="./lokacija"/>
+      <xs:selector xpath="./bolnice/bolnica | ./muzeji/muzej | ./parkovi/park | ./znamenitosti/znamenitost"/>
       <xs:field xpath="@pbr"/>
     </xs:keyref>
 	</xs:element>
