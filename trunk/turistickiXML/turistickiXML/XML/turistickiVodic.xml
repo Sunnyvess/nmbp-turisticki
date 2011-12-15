@@ -11,34 +11,6 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 			<nazivGrad>Split</nazivGrad>
 		</grad>
 	</gradovi>
-	<tipoviMuzeja>
-		<tipMuzej idTipMuzej="1">
-			<nazivTipMuzej>Prirodoslovni</nazivTipMuzej>
-		</tipMuzej>
-		<tipMuzej idTipMuzej="2">
-			<nazivTipMuzej>Arheološki</nazivTipMuzej>
-		</tipMuzej>
-		<tipMuzej idTipMuzej="3">
-			<nazivTipMuzej>Tehnički</nazivTipMuzej>
-		</tipMuzej>
-		<tipMuzej idTipMuzej="4">
-			<nazivTipMuzej>Povijesni</nazivTipMuzej>
-		</tipMuzej>
-		<tipMuzej idTipMuzej="5">
-			<nazivTipMuzej>Umjetnički</nazivTipMuzej>
-		</tipMuzej>
-	</tipoviMuzeja>
-	<tipoviZnamenitosti>
-		<tipZnamenitost idTipZnamenitost="1">
-			<nazivTipZnamenitost>Tvrđava</nazivTipZnamenitost>
-		</tipZnamenitost>
-		<tipZnamenitost idTipZnamenitost="2">
-			<nazivTipZnamenitost>Spomenik</nazivTipZnamenitost>
-		</tipZnamenitost>
-		<tipZnamenitost idTipZnamenitost="3">
-			<nazivTipZnamenitost>Crkva</nazivTipZnamenitost>
-		</tipZnamenitost>
-	</tipoviZnamenitosti>
 	<bolnice>
 		<bolnica idBolnica="1" pbr="10000" dezurstvo="DA">
 			<naziv>Rebro</naziv>
@@ -48,7 +20,7 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 		</bolnica>
 	</bolnice>
 	<muzeji>
-		<muzej idMuzej="1" pbr="10000" tipMuzeja="1">
+		<muzej idMuzej="1" pbr="10000" tipMuzeja="Umjetnički">
 			<naziv>Muzej suvremene umjetnosti</naziv>
 			<ulica>Trg hrvatskih velikana 7</ulica>
 			<opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
@@ -56,7 +28,7 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 		</muzej>
 	</muzeji>
 	<znamenitosti>
-		<znamenitost idZnamenitost="1" pbr="21000" tipZnamenitost="1">
+		<znamenitost idZnamenitost="1" pbr="21000" tipZnamenitost="Tvrđava">
 			<naziv>Dioklecijanova palača</naziv>
 			<ulica>Ante Starčevića 68</ulica>
 			<opis>Ovo je opis Dioklecijanove palače.</opis>
