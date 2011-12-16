@@ -30,6 +30,22 @@
       <xs:selector xpath="./bolnice/bolnica | ./muzeji/muzej | ./parkovi/park | ./znamenitosti/znamenitost"/>
       <xs:field xpath="@pbr"/>
     </xs:keyref>
+    <xs:key name="bolnicaKeyConstraint">
+      <xs:selector xpath="./bolnice/bolnica"/>
+      <xs:field xpath="@idBolnica"/>
+    </xs:key>
+    <xs:key name="muzejKeyConstraint">
+      <xs:selector xpath="./muzeji/muzej"/>
+      <xs:field xpath="@idMuzej"/>
+    </xs:key>
+    <xs:key name="znamenitostKeyConstraint">
+      <xs:selector xpath="./znamenitosti/znamenitost"/>
+      <xs:field xpath="@idZnamenitost"/>
+    </xs:key>
+    <xs:key name="parkKeyConstraint">
+      <xs:selector xpath="./parkovi/park"/>
+      <xs:field xpath="@idPark"/>
+    </xs:key>
 	</xs:element>
 	
 	<xs:element name="gradovi">
@@ -124,12 +140,7 @@
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="bolnica" type="bolnicaT">
-		<xs:key name="bolnicaKeyConstraint">
-			<xs:selector xpath="./bolnice/bolnica"/>
-			<xs:field xpath="@idBolnica"/>
-		</xs:key>
-	</xs:element>
+	<xs:element name="bolnica" type="bolnicaT"/>
 	
 	<xs:element name="muzeji">
 		<xs:complexType>
@@ -139,12 +150,7 @@
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="muzej" type="muzejT">
-		<xs:key name="muzejKeyConstraint">
-			<xs:selector xpath="./muzeji/muzej"/>
-			<xs:field xpath="@idMuzej"/>
-		</xs:key>
-	</xs:element>
+	<xs:element name="muzej" type="muzejT"/>
 	
 	<xs:element name="znamenitosti">
 		<xs:complexType>
@@ -154,12 +160,7 @@
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="znamenitost" type="znamenitostT">
-		<xs:key name="znamenitostKeyConstraint">
-			<xs:selector xpath="./znamenitosti/znamenitost"/>
-			<xs:field xpath="@idZnamenitost"/>
-		</xs:key>
-	</xs:element>
+	<xs:element name="znamenitost" type="znamenitostT"/>
 	
 	<xs:element name="parkovi">
 		<xs:complexType>
@@ -169,11 +170,6 @@
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="park" type="parkT">
-		<xs:key name="parkKeyConstraint">
-			<xs:selector xpath="./parkovi/park"/>
-			<xs:field xpath="@idPark"/>
-		</xs:key>
-	</xs:element>
+	<xs:element name="park" type="parkT"/>
 	
 </xs:schema>
