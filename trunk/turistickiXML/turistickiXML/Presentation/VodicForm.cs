@@ -31,6 +31,13 @@ namespace turistickiXML.Presentation
         private void VodicForm_Load(object sender, EventArgs e)
         {
             FillGradCB();
+
+            //lokacijaComboBox.Items.Add("Muzej");
+            //lokacijaComboBox.Items.Add("Bolnica");
+            //lokacijaComboBox.Items.Add("Park");
+            //lokacijaComboBox.Items.Add("Znamenitost");
+            
+            
             FillMasterList();
         }
         private void FillGradCB()
@@ -47,7 +54,7 @@ namespace turistickiXML.Presentation
             masterLista.Items.Clear();
             if (lokacijaComboBox.SelectedItem == null || gradoviComboBox.SelectedItem == null)
                 return;
-            masterList2 = xmldata.Select(Convert.ToInt32(gradoviComboBox.SelectedValue));
+            masterList2 = xmldata.Select(Convert.ToInt32(gradoviComboBox.SelectedValue), lokacijaComboBox.SelectedItem.ToString().ToLower());
 
             foreach (XmlNode node in masterList2)
             {
@@ -63,6 +70,11 @@ namespace turistickiXML.Presentation
         private void buttonNew_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void lokacijaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillMasterList();
         }
 
     }
