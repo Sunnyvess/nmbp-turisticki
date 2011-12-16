@@ -10,6 +10,9 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 		<grad pbr="21000">
 			<nazivGrad>Split</nazivGrad>
 		</grad>
+    <grad pbr="22000">
+      <nazivGrad>Osijek</nazivGrad>
+    </grad>
 	</gradovi>
 	<bolnice>
 		<bolnica idBolnica="1" pbr="10000" dezurstvo="DA">
@@ -18,6 +21,12 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 			<opis>Ovo je opis bolnice Rebro.</opis>
 			<radnoVrijeme>0-24</radnoVrijeme>
 		</bolnica>
+    <bolnica idBolnica="2" pbr="21000" dezurstvo="DA">
+      <naziv>Javna Bolnica</naziv>
+      <ulica>Kerumova ulica 33</ulica>
+      <opis>Ovo je opis bolnice ove.</opis>
+      <radnoVrijeme>0-24</radnoVrijeme>
+    </bolnica>
 	</bolnice>
 	<muzeji>
 		<muzej idMuzej="1" pbr="10000" tipMuzeja="Umjetnički">
