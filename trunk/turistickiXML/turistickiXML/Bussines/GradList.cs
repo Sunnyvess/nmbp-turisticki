@@ -12,7 +12,7 @@ namespace turistickiXML.Bussines
         public static Grad GetGrad(int PostanskiBr)
         {
             DataRow iDr = null;
-            iDr = XMLData.Select(PostanskiBr);
+            //iDr = XMLData.Select(PostanskiBr);
             Grad gr = null;
             if (iDr != null)
             {
@@ -24,9 +24,13 @@ namespace turistickiXML.Bussines
             return gr;
         }
 
-        public static DataTable GetGradList()
+
+        public DataTable GetGradList()
+
         {
-            return XMLData.SelectAll("Grad");
+
+            return XMLData.SelectAll("grad");
+
         }
 
         public static void UpdateGrad(Grad grad)
