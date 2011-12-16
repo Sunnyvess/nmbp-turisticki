@@ -31,9 +31,9 @@
             this.gradoviComboBox = new System.Windows.Forms.ComboBox();
             this.lokacijaComboBox = new System.Windows.Forms.ComboBox();
             this.masterLista = new System.Windows.Forms.ListBox();
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gradoviComboBox
@@ -41,7 +41,7 @@
             this.gradoviComboBox.DisplayMember = "postanskibroj";
             this.gradoviComboBox.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.gradoviComboBox.FormattingEnabled = true;
-            this.gradoviComboBox.Location = new System.Drawing.Point(12, 12);
+            this.gradoviComboBox.Location = new System.Drawing.Point(16, 12);
             this.gradoviComboBox.Name = "gradoviComboBox";
             this.gradoviComboBox.Size = new System.Drawing.Size(161, 31);
             this.gradoviComboBox.TabIndex = 1;
@@ -53,8 +53,8 @@
             this.lokacijaComboBox.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lokacijaComboBox.FormattingEnabled = true;
             this.lokacijaComboBox.Items.AddRange(new object[] {
-            "Bolnica",
             "Muzej",
+            "Bolnica",
             "Park",
             "Znamenitost"});
             this.lokacijaComboBox.Location = new System.Drawing.Point(187, 12);
@@ -62,6 +62,7 @@
             this.lokacijaComboBox.Name = "lokacijaComboBox";
             this.lokacijaComboBox.Size = new System.Drawing.Size(151, 31);
             this.lokacijaComboBox.TabIndex = 2;
+            this.lokacijaComboBox.SelectedIndexChanged += new System.EventHandler(this.lokacijaComboBox_SelectedIndexChanged);
             // 
             // masterLista
             // 
@@ -75,8 +76,30 @@
             this.masterLista.Size = new System.Drawing.Size(318, 274);
             this.masterLista.TabIndex = 3;
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackgroundImage = global::turistickiXML.Properties.Resources.delete;
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDelete.Location = new System.Drawing.Point(299, 367);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(35, 35);
+            this.buttonDelete.TabIndex = 6;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.BackgroundImage = global::turistickiXML.Properties.Resources.edit;
+            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonEdit.Location = new System.Drawing.Point(258, 367);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(35, 35);
+            this.buttonEdit.TabIndex = 5;
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
             // buttonNew
             // 
+            this.buttonNew.BackgroundImage = global::turistickiXML.Properties.Resources.add1;
+            this.buttonNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonNew.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.buttonNew.Location = new System.Drawing.Point(16, 367);
             this.buttonNew.Name = "buttonNew";
@@ -84,22 +107,6 @@
             this.buttonNew.TabIndex = 4;
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(258, 367);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(35, 35);
-            this.buttonEdit.TabIndex = 5;
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(299, 367);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(35, 35);
-            this.buttonDelete.TabIndex = 6;
-            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // VodicForm
             // 

@@ -36,12 +36,12 @@ namespace turistickiXML.DAL
             //save();
         }
 
-        public XmlNodeList Select(int PostanskiBr)
+        public XmlNodeList Select(int PostanskiBr, string lokacija)
         {
             ds.Clear();
             XmlDocument xml = new XmlDocument();
             xml.Load(filePath);
-            XmlNodeList xnList = xml.SelectNodes("turistickiVodic/bolnice/bolnica[@pbr='"+ PostanskiBr.ToString() + "']");
+            XmlNodeList xnList = xml.SelectNodes("*/*/" + lokacija + "[@pbr='"+ PostanskiBr.ToString() + "']");
             return xnList;
 
 

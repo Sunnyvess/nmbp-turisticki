@@ -94,6 +94,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\accept.png" />
+    <Content Include="Resources\add1.png" />
+    <Content Include="Resources\bolnica.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\htz_a.jpg" />
+    <Content Include="Resources\info.png" />
+    <Content Include="Resources\muzej.png" />
+    <Content Include="Resources\park.png" />
+    <Content Include="Resources\statue.png" />
+    <Content Include="Resources\znamenitost.png" />
     <Content Include="XML\proba.xml" />
     <Content Include="XML\turistickiVodic.xml">
       <SubType>Designer</SubType>
