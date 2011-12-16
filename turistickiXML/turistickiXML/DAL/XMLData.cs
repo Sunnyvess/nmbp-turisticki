@@ -14,7 +14,7 @@ namespace turistickiXML.DAL
 
         public static void save()
         {
-            ds.WriteXml(".\\XML\\proba.xml", XmlWriteMode.WriteSchema);
+            ds.WriteXml(".\\XML\\turistickiVodic.xml", XmlWriteMode.WriteSchema);
         }
 
         public static void Insert(int PostanskiBr, string Ime)
@@ -54,12 +54,12 @@ namespace turistickiXML.DAL
             save();
         }
 
-        public static DataView SelectAll()
+        public static DataTable SelectAll(String tableName)
         {
             ds.Clear();
             ds.ReadXml(".\\XML\\proba.xml", XmlReadMode.ReadSchema);
-            dv = ds.Tables[0].DefaultView;
-            return dv;
+            //dv = ds.Tables[0].DefaultView;
+            return ds.Tables[tableName];
         }
     }
 }

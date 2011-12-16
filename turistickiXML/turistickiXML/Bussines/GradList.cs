@@ -24,9 +24,9 @@ namespace turistickiXML.Bussines
             return gr;
         }
 
-        public static DataView GetGradList()
+        public static DataTable GetGradList()
         {
-            return XMLData.SelectAll();
+            return XMLData.SelectAll("Grad");
         }
 
         public static void UpdateGrad(Grad grad)
