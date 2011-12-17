@@ -32,19 +32,19 @@
     </xs:keyref>
     <xs:key name="bolnicaKeyConstraint">
       <xs:selector xpath="./bolnice/bolnica"/>
-      <xs:field xpath="@idBolnica"/>
+      <xs:field xpath="@id"/>
     </xs:key>
     <xs:key name="muzejKeyConstraint">
       <xs:selector xpath="./muzeji/muzej"/>
-      <xs:field xpath="@idMuzej"/>
+      <xs:field xpath="@id"/>
     </xs:key>
     <xs:key name="znamenitostKeyConstraint">
       <xs:selector xpath="./znamenitosti/znamenitost"/>
-      <xs:field xpath="@idZnamenitost"/>
+      <xs:field xpath="@id"/>
     </xs:key>
     <xs:key name="parkKeyConstraint">
       <xs:selector xpath="./parkovi/park"/>
-      <xs:field xpath="@idPark"/>
+      <xs:field xpath="@id"/>
     </xs:key>
 	</xs:element>
 	
@@ -72,13 +72,13 @@
 			<xs:element name="opis" type="xs:string"/>
 			<xs:element name="radnoVrijeme" type="xs:string"/>
 		</xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
 		<xs:attribute name="pbr" type="xs:integer" use="required"/>
 	</xs:complexType>
 	
 	<xs:complexType name="bolnicaT">
 		<xs:complexContent>
 			<xs:extension base="lokacijaT">
-				<xs:attribute name="idBolnica" type="xs:integer" use="required"/>
 				<xs:attribute name="dezurstvo" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -87,7 +87,6 @@
 	<xs:complexType name="muzejT">
 		<xs:complexContent>
 			<xs:extension base="lokacijaT">
-				<xs:attribute name="idMuzej" type="xs:integer" use="required"/>
 				<xs:attribute name="tipMuzeja" type="tipMuzejaT" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -109,7 +108,6 @@
 				<xs:sequence>
 					<xs:element name="datumIzgradnje" type="xs:string"/>
 				</xs:sequence>
-				<xs:attribute name="idZnamenitost" type="xs:integer" use="required"/>
 				<xs:attribute name="tipZnamenitost" type="tipZnamenitostiT" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -126,7 +124,6 @@
   <xs:complexType name="parkT">
 		<xs:complexContent>
 			<xs:extension base="lokacijaT">
-				<xs:attribute name="idPark" type="xs:integer" use="required"/>
 				<xs:attribute name="otvoren" type="xs:string" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
