@@ -25,14 +25,12 @@ namespace turistickiXML.Presentation {
             FillMasterList ();
         }
         private void VodicForm_Load (object sender, EventArgs e) {
-            FillGradCB ();
-
             lokacijaComboBox.Items.Add (new MuzejLokacija ());
             lokacijaComboBox.Items.Add (new BolnicaLokacija ());
             lokacijaComboBox.Items.Add (new ParkLokacija ());
             lokacijaComboBox.Items.Add (new ZnamenitostLokacija ());
 
-
+            FillGradCB ();
             FillMasterList ();
         }
         private void FillGradCB () {
@@ -64,7 +62,9 @@ namespace turistickiXML.Presentation {
         }
 
         private void buttonNew_Click (object sender, EventArgs e) {
-            int gradPostBr = (int)gradoviComboBox.SelectedValue;
+            if (gradoviComboBox.SelectedItem == null || lokacijaComboBox.SelectedItem == null)
+                return;
+            int gradPostBr = int.Parse (gradoviComboBox.SelectedValue.ToString());
             ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
             vrstaLokacije.Insert (gradPostBr);
         }
