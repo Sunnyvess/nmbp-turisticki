@@ -14,7 +14,7 @@ namespace turistickiXML.DAL
         static DataSet ds = new DataSet();
         static DataSet grad = new DataSet();
         static DataView dv = new DataView();
-        static string filePath = "..\\..\\XML\\turistickiVodic.xml";
+        public static string filePath = "..\\..\\XML\\turistickiVodic.xml";
 
         public static void save()
         {
