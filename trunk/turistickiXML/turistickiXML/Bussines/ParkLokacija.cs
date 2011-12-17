@@ -8,18 +8,22 @@ using System.Xml;
 namespace turistickiXML.Bussines {
     class ParkLokacija : ILokacija {
 
-        public void Update (int id) {
+        public void ShowUpdateForm (int id) {
             //pokrenuti formu nakon sto se implementira
             throw new NotImplementedException ();
         }
 
-        public void Insert (int pbr) {
+        public void ShowInsertForm (int pbr) {
             //pokrenuti formu nakon sto se implementira
             throw new NotImplementedException ();
         }
 
         public override string ToString () {
             return "Park";
+        }
+        public static void InsertNew (Park park) {
+        }
+        public static void Update (Park park) {
         }
     }
 }
