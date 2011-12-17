@@ -46,8 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\BolnicaLokacija.cs" />
     <Compile Include="Bussines\Grad.cs" />
     <Compile Include="Bussines\GradList.cs" />
+    <Compile Include="Bussines\ILokacija.cs" />
+    <Compile Include="Bussines\Lokacija.cs" />
+    <Compile Include="Bussines\MuzejLokacija.cs" />
+    <Compile Include="Bussines\ParkLokacija.cs" />
+    <Compile Include="Bussines\ZnamenitostLokacija.cs" />
     <Compile Include="DAL\XMLData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
