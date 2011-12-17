@@ -150,6 +150,7 @@
             this.odustaniBTN.Size = new System.Drawing.Size (43, 43);
             this.odustaniBTN.TabIndex = 55;
             this.odustaniBTN.UseVisualStyleBackColor = true;
+            this.odustaniBTN.Click += new System.EventHandler (this.odustaniBTN_Click);
             // 
             // prihvatiBTN
             // 
