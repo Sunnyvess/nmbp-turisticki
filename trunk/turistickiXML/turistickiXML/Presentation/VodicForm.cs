@@ -16,7 +16,7 @@ namespace turistickiXML.Presentation {
         //DataTable grad = new DataTable();
         //DataTable masterList = new DataTable();
         XmlNodeList masterList2;
-        string filePath = "..\\..\\XML\\turistickiVodic.xml";
+        string filePath = DAL.XMLData.filePath;
 
         public VodicForm () {
             InitializeComponent ();
