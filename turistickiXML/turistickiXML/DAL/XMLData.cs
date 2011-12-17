@@ -67,7 +67,7 @@ namespace turistickiXML.DAL
             xml = new XmlDocument ();
             xml.Load (filePath);
 
-            XmlNode node = xml.SelectSingleNode ("*/*/bolnica[@idBolnica='" + bolnica.ID.ToString () + "']");
+            XmlNode node = xml.SelectSingleNode ("*/*/bolnica[@id='" + bolnica.ID.ToString () + "']");
             if (node != null) {
                 node.Attributes[0].InnerText = bolnica.ID.ToString ();
                 node.Attributes[1].InnerText = bolnica.PostBr.ToString ();
