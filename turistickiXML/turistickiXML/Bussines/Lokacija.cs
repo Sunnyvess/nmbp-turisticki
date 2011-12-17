@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data;
-using turistickiXML.DAL;
 
 namespace turistickiXML.Bussines {
-    class Grad {
-        public int PostanskiBr {
+    class Lokacija {
+        public Lokacija (int id, string naziv) {
+            this.ID = id;
+            this.Naziv = naziv;
+        }
+        public int ID {
             get;
             set;
         }
-        public string Ime {
+        public string Naziv {
             get;
             set;
         }
