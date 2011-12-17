@@ -86,8 +86,8 @@ namespace turistickiXML.Presentation {
         }
         private void buttonDelete_Click (object sender, EventArgs e) {
             Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
-            ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
-            vrstaLokacije.Delete (odabranaLokacija.ID);
+            string vrstaLokacije = lokacijaComboBox.SelectedItem.ToString();
+            DAL.XMLData.DeleteLocation (vrstaLokacije, odabranaLokacija.ID);
             FillMasterList ();
         }
     }
