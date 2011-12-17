@@ -15,13 +15,13 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
     </grad>
 	</gradovi>
 	<bolnice>
-		<bolnica idBolnica="1" pbr="10000" dezurstvo="DA">
+		<bolnica id="1" pbr="10000" dezurstvo="DA">
 			<naziv>Rebro</naziv>
 			<ulica>Jukićeva 33</ulica>
 			<opis>Ovo je opis bolnice Rebro.</opis>
 			<radnoVrijeme>0-24</radnoVrijeme>
 		</bolnica>
-    <bolnica idBolnica="2" pbr="21000" dezurstvo="DA">
+    <bolnica id="2" pbr="21000" dezurstvo="DA">
       <naziv>Javna Bolnica</naziv>
       <ulica>Kerumova ulica 33</ulica>
       <opis>Ovo je opis bolnice ove.</opis>
@@ -29,7 +29,7 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
     </bolnica>
 	</bolnice>
 	<muzeji>
-		<muzej idMuzej="1" pbr="10000" tipMuzeja="Umjetnički">
+		<muzej id="1" pbr="10000" tipMuzeja="Umjetnički">
 			<naziv>Muzej suvremene umjetnosti</naziv>
 			<ulica>Trg hrvatskih velikana 7</ulica>
 			<opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
@@ -37,7 +37,7 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 		</muzej>
 	</muzeji>
 	<znamenitosti>
-		<znamenitost idZnamenitost="1" pbr="21000" tipZnamenitost="Tvrđava">
+		<znamenitost id="1" pbr="21000" tipZnamenitost="Tvrđava">
 			<naziv>Dioklecijanova palača</naziv>
 			<ulica>Ante Starčevića 68</ulica>
 			<opis>Ovo je opis Dioklecijanove palače.</opis>
@@ -46,7 +46,7 @@ xsi:noNamespaceSchemaLocation="schema.xsd">
 		</znamenitost>
 	</znamenitosti>
 	<parkovi>
-		<park idPark="1" pbr="10000" otvoren="DA">
+		<park id="1" pbr="10000" otvoren="DA">
 			<naziv>Zrinjevac</naziv>
 			<ulica>Zrinjevac 8</ulica>
 			<opis>Ovo je opis Zrinjevca.</opis>
