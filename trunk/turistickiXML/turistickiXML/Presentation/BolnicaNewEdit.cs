@@ -72,5 +72,8 @@ namespace turistickiXML.Presentation {
                 BolnicaLokacija.Update (bolnica);
             this.Close ();
         }
+        private void odustaniBTN_Click (object sender, EventArgs e) {
+            this.Close ();
+        }
     }
 }
