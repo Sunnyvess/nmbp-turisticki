@@ -1,56 +1,122 @@
-﻿<?xml version="1.0"?>
-
-<turistickiVodic
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="schema.xsd">
-	<gradovi>
-		<grad pbr="10000">
-			<nazivGrad>Zagreb</nazivGrad>
-		</grad>
-		<grad pbr="21000">
-			<nazivGrad>Split</nazivGrad>
-		</grad>
+<?xml version="1.0"?>
+<turistickiVodic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+  <gradovi>
+    <grad pbr="10000">
+      <nazivGrad>Zagreb</nazivGrad>
+    </grad>
+    <grad pbr="21000">
+      <nazivGrad>Split</nazivGrad>
+    </grad>
     <grad pbr="22000">
       <nazivGrad>Osijek</nazivGrad>
     </grad>
-	</gradovi>
-	<bolnice>
-		<bolnica id="1" pbr="10000" dezurstvo="DA">
-			<naziv>Rebro</naziv>
-			<ulica>Jukićeva 33</ulica>
-			<opis>Ovo je opis bolnice Rebro.</opis>
-			<radnoVrijeme>0-24</radnoVrijeme>
-		</bolnica>
-    <bolnica id="2" pbr="21000" dezurstvo="DA">
-      <naziv>Javna Bolnica</naziv>
-      <ulica>Kerumova ulica 33</ulica>
-      <opis>Ovo je opis bolnice ove.</opis>
+  </gradovi>
+  <bolnice>
+    <bolnica id="1" pbr="10000" dezurstvo="DA">
+      <naziv>Rebro</naziv>
+      <ulica>Jukićeva 33</ulica>
+      <opis>Ovo je opis bolnice Rebro.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
     </bolnica>
-	</bolnice>
-	<muzeji>
-		<muzej id="1" pbr="10000" tipMuzeja="Umjetnički">
-			<naziv>Muzej suvremene umjetnosti</naziv>
-			<ulica>Trg hrvatskih velikana 7</ulica>
-			<opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
-			<radnoVrijeme>8-20</radnoVrijeme>
-		</muzej>
-	</muzeji>
-	<znamenitosti>
-		<znamenitost id="1" pbr="21000" tipZnamenitost="Tvrđava">
-			<naziv>Dioklecijanova palača</naziv>
-			<ulica>Ante Starčevića 68</ulica>
-			<opis>Ovo je opis Dioklecijanove palače.</opis>
-			<radnoVrijeme>0-24</radnoVrijeme>
-			<datumIzgradnje>295.g.</datumIzgradnje>
-		</znamenitost>
-	</znamenitosti>
-	<parkovi>
-		<park id="1" pbr="10000" otvoren="DA">
-			<naziv>Zrinjevac</naziv>
-			<ulica>Zrinjevac 8</ulica>
-			<opis>Ovo je opis Zrinjevca.</opis>
-			<radnoVrijeme>0-24</radnoVrijeme>
-		</park>
-	</parkovi>
+    <bolnica id="3" pbr="10000" dezurstvo="False">
+      <naziv>osk</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="0" dezurstvo="False">
+      <naziv>jhsa</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="0" dezurstvo="False">
+      <naziv>hhhh</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="0" dezurstvo="False">
+      <naziv>hhhhhh</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="10000" dezurstvo="False">
+      <naziv>ssssssss</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="0" dezurstvo="False">
+      <naziv>aaaaaaa</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="10000" dezurstvo="False">
+      <naziv>kkkk</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="10000" dezurstvo="False">
+      <naziv>hhhh</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+    <bolnica id="3" pbr="10000" dezurstvo="False">
+      <naziv>
+      </naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
+  </bolnice>
+  <muzeji>
+    <muzej id="1" pbr="10000" tipMuzeja="Umjetnički">
+      <naziv>Muzej suvremene umjetnosti</naziv>
+      <ulica>Trg hrvatskih velikana 7</ulica>
+      <opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
+      <radnoVrijeme>8-20</radnoVrijeme>
+    </muzej>
+  </muzeji>
+  <znamenitosti>
+  </znamenitosti>
+  <parkovi>
+    <park id="1" pbr="10000" otvoren="DA">
+      <naziv>Zrinjevac</naziv>
+      <ulica>Zrinjevac 8</ulica>
+      <opis>Ovo je opis Zrinjevca.</opis>
+      <radnoVrijeme>0-24</radnoVrijeme>
+    </park>
+  </parkovi>
 </turistickiVodic>
