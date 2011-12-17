@@ -83,6 +83,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\BolnicaNewEdit.resx">
+      <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\VodicForm.resx">
       <DependentUpon>VodicForm.cs</DependentUpon>
     </EmbeddedResource>
