@@ -55,6 +55,13 @@ namespace turistickiXML.DAL
             dv.RowFilter = "";
             save();
         }
+        public static void DeleteLocation (string location, int id) {
+            XmlDocument document = new XmlDocument ();
+            document.Load (filePath);
+            XmlNode node = document.SelectSingleNode (string.Format ("/*/*/{0}[@id='{1}']", location.ToLower(), id));
+            node.ParentNode.RemoveChild (node);
+            document.Save (turistickiXML.DAL.XMLData.filePath);            
+        }
 
         public static DataTable SelectAll(string tablicaName)
         {
