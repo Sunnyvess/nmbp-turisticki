@@ -117,6 +117,7 @@
             this.Controls.Add (this.lokacijaComboBox);
             this.Controls.Add (this.gradoviComboBox);
             this.Name = "VodicForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turistički vodič";
             this.Load += new System.EventHandler (this.VodicForm_Load);
             this.ResumeLayout (false);
