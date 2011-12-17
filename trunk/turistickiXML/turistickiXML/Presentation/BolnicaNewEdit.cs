@@ -39,6 +39,7 @@ namespace turistickiXML.Presentation {
 
         private void FillGradCB () {
             DataTable grad = gradlist.GetGradList ();
+            this.gradComboBox.Items.Clear ();
             this.gradComboBox.DataSource = grad;
             this.gradComboBox.DisplayMember = "nazivGrad";
             this.gradComboBox.ValueMember = "pbr";
