@@ -7,12 +7,12 @@ using System.Xml;
 
 namespace turistickiXML.Bussines {
     class BolnicaLokacija : ILokacija {
-        public void Update (int id) {
+
+        public void ShowUpdateForm (int id) {
             //pokrenuti formu nakon sto se implementira
             throw new NotImplementedException ();
         }
-
-        public void Insert (int pbr) {
+        public void ShowInsertForm (int pbr) {
             //pokrenuti formu nakon sto se implementira
             throw new NotImplementedException ();
         }
@@ -20,7 +20,15 @@ namespace turistickiXML.Bussines {
         public override string ToString () {
             return "Bolnica";
         }
-        public static void InsertNew () {
+
+        public static void InsertNew (Bolnica bolnica) {
+            DAL.XMLData.InsertBolnica (bolnica);
+        }
+        public static void Update (Bolnica bolnica) {
+            DAL.XMLData.UpdateBolnica (bolnica);
+        }
+        public static Bolnica SelectBolnica (int id) {
+            return DAL.XMLData.SelectBolnica (id);
         }
     }
 }

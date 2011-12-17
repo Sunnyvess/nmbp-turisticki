@@ -91,6 +91,7 @@
             this.buttonEdit.Size = new System.Drawing.Size (35, 35);
             this.buttonEdit.TabIndex = 5;
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler (this.buttonEdit_Click);
             // 
             // buttonNew
             // 

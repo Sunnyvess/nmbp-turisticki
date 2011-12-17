@@ -35,17 +35,17 @@ namespace turistickiXML.Bussines
 
         public static void UpdateGrad(Grad grad)
         {
-            XMLData.Update(grad.PostanskiBr, grad.Ime);
+            //XMLData.Update(grad.PostanskiBr, grad.Ime);
         }
 
         public static void InsertGrad(Grad grad)
         {
-            XMLData.Insert(grad.PostanskiBr, grad.Ime);
+            //XMLData.Insert(grad.PostanskiBr, grad.Ime);
         }
 
         public static void DeleteGrad(Grad grad)
         {
-            XMLData.Delete(grad.PostanskiBr);
+            //XMLData.Delete(grad.PostanskiBr);
         }
 
     }

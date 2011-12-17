@@ -68,21 +68,23 @@ namespace turistickiXML.Presentation {
             FillMasterList ();
         }
 
-        private void editBTN_Click (object sender, EventArgs e) {
-            if (masterLista.SelectedItem == null)
-                return;
-            Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
-            ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
-            vrstaLokacije.Update (odabranaLokacija.ID);
-            FillMasterList ();
-        }
+        
         private void buttonNew_Click (object sender, EventArgs e) {
             if (gradoviComboBox.SelectedItem == null || lokacijaComboBox.SelectedItem == null)
                 return;
             int gradPostBr = int.Parse (gradoviComboBox.SelectedValue.ToString());
             ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
-            vrstaLokacije.Insert (gradPostBr);
+            vrstaLokacije.ShowInsertForm (gradPostBr);
             FillMasterList ();
+        }
+        private void buttonEdit_Click (object sender, EventArgs e) {
+            if (masterLista.SelectedItem == null)
+                return;
+            Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
+            ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
+            vrstaLokacije.ShowUpdateForm (odabranaLokacija.ID);
+            FillMasterList ();
+
         }
         private void buttonDelete_Click (object sender, EventArgs e) {
             Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;

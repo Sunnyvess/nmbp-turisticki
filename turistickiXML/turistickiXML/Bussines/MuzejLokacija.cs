@@ -8,18 +8,22 @@ using System.Xml;
 namespace turistickiXML.Bussines {
     class MuzejLokacija : ILokacija {
 
-        public void Update (int id) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowUpdateForm (int id) {
+            Presentation.BolnicaNewEdit editBolnica = new Presentation.BolnicaNewEdit (id);
+            editBolnica.ShowDialog ();
         }
 
-        public void Insert (int pbr) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowInsertForm (int pbr) {
+            Presentation.BolnicaNewEdit newMuzej = new Presentation.BolnicaNewEdit ();
+            newMuzej.ShowDialog ();
         }
 
         public override string ToString () {
             return "Muzej";
+        }
+        public static void InsertNew (Muzej muzej) {
+        }
+        public static void Update (Muzej muzej) {
         }
     }
 }

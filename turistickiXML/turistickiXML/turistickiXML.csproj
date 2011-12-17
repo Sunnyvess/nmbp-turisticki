@@ -46,13 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\Bolnica.cs" />
     <Compile Include="Bussines\BolnicaLokacija.cs" />
     <Compile Include="Bussines\Grad.cs" />
     <Compile Include="Bussines\GradList.cs" />
     <Compile Include="Bussines\ILokacija.cs" />
     <Compile Include="Bussines\Lokacija.cs" />
+    <Compile Include="Bussines\Muzej.cs" />
     <Compile Include="Bussines\MuzejLokacija.cs" />
+    <Compile Include="Bussines\Park.cs" />
     <Compile Include="Bussines\ParkLokacija.cs" />
+    <Compile Include="Bussines\Znamenitost.cs" />
     <Compile Include="Bussines\ZnamenitostLokacija.cs" />
     <Compile Include="DAL\XMLData.cs" />
     <Compile Include="Form1.cs">
@@ -60,6 +64,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\BolnicaNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\BolnicaNewEdit.Designer.cs">
+      <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\VodicForm.cs">
       <SubType>Form</SubType>
@@ -100,10 +110,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\accept.png" />
+    <None Include="Resources\accept.png" />
     <Content Include="Resources\add1.png" />
     <Content Include="Resources\bolnica.png" />
-    <Content Include="Resources\cancel.png" />
+    <None Include="Resources\cancel.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\htz_a.jpg" />

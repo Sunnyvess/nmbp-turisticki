@@ -6,6 +6,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Xml.XPath;
 using System.Xml;
+using turistickiXML.Bussines;
 
 namespace turistickiXML.DAL
 {
@@ -13,28 +14,92 @@ namespace turistickiXML.DAL
     {
         static DataSet ds = new DataSet();
         static DataSet grad = new DataSet();
-        static DataView dv = new DataView();
+        static DataView dv = new DataView ();
+        static XmlDocument xml;
         public static string filePath = "..\\..\\XML\\turistickiVodic.xml";
 
-        public static void save()
-        {
-            ds.WriteXml(filePath, XmlWriteMode.WriteSchema);
+        public static void DeleteLocation (string location, int id) {
+            XmlDocument document = new XmlDocument ();
+            document.Load (filePath);
+            XmlNode node = document.SelectSingleNode (string.Format ("/*/*/{0}[@id='{1}']", location.ToLower (), id));
+            node.ParentNode.RemoveChild (node);
+            document.Save (turistickiXML.DAL.XMLData.filePath);
         }
 
-        public static void Insert(int PostanskiBr, string Ime)
-        {
-            DataRow dr = dv.Table.NewRow();
-            dr[0] = PostanskiBr;
-            dr[1] = Ime;
-            dv.Table.Rows.Add(dr);
+        #region Bolnica
+
+        public static void InsertBolnica (Bolnica bolnicaNova) {
+            xml = new XmlDocument ();
+            xml.Load (filePath);
+
+            XmlNode node = xml.CreateNode (XmlNodeType.Element, "bolnica", "");
+            XmlElement bolnica = xml.CreateElement ("bolnica");
+            XmlElement naziv = xml.CreateElement ("naziv");
+            XmlElement ulica = xml.CreateElement ("ulica");
+            XmlElement opis = xml.CreateElement ("opis");
+            XmlElement radnoVrijeme = xml.CreateElement ("radnoVrijeme");
+            XmlAttribute idBolnica = xml.CreateAttribute ("id");
+            idBolnica.Value = bolnicaNova.ID.ToString ();
+            XmlAttribute pbr = xml.CreateAttribute ("pbr");
+            pbr.Value = bolnicaNova.PostBr.ToString ();
+            XmlAttribute dezurstvo = xml.CreateAttribute ("dezurstvo");
+            dezurstvo.Value = bolnicaNova.Dezurna.ToString();
+            XmlText nazivText = xml.CreateTextNode (bolnicaNova.Naziv);
+            XmlText ulicaText = xml.CreateTextNode (bolnicaNova.Ulica);
+            XmlText opisText = xml.CreateTextNode (bolnicaNova.Opis);
+            XmlText radnoVrijemeText = xml.CreateTextNode (bolnicaNova.RadnoVrijeme);
+
+            bolnica.Attributes.Append (idBolnica);
+            bolnica.Attributes.Append (pbr);
+            bolnica.Attributes.Append (dezurstvo);
+            bolnica.AppendChild (naziv);
+            bolnica.AppendChild (ulica);
+            bolnica.AppendChild (opis);
+            bolnica.AppendChild (radnoVrijeme);
+            naziv.AppendChild (nazivText);
+            ulica.AppendChild (ulicaText);
+            opis.AppendChild (opisText);
+            radnoVrijeme.AppendChild (radnoVrijemeText);
+            xml.GetElementsByTagName ("bolnice")[0].AppendChild (bolnica);
+            xml.Save (filePath);
+        }
+        public static void UpdateBolnica (Bolnica bolnica) {
+            xml = new XmlDocument ();
+            xml.Load (filePath);
+
+            XmlNode node = xml.SelectSingleNode ("*/*/bolnica[@idBolnica='" + bolnica.ID.ToString () + "']");
+            if (node != null) {
+                node.Attributes[0].InnerText = bolnica.ID.ToString ();
+                node.Attributes[1].InnerText = bolnica.PostBr.ToString ();
+                node.Attributes[2].InnerText = bolnica.Dezurna.ToString ();
+
+                node.ChildNodes[0].InnerText = bolnica.Naziv;
+                node.ChildNodes[1].InnerText = bolnica.Ulica;
+                node.ChildNodes[2].InnerText = bolnica.Opis;
+                node.ChildNodes[3].InnerText = bolnica.RadnoVrijeme;
+            }
+            xml.Save (filePath);
+        }
+        public static Bolnica SelectBolnica (int id) {
+            XmlDocument xml = new XmlDocument ();
+            xml.Load (filePath);
+            XmlNode node = xml.SelectSingleNode ("*/*/bolnica[@id='" + id.ToString () + "']");
+            Bolnica bolnica = new Bolnica ();
+            if (node != null) {
+                bolnica.ID = Convert.ToInt32 (node.Attributes[0].InnerText);
+                bolnica.PostBr = Convert.ToInt32 (node.Attributes[1].InnerText);
+                bolnica.Dezurna = bool.Parse (node.Attributes[2].InnerText);
+
+                bolnica.Naziv = node.ChildNodes[0].InnerText;
+                bolnica.Ulica = node.ChildNodes[1].InnerText;
+                bolnica.Opis = node.ChildNodes[2].InnerText;
+                bolnica.RadnoVrijeme = node.ChildNodes[3].InnerText;
+            }
+            //Console.WriteLine("Odabrana bolnica" + bolnica.id.ToString());
+            return bolnica;
         }
 
-        public static void Update(int PostanskiBr, string Ime)
-        {
-            //DataRow dr = Select(PostanskiBr);
-            //dr[1] = Ime;
-            //save();
-        }
+        #endregion
 
         public XmlNodeList Select(int PostanskiBr, string lokacija)
         {
@@ -45,24 +110,7 @@ namespace turistickiXML.DAL
             return xnList;
 
 
-        }
-
-        public static void Delete(int PostanskiBr)
-        {
-            dv.RowFilter = "PostanskiBr='" + PostanskiBr + "'";
-            dv.Sort = "PostanskiBr";
-            dv.Delete(0);
-            dv.RowFilter = "";
-            save();
-        }
-        public static void DeleteLocation (string location, int id) {
-            XmlDocument document = new XmlDocument ();
-            document.Load (filePath);
-            XmlNode node = document.SelectSingleNode (string.Format ("/*/*/{0}[@id='{1}']", location.ToLower(), id));
-            node.ParentNode.RemoveChild (node);
-            document.Save (turistickiXML.DAL.XMLData.filePath);            
-        }
-
+        }   
         public static DataTable SelectAll(string tablicaName)
         {
             if (tablicaName == "grad")
@@ -77,6 +125,8 @@ namespace turistickiXML.DAL
                 return ds.Tables[tablicaName];
             }
         }
+
+        #region Pomocna funkcija....Ne brisati
         // Ko pipne ovu funkciju mrtav je.................Moje vlasnistvo!...................Daniel Kozul
 
 
@@ -111,5 +161,6 @@ namespace turistickiXML.DAL
         //    }
         //    return dt;
         //}
+        #endregion
     }
 }
