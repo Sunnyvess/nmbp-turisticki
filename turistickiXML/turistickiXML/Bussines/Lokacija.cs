@@ -17,5 +17,8 @@ namespace turistickiXML.Bussines {
             get;
             set;
         }
+        public override string ToString () {
+            return this.Naziv;
+        }
     }
 }
