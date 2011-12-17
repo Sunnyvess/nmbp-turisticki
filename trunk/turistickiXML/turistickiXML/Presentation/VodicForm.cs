@@ -48,7 +48,17 @@ namespace turistickiXML.Presentation {
             masterList2 = xmldata.Select (Convert.ToInt32 (gradoviComboBox.SelectedValue), lokacijaComboBox.SelectedItem.ToString ().ToLower ());
 
             foreach (XmlNode node in masterList2) {
-                Lokacija lokacija = new Lokacija (int.Parse (node["id"].InnerText), node["naziv"].InnerText);
+                int id = 0;
+                bool found = false;
+                foreach (XmlAttribute attribute in node.Attributes) {
+                    if (attribute.Name.ToLower().StartsWith ("id")) {
+                        id = int.Parse (attribute.Value);
+                        found = true;
+                    }
+                }
+                if (found == false)
+                    continue;
+                Lokacija lokacija = new Lokacija (id, node["naziv"].InnerText);
                 masterLista.Items.Add (lokacija);
             }
         }
