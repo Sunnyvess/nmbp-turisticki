@@ -115,6 +115,7 @@ namespace turistickiXML.DAL
         {
             if (tablicaName == "grad")
             {
+                grad.Clear();
                 grad.ReadXml(filePath);
                 return grad.Tables["grad"];
             }
