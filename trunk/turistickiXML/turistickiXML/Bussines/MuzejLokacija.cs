@@ -9,13 +9,13 @@ namespace turistickiXML.Bussines {
     class MuzejLokacija : ILokacija {
 
         public void ShowUpdateForm (int id) {
-            Presentation.BolnicaNewEdit editBolnica = new Presentation.BolnicaNewEdit (id);
-            editBolnica.ShowDialog ();
+            //pokrenuti formu nakon sto se implementira
+            throw new NotImplementedException ();
         }
 
         public void ShowInsertForm (int pbr) {
-            Presentation.BolnicaNewEdit newMuzej = new Presentation.BolnicaNewEdit ();
-            newMuzej.ShowDialog ();
+            //pokrenuti formu nakon sto se implementira
+            throw new NotImplementedException ();
         }
 
         public override string ToString () {
