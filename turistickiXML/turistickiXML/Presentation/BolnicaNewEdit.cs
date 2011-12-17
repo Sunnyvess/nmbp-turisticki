@@ -21,7 +21,7 @@ namespace turistickiXML.Presentation {
             this.Text = "Nova bolnica";
             this.StartPosition = FormStartPosition.CenterScreen;
             isNew = true;
-            FillGradCB ();
+            //FillGradCB ();
             //gradComboBox.SelectedValue = int.Parse(pbr);
         }
         public BolnicaNewEdit (int sifra) {
@@ -30,7 +30,7 @@ namespace turistickiXML.Presentation {
             this.StartPosition = FormStartPosition.CenterScreen;
             this.sifra = sifra;
             isNew = false;
-            FillGradCB ();
+            //FillGradCB ();
             bolnica = BolnicaLokacija.SelectBolnica (sifra);
             //gradComboBox.SelectedValue = int.Parse(pbr);
 
