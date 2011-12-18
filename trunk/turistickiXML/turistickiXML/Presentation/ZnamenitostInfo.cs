@@ -26,7 +26,7 @@ namespace turistickiXML.Presentation
            adresaLabel.Text = znam.Ulica;          
            radnoVrijemeLabel.Text = znam.RadnoVrijeme;
            opisLabel.Text =  znam.Opis;
-           datumizgradnjeLB.Text = znam.godinaIzgradnje.Date.ToShortDateString();
+           datumizgradnjeLB.Text = znam.godinaIzgradnje;
            tipZnamenLabel.Text = znam.TipZnamenitosti;
         }
 

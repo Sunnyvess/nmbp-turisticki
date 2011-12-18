@@ -221,7 +221,7 @@ namespace turistickiXML.DAL
                 znam.Ulica = node.ChildNodes[1].InnerText;
                 znam.Opis = node.ChildNodes[2].InnerText;
                 znam.RadnoVrijeme = node.ChildNodes[3].InnerText;
-                //znam.godinaIzgradnje = DateTime.Parse(node.ChildNodes[4].InnerText);
+                znam.godinaIzgradnje = node.ChildNodes[4].InnerText;
             }
             return znam;
         }
@@ -298,42 +298,5 @@ namespace turistickiXML.DAL
             ds.ReadXml(filePath);
             return ds.Tables[tablicaName];
         }
-
-        #region Pomocna funkcija....Ne brisati
-        // Ko pipne ovu funkciju mrtav je.................Moje vlasnistvo!...................Daniel Kozul
-
-
-        //public static DataTable ConvertXmlNodeListToDataTable(XmlNodeList xnl)
-        //{
-        //    DataTable dt = new DataTable();
-        //    int TempColumn = 0;
-
-        //    foreach (XmlNode node in xnl)
-        //    {
-        //        TempColumn++;
-        //        DataColumn dc = new DataColumn(node.Name, System.Type.GetType("System.String"));
-        //        if (dt.Columns.Contains(node.Name))
-        //        {
-        //            dt.Columns.Add(dc.ColumnName = dc.ColumnName + TempColumn.ToString());
-        //        }
-        //        else
-        //        {
-        //            dt.Columns.Add(dc);
-        //        }
-        //    }
-
-        //    int ColumnsCount = dt.Columns.Count;
-        //    for (int i = 0; i < xnl.Count; i++)
-        //    {
-        //        DataRow dr = dt.NewRow();
-        //        for (int j = 0; j < ColumnsCount; j++)
-        //        {
-        //            dr[j] = xnl.Item(i).ChildNodes[j].InnerText;
-        //        }
-        //        dt.Rows.Add(dr);
-        //    }
-        //    return dt;
-        //}
-        #endregion
     }
 }

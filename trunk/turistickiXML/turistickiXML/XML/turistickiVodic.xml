@@ -26,15 +26,6 @@
       <opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
       <radnoVrijeme>8-20</radnoVrijeme>
     </muzej>
-    <muzej id="2" pbr="10000" tipMuzeja="Prirodoslovni">
-      <naziv>novi</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </muzej>
   </muzeji>
   <znamenitosti>
     <znamenitost id="1" pbr="21000" tipZnamenitost="Tvrđava">
@@ -42,27 +33,7 @@
       <ulica>Ante Starčevića 68</ulica>
       <opis>Ovo je opis Dioklecijanove palače.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
-      <datumIzgradnje>2011-05-30T09:00:00</datumIzgradnje>
-    </znamenitost>
-    <znamenitost id="2" pbr="10000" tipZnamenitost="Tvrđava">
-      <naziv>tvr</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-      <datumIzgradnje>2002-05-30T09:00:00</datumIzgradnje>
-    </znamenitost>
-    <znamenitost id="3" pbr="10000" tipZnamenitost="Tvrđava">
-      <naziv>test</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-      <datumIzgradnje>2001-05-30T09:00:00</datumIzgradnje>
+      <datumIzgradnje>2011-12-08</datumIzgradnje>
     </znamenitost>
   </znamenitosti>
   <parkovi>

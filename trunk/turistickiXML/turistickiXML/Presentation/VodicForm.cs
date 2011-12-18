@@ -14,7 +14,6 @@ namespace turistickiXML.Presentation {
         GradList gradlist = new GradList ();
         turistickiXML.DAL.XMLData xmldata = new turistickiXML.DAL.XMLData ();
         DataTable grad = new DataTable();
-        //DataTable masterList = new DataTable();
         XmlNodeList masterList2;
         string filePath = DAL.XMLData.filePath;
 
@@ -32,7 +31,6 @@ namespace turistickiXML.Presentation {
         }
 
         private void FillGradCB () {
-            //this.gradoviComboBox.Items.Clear();
             gradoviComboBox.DataSource = grad;
             gradoviComboBox.DisplayMember = "nazivGrad";
             gradoviComboBox.ValueMember = "pbr";
@@ -94,10 +92,15 @@ namespace turistickiXML.Presentation {
 
         }
         private void buttonDelete_Click (object sender, EventArgs e) {
-            Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
-            string vrstaLokacije = lokacijaComboBox.SelectedItem.ToString();
-            DAL.XMLData.DeleteLocation (vrstaLokacije, odabranaLokacija.ID);
-            FillMasterList ();
+            if (masterLista.SelectedItem == null)
+                return;
+            if (MessageBox.Show("Jeste li sigurni?", "Potvrda brisanja", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK)
+            {
+                Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
+                string vrstaLokacije = lokacijaComboBox.SelectedItem.ToString();
+                DAL.XMLData.DeleteLocation(vrstaLokacije, odabranaLokacija.ID);
+                FillMasterList();
+            }
         }
 
         private void masterLista_MouseDoubleClick(object sender, MouseEventArgs e)

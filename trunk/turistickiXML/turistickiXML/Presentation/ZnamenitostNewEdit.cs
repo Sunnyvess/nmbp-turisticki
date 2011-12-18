@@ -37,8 +37,6 @@ namespace turistickiXML.Presentation
             grad = gradlist.GetGradList();
             FillGradCB ();
             znam = ZnamenitostLokacija.SelectZnamenitost (sifra);
-            //gradComboBox.SelectedValue = int.Parse(pbr);
-
             BindData ();
         }
 
@@ -52,14 +50,12 @@ namespace turistickiXML.Presentation
         }
 
         private void BindData () {
-            //bolnica = new Bolnica ();
-            //bolnica = bolnica.Select (sifra);
             this.nazivTB.Text = znam.Naziv;
             this.ulicaTB.Text = znam.Ulica;
             this.opisTB.Text = znam.Opis;
             this.radnoVrijemeTB.Text = znam.RadnoVrijeme;
             tipZnamenCB.SelectedItem = znam.TipZnamenitosti;
-            datumIzgradnje.Value = znam.godinaIzgradnje;
+            datumIzgradnje.Value = Convert.ToDateTime(znam.godinaIzgradnje).Date;
             gradComboBox.SelectedValue = znam.PostBr;
         }
 
@@ -70,10 +66,8 @@ namespace turistickiXML.Presentation
             znam.RadnoVrijeme = radnoVrijemeTB.Text;
             znam.PostBr = Convert.ToInt32 (gradComboBox.SelectedValue);
             znam.TipZnamenitosti = tipZnamenCB.SelectedItem.ToString();
-            //znam.godinaIzgradnje = datumIzgradnje.Value.Date.ToShortDateString;
+            znam.godinaIzgradnje = datumIzgradnje.Value.ToString("yyyy-MM-dd");
             if (isNew) {
-                znam.ID = 3;
-                
                 ZnamenitostLokacija.InsertNew (znam);
             }
             else if (!isNew)
