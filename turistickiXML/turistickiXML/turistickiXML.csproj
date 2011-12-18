@@ -54,7 +54,6 @@
       <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Bussines\BolnicaLokacija.cs" />
-    <Compile Include="Bussines\Grad.cs" />
     <Compile Include="Bussines\GradList.cs" />
     <Compile Include="Bussines\ILokacija.cs" />
     <Compile Include="Bussines\Lokacija.cs" />

@@ -26,9 +26,9 @@
     </bolnica>
   </bolnice>
   <muzeji>
-    <muzej id="1" pbr="10000" tipMuzeja="Umjetnički">
+    <muzej id="1" pbr="10000" tipMuzeja="Arheološki">
       <naziv>Muzej suvremene umjetnosti</naziv>
-      <ulica>Trg hrvatskih velikana 7</ulica>
+      <ulica>Trg hrvatskih velikana 6</ulica>
       <opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
       <radnoVrijeme>8-20</radnoVrijeme>
     </muzej>
@@ -41,7 +41,6 @@
       <radnoVrijeme>0-24</radnoVrijeme>
       <datumIzgradnje>7.12.2011. 2:46:45</datumIzgradnje>
     </znamenitost>
-
   </znamenitosti>
   <parkovi>
     <park id="1" pbr="10000" otvoren="False">

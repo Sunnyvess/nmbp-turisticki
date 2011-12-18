@@ -10,7 +10,5 @@ namespace turistickiXML.Bussines {
             get;
             set;
         }
-        public Bolnica () {
-        }
     }
 }
