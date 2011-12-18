@@ -18,12 +18,6 @@
       <opis>Ovo je opis bolnice Rebro.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
     </bolnica>
-    <bolnica id="3" pbr="21000" dezurstvo="False">
-      <naziv>sadsad</naziv>
-      <ulica>sadsadsad</ulica>
-      <opis>sadsadsad</opis>
-      <radnoVrijeme>dasdasdsad</radnoVrijeme>
-    </bolnica>
   </bolnice>
   <muzeji>
     <muzej id="1" pbr="10000" tipMuzeja="Arheološki">

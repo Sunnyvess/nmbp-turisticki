@@ -167,21 +167,14 @@
   <ItemGroup>
     <None Include="Resources\accept.png" />
     <Content Include="Resources\add1.png" />
-    <Content Include="Resources\bolnica.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\bolnica1.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
-    <Content Include="Resources\htz_a.jpg" />
-    <Content Include="Resources\info.png" />
     <None Include="Resources\info1.png" />
-    <Content Include="Resources\muzej.png" />
     <None Include="Resources\muzej1.png" />
-    <Content Include="Resources\park.png" />
     <None Include="Resources\park1.png" />
-    <Content Include="Resources\statue.png" />
     <None Include="Resources\statue1.png" />
-    <Content Include="Resources\znamenitost.png" />
     <None Include="Resources\znamenitost1.png" />
     <Content Include="XML\turistickiVodic.xml">
       <SubType>Designer</SubType>
