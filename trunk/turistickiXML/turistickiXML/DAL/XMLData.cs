@@ -50,36 +50,6 @@ namespace turistickiXML.DAL
         public static void InsertBolnica (Bolnica bolnicaNova) {
             xml = new XmlDocument ();
             xml.Load (filePath);
-            #region staro
-            //XmlNode node = xml.CreateNode(XmlNodeType.Element, "bolnica", "");
-            //XmlElement bolnica = xml.CreateElement("bolnica");
-            //XmlElement naziv = xml.CreateElement("naziv");
-            //XmlElement ulica = xml.CreateElement("ulica");
-            //XmlElement opis = xml.CreateElement("opis");
-            //XmlElement radnoVrijeme = xml.CreateElement("radnoVrijeme");
-            //XmlAttribute idBolnica = xml.CreateAttribute("id");
-            //idBolnica.Value = bolnicaNova.ID.ToString();
-            //XmlAttribute pbr = xml.CreateAttribute("pbr");
-            //pbr.Value = bolnicaNova.PostBr.ToString();
-            //XmlAttribute dezurstvo = xml.CreateAttribute("dezurstvo");
-            //dezurstvo.Value = bolnicaNova.Dezurna.ToString();
-            //XmlText nazivText = xml.CreateTextNode(bolnicaNova.Naziv);
-            //XmlText ulicaText = xml.CreateTextNode(bolnicaNova.Ulica);
-            //XmlText opisText = xml.CreateTextNode(bolnicaNova.Opis);
-            //XmlText radnoVrijemeText = xml.CreateTextNode(bolnicaNova.RadnoVrijeme);
-
-            //bolnica.Attributes.Append(idBolnica);
-            //bolnica.Attributes.Append(pbr);
-            //bolnica.Attributes.Append(dezurstvo);
-            //bolnica.AppendChild(naziv);
-            //bolnica.AppendChild(ulica);
-            //bolnica.AppendChild(opis);
-            //bolnica.AppendChild(radnoVrijeme);
-            //naziv.AppendChild(nazivText);
-            //ulica.AppendChild(ulicaText);
-            //opis.AppendChild(opisText);
-            //radnoVrijeme.AppendChild(radnoVrijemeText);
-            #endregion
             XmlNode node = xml.CreateNode(XmlNodeType.Element, "bolnica", "");
             XmlElement bolnica = InsertLokacija(bolnicaNova, "bolnica", xml);
             XmlAttribute dezurstvo = xml.CreateAttribute("dezurstvo");
