@@ -8,22 +8,37 @@ using System.Xml;
 namespace turistickiXML.Bussines {
     class MuzejLokacija : ILokacija {
 
-        public void ShowUpdateForm (int id) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowUpdateForm(int id)
+        {
+            Presentation.MuzejNewEdit editMuzej = new Presentation.MuzejNewEdit(id);
+            editMuzej.ShowDialog();
         }
-
-        public void ShowInsertForm (int pbr) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowInsertForm(string pbr)
+        {
+            Presentation.MuzejNewEdit newMuzej = new Presentation.MuzejNewEdit(pbr);
+            newMuzej.ShowDialog();
         }
-
-        public override string ToString () {
+        public void ShowInfoForm(int id)
+        {
+            Presentation.MuzejInfo MuzejInfo = new Presentation.MuzejInfo(id);
+            MuzejInfo.ShowDialog();
+        }
+        public override string ToString()
+        {
             return "Muzej";
         }
-        public static void InsertNew (Muzej muzej) {
+
+        public static void InsertNew(Muzej muzej)
+        {
+            DAL.XMLData.InsertMuzej(muzej);
         }
-        public static void Update (Muzej muzej) {
+        public static void Update(Muzej muzej)
+        {
+            DAL.XMLData.UpdateMuzej(muzej);
+        }
+        public static Muzej SelectMuzej(int id)
+        {
+            return DAL.XMLData.SelectMuzej(id);
         }
     }
 }

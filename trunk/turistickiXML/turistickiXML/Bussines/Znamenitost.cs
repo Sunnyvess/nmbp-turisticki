@@ -9,5 +9,10 @@ namespace turistickiXML.Bussines {
             get;
             set;
         }
+        public DateTime godinaIzgradnje
+        {
+            get;
+            set;
+        }
     }
 }

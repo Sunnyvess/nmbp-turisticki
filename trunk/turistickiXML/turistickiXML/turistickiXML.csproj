@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bussines\Bolnica.cs" />
+    <Compile Include="Presentation\BolnicaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\BolnicaInfo.Designer.cs">
+      <DependentUpon>BolnicaInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bussines\BolnicaLokacija.cs" />
     <Compile Include="Bussines\Grad.cs" />
     <Compile Include="Bussines\GradList.cs" />
@@ -59,17 +65,35 @@
     <Compile Include="Bussines\Znamenitost.cs" />
     <Compile Include="Bussines\ZnamenitostLokacija.cs" />
     <Compile Include="DAL\XMLData.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\BolnicaNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\BolnicaNewEdit.Designer.cs">
       <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MuzejInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MuzejInfo.Designer.cs">
+      <DependentUpon>MuzejInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MuzejNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MuzejNewEdit.Designer.cs">
+      <DependentUpon>MuzejNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ParkInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ParkInfo.Designer.cs">
+      <DependentUpon>ParkInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ParkNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ParkNewEdit.Designer.cs">
+      <DependentUpon>ParkNewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\VodicForm.cs">
       <SubType>Form</SubType>
@@ -77,17 +101,46 @@
     <Compile Include="Presentation\VodicForm.Designer.cs">
       <DependentUpon>VodicForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\ZnamenitostInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ZnamenitostInfo.Designer.cs">
+      <DependentUpon>ZnamenitostInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ZnamenitostNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ZnamenitostNewEdit.Designer.cs">
+      <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Presentation\BolnicaInfo.resx">
+      <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BolnicaNewEdit.resx">
       <DependentUpon>BolnicaNewEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MuzejInfo.resx">
+      <DependentUpon>MuzejInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MuzejNewEdit.resx">
+      <DependentUpon>MuzejNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ParkInfo.resx">
+      <DependentUpon>ParkInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ParkNewEdit.resx">
+      <DependentUpon>ParkNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\VodicForm.resx">
       <DependentUpon>VodicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ZnamenitostInfo.resx">
+      <DependentUpon>ZnamenitostInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ZnamenitostNewEdit.resx">
+      <DependentUpon>ZnamenitostNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,15 +170,20 @@
     <Content Include="Resources\add1.png" />
     <Content Include="Resources\bolnica.png" />
     <None Include="Resources\cancel.png" />
+    <None Include="Resources\bolnica1.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\htz_a.jpg" />
     <Content Include="Resources\info.png" />
+    <None Include="Resources\info1.png" />
     <Content Include="Resources\muzej.png" />
+    <None Include="Resources\muzej1.png" />
     <Content Include="Resources\park.png" />
+    <None Include="Resources\park1.png" />
     <Content Include="Resources\statue.png" />
+    <None Include="Resources\statue1.png" />
     <Content Include="Resources\znamenitost.png" />
-    <Content Include="XML\proba.xml" />
+    <None Include="Resources\znamenitost1.png" />
     <Content Include="XML\turistickiVodic.xml">
       <SubType>Designer</SubType>
     </Content>

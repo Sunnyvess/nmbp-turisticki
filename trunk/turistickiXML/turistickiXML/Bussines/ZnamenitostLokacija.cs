@@ -8,21 +8,37 @@ using System.Xml;
 namespace turistickiXML.Bussines {
     class ZnamenitostLokacija : ILokacija {
 
-        public void ShowUpdateForm (int id) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowUpdateForm(int id)
+        {
+            Presentation.ZnamenitostNewEdit editZnamenitost = new Presentation.ZnamenitostNewEdit(id);
+            editZnamenitost.ShowDialog();
         }
-
-        public void ShowInsertForm (int pbr) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowInsertForm(string pbr)
+        {
+            Presentation.ZnamenitostNewEdit newZnamenitost = new Presentation.ZnamenitostNewEdit(pbr);
+            newZnamenitost.ShowDialog();
         }
-        public override string ToString () {
+        public void ShowInfoForm(int id)
+        {
+            Presentation.ZnamenitostInfo znamenitostInfo = new Presentation.ZnamenitostInfo(id);
+            znamenitostInfo.ShowDialog();
+        }
+        public override string ToString()
+        {
             return "Znamenitost";
         }
-        public static void InsertNew (Znamenitost znam) {
+
+        public static void InsertNew(Znamenitost znam)
+        {
+            DAL.XMLData.InsertZnamenitost(znam);
         }
-        public static void Update (Znamenitost znam) {
+        public static void Update(Znamenitost znam)
+        {
+            DAL.XMLData.UpdateZnamenitost(znam);
+        }
+        public static Znamenitost SelectZnamenitost(int id)
+        {
+            return DAL.XMLData.SelectZnamenitost(id);
         }
     }
 }
