@@ -32,7 +32,7 @@ namespace turistickiXML.Presentation {
 
         private void FillGradCB () {
             gradoviComboBox.DataSource = grad;
-            gradoviComboBox.DisplayMember = "nazivGrad";
+            gradoviComboBox.DisplayMember = "naziv";
             gradoviComboBox.ValueMember = "pbr";
             gradoviComboBox.SelectedIndex = 0;
             lokacijaComboBox.SelectedIndex = 0;
