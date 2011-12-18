@@ -47,7 +47,7 @@ namespace turistickiXML.DAL
             XmlNode node = xml.CreateNode(XmlNodeType.Element, "bolnica", "");
             XmlElement bolnica = InsertLokacija(bolnicaNova, "bolnica", xml);
             XmlAttribute dezurstvo = xml.CreateAttribute("dezurstvo");
-            dezurstvo.Value = bolnicaNova.Dezurna.ToString();
+            dezurstvo.Value = bool.Parse (bolnicaNova.Dezurna.ToString()).ToString();
             bolnica.Attributes.Append(dezurstvo);
           
             xml.GetElementsByTagName ("bolnice")[0].AppendChild (bolnica);

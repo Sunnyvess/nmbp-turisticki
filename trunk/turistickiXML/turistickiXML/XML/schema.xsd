@@ -2,15 +2,145 @@
 
 <xs:schema id="Turisticki" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<!-- types -->
+  <xs:element name="naziv" type="xs:string"/>
+  <xs:element name="ulica" type="xs:string"/>
+  <xs:element name="opis" type="xs:string"/>
+  <xs:element name="radnoVrijeme" type="xs:string"/>
+  <xs:element name="datumIzgradnje" type="xs:date"/>
+
+  <xs:attribute name="id" type="xs:integer"/>
+  <xs:attribute name="pbr" type="xs:integer"/>
+
+  <xs:attribute name="dezurstvo" type="myboolean"/>
+  <xs:attribute name="otvoren" type="myboolean"/>
+  <xs:attribute name="tipMuzeja" type="tipMuzejaT"/>
+  <xs:attribute name="tipZnamenitost" type="tipZnamenitostiT"/>
+
+  <xs:simpleType name="myboolean">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipMuzejaT">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Prirodoslovni"/>
+      <xs:enumeration value="Arheološki" />
+      <xs:enumeration value="Tehnički" />
+      <xs:enumeration value="Povijesni" />
+      <xs:enumeration value="Umjetnički" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipZnamenitostiT">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tvrđava"/>
+      <xs:enumeration value="Spomenik" />
+      <xs:enumeration value="Crkva" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="grad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="naziv" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="pbr" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="gradovi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="grad" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   
-<!-- simple elements -->
+  <xs:complexType name="lokacijaT">
+    <xs:sequence>
+      <xs:element ref="naziv"/>
+      <xs:element ref="ulica"/>
+      <xs:element ref="opis"/>
+      <xs:element ref="radnoVrijeme"/>
+    </xs:sequence>
+    <xs:attribute ref="id" use="required"/>
+    <xs:attribute ref="pbr" use="required"/>
+  </xs:complexType>
 
-<!-- attributes -->
+  <xs:complexType name="bolnicaT">
+    <xs:complexContent>
+      <xs:extension base="lokacijaT">
+        <xs:attribute ref="dezurstvo" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
-<!-- complex elements -->
+  <xs:complexType name="muzejT">
+    <xs:complexContent>
+      <xs:extension base="lokacijaT">
+        <xs:attribute ref="tipMuzeja" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
+  <xs:complexType name="znamenitostT">
+    <xs:complexContent>
+      <xs:extension base="lokacijaT">
+        <xs:sequence>
+          <xs:element ref="datumIzgradnje"/>
+        </xs:sequence>
+        <xs:attribute ref="tipZnamenitost" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
+  <xs:complexType name="parkT">
+    <xs:complexContent>
+      <xs:extension base="lokacijaT">
+        <xs:attribute ref="otvoren" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="bolnica" type="bolnicaT"/>
+  <xs:element name="muzej" type="muzejT"/>
+  <xs:element name="znamenitost" type="znamenitostT"/>
+  <xs:element name="park" type="parkT"/>
+
+  <xs:element name="bolnice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="bolnica" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="muzeji">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="muzej" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="znamenitosti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="znamenitost" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="parkovi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="park" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
   
 	<xs:element name="turistickiVodic">
 		<xs:complexType>
@@ -21,7 +151,8 @@
 				<xs:element ref="znamenitosti" maxOccurs="unbounded"/>
 				<xs:element ref="parkovi" maxOccurs="unbounded"/>
 			</xs:sequence>            
-        </xs:complexType>
+     </xs:complexType>
+    
 		<xs:key name="gradKeyConstraint">
 			<xs:selector xpath="./gradovi/grad"/>
 			<xs:field xpath="@pbr"/>
@@ -47,126 +178,5 @@
       <xs:field xpath="@id"/>
     </xs:key>
 	</xs:element>
-	
-	<xs:element name="gradovi">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="grad" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:element name="grad">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="nazivGrad" type="xs:string"/>
-			</xs:sequence>
-			<xs:attribute name="pbr" type="xs:integer" use="required"/>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:complexType name="lokacijaT">
-		<xs:sequence>
-			<xs:element name="naziv" type="xs:string"/>
-			<xs:element name="ulica" type="xs:string"/>
-			<xs:element name="opis" type="xs:string"/>
-			<xs:element name="radnoVrijeme" type="xs:string"/>
-		</xs:sequence>
-    <xs:attribute name="id" type="xs:integer" use="required"/>
-		<xs:attribute name="pbr" type="xs:integer" use="required"/>
-	</xs:complexType>
-	
-	<xs:complexType name="bolnicaT">
-		<xs:complexContent>
-			<xs:extension base="lokacijaT">
-				<xs:attribute name="dezurstvo" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
-	<xs:complexType name="muzejT">
-		<xs:complexContent>
-			<xs:extension base="lokacijaT">
-				<xs:attribute name="tipMuzeja" type="tipMuzejaT" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-  <xs:simpleType name="tipMuzejaT">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Prirodoslovni"/>
-      <xs:enumeration value="Arheološki" />
-      <xs:enumeration value="Tehnički" />
-      <xs:enumeration value="Povijesni" />
-      <xs:enumeration value="Umjetnički" />
-    </xs:restriction>
-  </xs:simpleType>
-  
-	<xs:complexType name="znamenitostT">
-		<xs:complexContent>
-			<xs:extension base="lokacijaT">
-				<xs:sequence>
-					<xs:element name="datumIzgradnje" type="xs:date"/>
-				</xs:sequence>
-				<xs:attribute name="tipZnamenitost" type="tipZnamenitostiT" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-  <xs:simpleType name="tipZnamenitostiT">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Tvrđava"/>
-      <xs:enumeration value="Spomenik" />
-      <xs:enumeration value="Crkva" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="parkT">
-		<xs:complexContent>
-			<xs:extension base="lokacijaT">
-				<xs:attribute name="otvoren" type="xs:string" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
-	<xs:element name="bolnice">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="bolnica" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:element name="bolnica" type="bolnicaT"/>
-	
-	<xs:element name="muzeji">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="muzej" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:element name="muzej" type="muzejT"/>
-	
-	<xs:element name="znamenitosti">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="znamenitost" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:element name="znamenitost" type="znamenitostT"/>
-	
-	<xs:element name="parkovi">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="park" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	
-	<xs:element name="park" type="parkT"/>
 	
 </xs:schema>
