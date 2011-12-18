@@ -77,5 +77,34 @@ namespace turistickiXML.Presentation
         private void odustaniBTN_Click (object sender, EventArgs e) {
             this.Close ();
         }
+
+
+        private void nazivTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (nazivTB.Text.Trim() == String.Empty)
+            {
+                prihvatiBTN.Enabled = false;
+                errorProvider1.SetError(nazivTB, "Unesite naziv!");
+            }
+            else
+            {
+                prihvatiBTN.Enabled = true;
+                errorProvider1.Clear();
+            }
+        }
+
+        private void ulicaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (ulicaTB.Text.Trim() == String.Empty)
+            {
+                prihvatiBTN.Enabled = false;
+                errorProvider2.SetError(ulicaTB, "Unesite adresu!");
+            }
+            else
+            {
+                prihvatiBTN.Enabled = true;
+                errorProvider2.Clear();
+            }
+        }
     }
 }
