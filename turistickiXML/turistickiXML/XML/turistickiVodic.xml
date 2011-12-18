@@ -19,24 +19,6 @@
       <radnoVrijeme>0-24</radnoVrijeme>
     </bolnica>
     <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>osk</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="0" dezurstvo="False">
-      <naziv>jhsa</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="0" dezurstvo="False">
       <naziv>hhhh</naziv>
       <ulica>
       </ulica>
@@ -45,56 +27,9 @@
       <radnoVrijeme>
       </radnoVrijeme>
     </bolnica>
-    <bolnica id="3" pbr="0" dezurstvo="False">
-      <naziv>hhhhhh</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>ssssssss</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="0" dezurstvo="False">
-      <naziv>aaaaaaa</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>kkkk</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>hhhh</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>
-      </naziv>
-      <ulica>
-      </ulica>
+    <bolnica id="4" pbr="10000" dezurstvo="False">
+      <naziv>jjhsjah</naziv>
+      <ulica>hhhh</ulica>
       <opis>
       </opis>
       <radnoVrijeme>
