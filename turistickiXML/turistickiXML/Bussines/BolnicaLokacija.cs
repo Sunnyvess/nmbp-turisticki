@@ -12,11 +12,15 @@ namespace turistickiXML.Bussines {
             Presentation.BolnicaNewEdit editBolnica = new Presentation.BolnicaNewEdit (id);
             editBolnica.ShowDialog ();
         }
-        public void ShowInsertForm (int pbr) {
-            Presentation.BolnicaNewEdit newBolnica = new Presentation.BolnicaNewEdit ();
+        public void ShowInsertForm (string pbr) {
+            Presentation.BolnicaNewEdit newBolnica = new Presentation.BolnicaNewEdit (pbr);
             newBolnica.ShowDialog ();
         }
-
+        public void ShowInfoForm(int id)
+        {
+            Presentation.BolnicaInfo bolnicaInfo = new Presentation.BolnicaInfo(id);
+            bolnicaInfo.ShowDialog();
+        }
         public override string ToString () {
             return "Bolnica";
         }

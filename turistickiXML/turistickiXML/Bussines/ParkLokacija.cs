@@ -8,22 +8,37 @@ using System.Xml;
 namespace turistickiXML.Bussines {
     class ParkLokacija : ILokacija {
 
-        public void ShowUpdateForm (int id) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowUpdateForm(int id)
+        {
+            Presentation.ParkNewEdit editPark = new Presentation.ParkNewEdit(id);
+            editPark.ShowDialog();
         }
-
-        public void ShowInsertForm (int pbr) {
-            //pokrenuti formu nakon sto se implementira
-            throw new NotImplementedException ();
+        public void ShowInsertForm(string pbr)
+        {
+            Presentation.ParkNewEdit newPark = new Presentation.ParkNewEdit(pbr);
+            newPark.ShowDialog();
         }
-
-        public override string ToString () {
+        public void ShowInfoForm(int id)
+        {
+            Presentation.ParkInfo ParkInfo = new Presentation.ParkInfo(id);
+            ParkInfo.ShowDialog();
+        }
+        public override string ToString()
+        {
             return "Park";
         }
-        public static void InsertNew (Park park) {
+
+        public static void InsertNew(Park park)
+        {
+            DAL.XMLData.InsertPark(park);
         }
-        public static void Update (Park park) {
+        public static void Update(Park park)
+        {
+            DAL.XMLData.UpdatePark(park);
+        }
+        public static Park SelectPark(int id)
+        {
+            return DAL.XMLData.SelectPark(id);
         }
     }
 }

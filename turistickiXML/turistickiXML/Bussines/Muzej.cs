@@ -5,5 +5,11 @@ using System.Text;
 
 namespace turistickiXML.Bussines {
     class Muzej : Lokacija {
+        public string Tip {
+            get;
+            set;
+        }
+        public Muzej () {
+        }
     }
 }

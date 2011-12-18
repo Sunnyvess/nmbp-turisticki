@@ -13,7 +13,7 @@ namespace turistickiXML.Presentation {
     public partial class VodicForm : Form {
         GradList gradlist = new GradList ();
         turistickiXML.DAL.XMLData xmldata = new turistickiXML.DAL.XMLData ();
-        //DataTable grad = new DataTable();
+        DataTable grad = new DataTable();
         //DataTable masterList = new DataTable();
         XmlNodeList masterList2;
         string filePath = DAL.XMLData.filePath;
@@ -26,13 +26,13 @@ namespace turistickiXML.Presentation {
             lokacijaComboBox.Items.Add (new BolnicaLokacija ());
             lokacijaComboBox.Items.Add (new ParkLokacija ());
             lokacijaComboBox.Items.Add (new ZnamenitostLokacija ());
-
+            grad = gradlist.GetGradList();
             FillGradCB ();
             FillMasterList ();
         }
 
         private void FillGradCB () {
-            DataTable grad = gradlist.GetGradList ();
+            //this.gradoviComboBox.Items.Clear();
             gradoviComboBox.DataSource = grad;
             gradoviComboBox.DisplayMember = "nazivGrad";
             gradoviComboBox.ValueMember = "pbr";
@@ -59,6 +59,8 @@ namespace turistickiXML.Presentation {
                 Lokacija lokacija = new Lokacija (id, node["naziv"].InnerText);
                 masterLista.Items.Add (lokacija);
             }
+            if(masterLista.Items.Count > 0)
+                masterLista.SelectedIndex = 0;
         }
 
         private void gradoviComboBox_SelectedIndexChanged (object sender, EventArgs e) {
@@ -72,18 +74,23 @@ namespace turistickiXML.Presentation {
         private void buttonNew_Click (object sender, EventArgs e) {
             if (gradoviComboBox.SelectedItem == null || lokacijaComboBox.SelectedItem == null)
                 return;
+            object selectedValue = gradoviComboBox.SelectedValue;
             int gradPostBr = int.Parse (gradoviComboBox.SelectedValue.ToString());
             ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
-            vrstaLokacije.ShowInsertForm (gradPostBr);
+            vrstaLokacije.ShowInsertForm (gradPostBr.ToString());
             FillMasterList ();
+            gradoviComboBox.SelectedValue = selectedValue;
         }
         private void buttonEdit_Click (object sender, EventArgs e) {
             if (masterLista.SelectedItem == null)
                 return;
+            object selectedValue = gradoviComboBox.SelectedValue;
             Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
+            
             ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
             vrstaLokacije.ShowUpdateForm (odabranaLokacija.ID);
             FillMasterList ();
+            gradoviComboBox.SelectedValue = selectedValue;
 
         }
         private void buttonDelete_Click (object sender, EventArgs e) {
@@ -91,6 +98,15 @@ namespace turistickiXML.Presentation {
             string vrstaLokacije = lokacijaComboBox.SelectedItem.ToString();
             DAL.XMLData.DeleteLocation (vrstaLokacije, odabranaLokacija.ID);
             FillMasterList ();
+        }
+
+        private void masterLista_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (gradoviComboBox.SelectedItem == null)
+                return;
+            Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
+            ILokacija vrstaLokacije = lokacijaComboBox.SelectedItem as ILokacija;
+            vrstaLokacije.ShowInfoForm(odabranaLokacija.ID);  
         }
     }
 }

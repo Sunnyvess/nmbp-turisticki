@@ -12,28 +12,17 @@
     </grad>
   </gradovi>
   <bolnice>
-    <bolnica id="1" pbr="10000" dezurstvo="DA">
+    <bolnica id="1" pbr="10000" dezurstvo="False">
       <naziv>Rebro</naziv>
       <ulica>Jukićeva 33</ulica>
       <opis>Ovo je opis bolnice Rebro.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
     </bolnica>
-    <bolnica id="3" pbr="10000" dezurstvo="False">
-      <naziv>hhhh</naziv>
-      <ulica>
-      </ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
-    </bolnica>
-    <bolnica id="4" pbr="10000" dezurstvo="False">
-      <naziv>jjhsjah</naziv>
-      <ulica>hhhh</ulica>
-      <opis>
-      </opis>
-      <radnoVrijeme>
-      </radnoVrijeme>
+    <bolnica id="3" pbr="21000" dezurstvo="False">
+      <naziv>sadsad</naziv>
+      <ulica>sadsadsad</ulica>
+      <opis>sadsadsad</opis>
+      <radnoVrijeme>dasdasdsad</radnoVrijeme>
     </bolnica>
   </bolnice>
   <muzeji>
@@ -45,9 +34,17 @@
     </muzej>
   </muzeji>
   <znamenitosti>
+    <znamenitost id="1" pbr="21000" tipZnamenitost="Tvrđava">
+      <naziv>Dioklecijanova palača</naziv>
+      <ulica>Ante Starčevića 68</ulica>
+      <opis>Ovo je opis Dioklecijanove palače.</opis>
+      <radnoVrijeme>0-24</radnoVrijeme>
+      <datumIzgradnje>7.12.2011. 2:46:45</datumIzgradnje>
+    </znamenitost>
+
   </znamenitosti>
   <parkovi>
-    <park id="1" pbr="10000" otvoren="DA">
+    <park id="1" pbr="10000" otvoren="False">
       <naziv>Zrinjevac</naziv>
       <ulica>Zrinjevac 8</ulica>
       <opis>Ovo je opis Zrinjevca.</opis>

@@ -6,35 +6,36 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using turistickiXML.Bussines;
 
-namespace turistickiXML.Presentation {
-    public partial class BolnicaNewEdit : Form {
-        private Bolnica bolnica = new Bolnica ();
+namespace turistickiXML.Presentation
+{
+    public partial class ParkNewEdit : Form
+    {
+        private  Park park = new Park ();
         GradList gradlist = new GradList ();
         DataTable grad = new DataTable();
         private int sifra;
         private bool isNew;
 
-        public BolnicaNewEdit (string pbr) {
+        public ParkNewEdit (string pbr) {
             InitializeComponent ();
-            this.Text = "Nova bolnica";
+            this.Text = "Novi park";
             this.StartPosition = FormStartPosition.CenterScreen;
             isNew = true;
             grad = gradlist.GetGradList();
             FillGradCB ();
             gradComboBox.SelectedValue = int.Parse(pbr);
         }
-        public BolnicaNewEdit (int sifra) {
+        public ParkNewEdit (int sifra) {
             InitializeComponent ();
-            this.Text = "Izmjena bolnice";
+            this.Text = "Izmjena parka";
             this.StartPosition = FormStartPosition.CenterScreen;
             this.sifra = sifra;
             isNew = false;
             grad = gradlist.GetGradList();
             FillGradCB ();
-            bolnica = BolnicaLokacija.SelectBolnica (sifra);
+            park = ParkLokacija.SelectPark (sifra);
             //gradComboBox.SelectedValue = int.Parse(pbr);
 
             BindData ();
@@ -52,27 +53,28 @@ namespace turistickiXML.Presentation {
         private void BindData () {
             //bolnica = new Bolnica ();
             //bolnica = bolnica.Select (sifra);
-            this.nazivTB.Text = bolnica.Naziv;
-            this.ulicaTB.Text = bolnica.Ulica;
-            this.opisTB.Text = bolnica.Opis;
-            this.radnoVrijemeTB.Text = bolnica.RadnoVrijeme;
-            dezurna.Checked = bolnica.Dezurna;
-            gradComboBox.SelectedValue = bolnica.PostBr;
+            this.nazivTB.Text = park.Naziv;
+            this.ulicaTB.Text = park.Ulica;
+            this.opisTB.Text = park.Opis;
+            this.radnoVrijemeTB.Text = park.RadnoVrijeme;
+            otvoren.Checked = park.Otvoren;
+            gradComboBox.SelectedValue = park.PostBr;
         }
 
         private void prihvatiBTN_Click (object sender, EventArgs e) {
-            bolnica.Naziv = nazivTB.Text;
-            bolnica.Ulica = ulicaTB.Text;
-            bolnica.Opis = opisTB.Text;
-            bolnica.RadnoVrijeme = radnoVrijemeTB.Text;
-            bolnica.PostBr = Convert.ToInt32 (gradComboBox.SelectedValue);
-            bolnica.Dezurna = dezurna.Checked;
+            park.Naziv = nazivTB.Text;
+            park.Ulica = ulicaTB.Text;
+            park.Opis = opisTB.Text;
+            park.RadnoVrijeme = radnoVrijemeTB.Text;
+            park.PostBr = Convert.ToInt32 (gradComboBox.SelectedValue);
+            park.Otvoren = otvoren.Checked;
             if (isNew) {
-                bolnica.ID = 3;
-                BolnicaLokacija.InsertNew (bolnica);
+                park.ID = 3;
+                
+                ParkLokacija.InsertNew (park);
             }
             else if (!isNew)
-                BolnicaLokacija.Update (bolnica);
+                ParkLokacija.Update (park);
             this.Close ();
         }
         private void odustaniBTN_Click (object sender, EventArgs e) {
