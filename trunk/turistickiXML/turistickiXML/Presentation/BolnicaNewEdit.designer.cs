@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
+            this.components = new System.ComponentModel.Container();
             this.gradComboBox = new System.Windows.Forms.ComboBox();
             this.dezurna = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.odustaniBTN = new System.Windows.Forms.Button();
             this.prihvatiBTN = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // gradComboBox
@@ -114,6 +119,7 @@
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(278, 24);
             this.ulicaTB.TabIndex = 43;
+            this.ulicaTB.Validating += new System.ComponentModel.CancelEventHandler(this.ulicaTB_Validating);
             // 
             // label1
             // 
@@ -132,6 +138,7 @@
             this.nazivTB.Name = "nazivTB";
             this.nazivTB.Size = new System.Drawing.Size(349, 26);
             this.nazivTB.TabIndex = 42;
+            this.nazivTB.Validating += new System.ComponentModel.CancelEventHandler(this.nazivTB_Validating);
             // 
             // panel1
             // 
@@ -164,6 +171,14 @@
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler(this.prihvatiBTN_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // BolnicaNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +199,8 @@
             this.Controls.Add(this.nazivTB);
             this.Name = "BolnicaNewEdit";
             this.Text = "BolnicaNewEdit";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +221,7 @@
         private System.Windows.Forms.Button prihvatiBTN;
         private System.Windows.Forms.Button odustaniBTN;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

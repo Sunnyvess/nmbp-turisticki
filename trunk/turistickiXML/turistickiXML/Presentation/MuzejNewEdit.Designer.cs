@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gradComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tipMuzejaCB = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.odustaniBTN = new System.Windows.Forms.Button();
             this.prihvatiBTN = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // gradComboBox
@@ -134,6 +139,7 @@
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(299, 24);
             this.ulicaTB.TabIndex = 45;
+            this.ulicaTB.Validating += new System.ComponentModel.CancelEventHandler(this.ulicaTB_Validating);
             // 
             // label1
             // 
@@ -152,6 +158,7 @@
             this.nazivTB.Name = "nazivTB";
             this.nazivTB.Size = new System.Drawing.Size(370, 26);
             this.nazivTB.TabIndex = 44;
+            this.nazivTB.Validating += new System.ComponentModel.CancelEventHandler(this.nazivTB_Validating);
             // 
             // panel1
             // 
@@ -184,6 +191,14 @@
             this.prihvatiBTN.UseVisualStyleBackColor = true;
             this.prihvatiBTN.Click += new System.EventHandler(this.prihvatiBTN_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // MuzejNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +220,8 @@
             this.Controls.Add(this.nazivTB);
             this.Name = "MuzejNewEdit";
             this.Text = "MuzejNewEdit";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +243,7 @@
         private System.Windows.Forms.Button prihvatiBTN;
         private System.Windows.Forms.Button odustaniBTN;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
