@@ -35,8 +35,6 @@ namespace turistickiXML.Presentation {
             grad = gradlist.GetGradList();
             FillGradCB ();
             bolnica = BolnicaLokacija.SelectBolnica (sifra);
-            //gradComboBox.SelectedValue = int.Parse(pbr);
-
             BindData ();
         }
 
@@ -50,8 +48,6 @@ namespace turistickiXML.Presentation {
         }
 
         private void BindData () {
-            //bolnica = new Bolnica ();
-            //bolnica = bolnica.Select (sifra);
             this.nazivTB.Text = bolnica.Naziv;
             this.ulicaTB.Text = bolnica.Ulica;
             this.opisTB.Text = bolnica.Opis;
@@ -68,7 +64,6 @@ namespace turistickiXML.Presentation {
             bolnica.PostBr = Convert.ToInt32 (gradComboBox.SelectedValue);
             bolnica.Dezurna = dezurna.Checked;
             if (isNew) {
-                bolnica.ID = 3;
                 BolnicaLokacija.InsertNew (bolnica);
             }
             else if (!isNew)

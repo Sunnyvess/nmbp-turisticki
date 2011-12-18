@@ -9,7 +9,7 @@ namespace turistickiXML.Bussines {
             get;
             set;
         }
-        public DateTime godinaIzgradnje
+        public string godinaIzgradnje
         {
             get;
             set;

@@ -70,7 +70,6 @@ namespace turistickiXML.Presentation
             muzej.Tip = tipMuzejaCB.SelectedItem.ToString();
             if (isNew)
             {
-                muzej.ID = 3;
                 MuzejLokacija.InsertNew(muzej);
             }
             else if (!isNew)

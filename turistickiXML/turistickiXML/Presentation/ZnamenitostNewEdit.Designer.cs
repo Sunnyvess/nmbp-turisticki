@@ -77,12 +77,14 @@
             // 
             // datumIzgradnje
             // 
+            
             this.datumIzgradnje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datumIzgradnje.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datumIzgradnje.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datumIzgradnje.Location = new System.Drawing.Point(158, 267);
             this.datumIzgradnje.Name = "datumIzgradnje";
             this.datumIzgradnje.Size = new System.Drawing.Size(152, 22);
             this.datumIzgradnje.TabIndex = 35;
+            this.datumIzgradnje.Value = new System.DateTime(2011, 12, 18, 0, 0, 0, 0);
             // 
             // tipZnamenCB
             // 
@@ -226,6 +228,7 @@
             this.Controls.Add(this.nazivTB);
             this.Name = "ZnamenitostNewEdit";
             this.Text = "ZnamenitostNewEdit";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

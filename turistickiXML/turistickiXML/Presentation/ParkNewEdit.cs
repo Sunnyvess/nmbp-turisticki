@@ -36,8 +36,6 @@ namespace turistickiXML.Presentation
             grad = gradlist.GetGradList();
             FillGradCB ();
             park = ParkLokacija.SelectPark (sifra);
-            //gradComboBox.SelectedValue = int.Parse(pbr);
-
             BindData ();
         }
 
@@ -51,8 +49,6 @@ namespace turistickiXML.Presentation
         }
 
         private void BindData () {
-            //bolnica = new Bolnica ();
-            //bolnica = bolnica.Select (sifra);
             this.nazivTB.Text = park.Naziv;
             this.ulicaTB.Text = park.Ulica;
             this.opisTB.Text = park.Opis;
@@ -69,8 +65,6 @@ namespace turistickiXML.Presentation
             park.PostBr = Convert.ToInt32 (gradComboBox.SelectedValue);
             park.Otvoren = otvoren.Checked;
             if (isNew) {
-                park.ID = 3;
-                
                 ParkLokacija.InsertNew (park);
             }
             else if (!isNew)
