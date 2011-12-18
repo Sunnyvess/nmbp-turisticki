@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using turistickiXML.DAL;
 
-namespace turistickiXML.Bussines
+namespace turistickiXML.Business
 {
     class GradList
     { 

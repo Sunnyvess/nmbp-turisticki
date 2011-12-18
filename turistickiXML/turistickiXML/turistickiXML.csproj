@@ -46,23 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bussines\Bolnica.cs" />
+    <Compile Include="Business\Bolnica.cs" />
     <Compile Include="Presentation\BolnicaInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\BolnicaInfo.Designer.cs">
       <DependentUpon>BolnicaInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bussines\BolnicaLokacija.cs" />
-    <Compile Include="Bussines\GradList.cs" />
-    <Compile Include="Bussines\ILokacija.cs" />
-    <Compile Include="Bussines\Lokacija.cs" />
-    <Compile Include="Bussines\Muzej.cs" />
-    <Compile Include="Bussines\MuzejLokacija.cs" />
-    <Compile Include="Bussines\Park.cs" />
-    <Compile Include="Bussines\ParkLokacija.cs" />
-    <Compile Include="Bussines\Znamenitost.cs" />
-    <Compile Include="Bussines\ZnamenitostLokacija.cs" />
+    <Compile Include="Business\BolnicaLokacija.cs" />
+    <Compile Include="Business\GradList.cs" />
+    <Compile Include="Business\ILokacija.cs" />
+    <Compile Include="Business\Lokacija.cs" />
+    <Compile Include="Business\Muzej.cs" />
+    <Compile Include="Business\MuzejLokacija.cs" />
+    <Compile Include="Business\Park.cs" />
+    <Compile Include="Business\ParkLokacija.cs" />
+    <Compile Include="Business\Znamenitost.cs" />
+    <Compile Include="Business\ZnamenitostLokacija.cs" />
     <Compile Include="DAL\XMLData.cs" />
     <Compile Include="Presentation\BolnicaNewEdit.cs">
       <SubType>Form</SubType>

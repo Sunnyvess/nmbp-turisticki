@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using turistickiXML.Bussines;
+using turistickiXML.Business;
 
 namespace turistickiXML.Presentation {
     public partial class BolnicaNewEdit : Form {
