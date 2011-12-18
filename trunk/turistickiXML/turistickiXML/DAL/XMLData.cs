@@ -29,19 +29,13 @@ namespace turistickiXML.DAL
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(filePath);
-
             int maxID = 0;
-
             foreach (XmlNode n in doc.SelectNodes(nodePath))
             {
                 int curr = int.Parse(n.Attributes[0].Value);
-
                 if (maxID == 0 || curr > maxID)
-                {
                     maxID = curr;
-                }
             }
-            
             return maxID + 1;
         }
 
@@ -284,21 +278,6 @@ namespace turistickiXML.DAL
         }
         #endregion
 
-        //public static Lokacija SelectLokacija(Lokacija lokacija, XmlNode node)
-        //{
-        //    if (node != null)
-        //    {
-        //        lokacija.ID = Convert.ToInt32(node.Attributes[0].InnerText);
-        //        lokacija.PostBr = Convert.ToInt32(node.Attributes[1].InnerText);
-                
-        //        lokacija.Naziv = node.ChildNodes[0].InnerText;
-        //        lokacija.Ulica = node.ChildNodes[1].InnerText;
-        //        lokacija.Opis = node.ChildNodes[2].InnerText;
-        //        lokacija.RadnoVrijeme = node.ChildNodes[3].InnerText;
-        //    }
-        //    return lokacija;
-        //}
-        
         public XmlNodeList Select(int PostanskiBr, string lokacija)
         {
             ds.Clear();
