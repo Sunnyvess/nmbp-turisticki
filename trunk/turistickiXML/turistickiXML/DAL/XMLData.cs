@@ -26,6 +26,29 @@ namespace turistickiXML.DAL
             document.Save (turistickiXML.DAL.XMLData.filePath);
         }
 
+        public static int GetID(string nodePath) {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filePath);
+
+            int maxID = 0;
+
+            foreach (XmlNode n in doc.SelectNodes(nodePath))
+            {
+
+                int curr = int.Parse(n.Attributes[0].Value);
+
+                if (maxID == 0 || curr > maxID)
+                {
+
+                    maxID = curr;
+
+                }
+
+            }
+            
+            return maxID+1;
+        }
+
         #region Bolnica
 
         public static void InsertBolnica (Bolnica bolnicaNova) {
@@ -39,7 +62,7 @@ namespace turistickiXML.DAL
             XmlElement opis = xml.CreateElement ("opis");
             XmlElement radnoVrijeme = xml.CreateElement ("radnoVrijeme");
             XmlAttribute idBolnica = xml.CreateAttribute ("id");
-            idBolnica.Value = bolnicaNova.ID.ToString ();
+            idBolnica.Value = GetID("*/*/bolnica").ToString();
             XmlAttribute pbr = xml.CreateAttribute ("pbr");
             pbr.Value = bolnicaNova.PostBr.ToString ();
             XmlAttribute dezurstvo = xml.CreateAttribute ("dezurstvo");
