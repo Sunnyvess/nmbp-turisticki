@@ -42,7 +42,7 @@
       <ulica>Ante Starčevića 68</ulica>
       <opis>Ovo je opis Dioklecijanove palače.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
-      <datumIzgradnje>2011-01-01</datumIzgradnje>
+      <datumIzgradnje>2011-05-30T09:00:00</datumIzgradnje>
     </znamenitost>
     <znamenitost id="2" pbr="10000" tipZnamenitost="Tvrđava">
       <naziv>tvr</naziv>
@@ -52,7 +52,17 @@
       </opis>
       <radnoVrijeme>
       </radnoVrijeme>
-      <datumIzgradnje>2000-12-30</datumIzgradnje>
+      <datumIzgradnje>2002-05-30T09:00:00</datumIzgradnje>
+    </znamenitost>
+    <znamenitost id="3" pbr="10000" tipZnamenitost="Tvrđava">
+      <naziv>test</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+      <datumIzgradnje>2001-05-30T09:00:00</datumIzgradnje>
     </znamenitost>
   </znamenitosti>
   <parkovi>
