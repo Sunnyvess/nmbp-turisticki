@@ -32,6 +32,15 @@
       <opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
       <radnoVrijeme>8-20</radnoVrijeme>
     </muzej>
+    <muzej id="2" pbr="10000" tipMuzeja="Prirodoslovni">
+      <naziv>novi</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </muzej>
   </muzeji>
   <znamenitosti>
     <znamenitost id="1" pbr="21000" tipZnamenitost="Tvrđava">
@@ -40,6 +49,16 @@
       <opis>Ovo je opis Dioklecijanove palače.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
       <datumIzgradnje>7.12.2011. 2:46:45</datumIzgradnje>
+    </znamenitost>
+    <znamenitost id="2" pbr="10000" tipZnamenitost="Tvrđava">
+      <naziv>tvr</naziv>
+      <ulica>
+      </ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+      <datumIzgradnje>1.1.0001. 0:00:00</datumIzgradnje>
     </znamenitost>
   </znamenitosti>
   <parkovi>

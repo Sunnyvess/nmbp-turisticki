@@ -106,7 +106,7 @@
 		<xs:complexContent>
 			<xs:extension base="lokacijaT">
 				<xs:sequence>
-					<xs:element name="datumIzgradnje" type="xs:string"/>
+					<xs:element name="datumIzgradnje" type="xs:date"/>
 				</xs:sequence>
 				<xs:attribute name="tipZnamenitost" type="tipZnamenitostiT" use="required"/>
 			</xs:extension>
