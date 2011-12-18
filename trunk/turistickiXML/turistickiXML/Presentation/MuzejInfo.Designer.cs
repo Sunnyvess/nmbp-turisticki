@@ -130,7 +130,7 @@
             this.Controls.Add(this.adresaLabel);
             this.Controls.Add(this.nameLabel);
             this.Name = "MuzejInfo";
-            this.Text = "MuzejInfo";
+            this.Text = "Informacije o muzeju";
             this.Load += new System.EventHandler(this.MuzejInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

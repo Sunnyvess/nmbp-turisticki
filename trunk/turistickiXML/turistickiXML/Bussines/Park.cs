@@ -9,7 +9,5 @@ namespace turistickiXML.Bussines {
             get;
             set;
         }
-        public Park () {
-        }
     }
 }
