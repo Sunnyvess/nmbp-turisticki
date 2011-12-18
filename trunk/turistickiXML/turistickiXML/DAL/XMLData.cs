@@ -6,7 +6,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Xml.XPath;
 using System.Xml;
-using turistickiXML.Bussines;
+using turistickiXML.Business;
 
 namespace turistickiXML.DAL
 {

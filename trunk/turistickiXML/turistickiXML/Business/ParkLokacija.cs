@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.XPath;
 using System.Xml;
 
-namespace turistickiXML.Bussines {
+namespace turistickiXML.Business {
     class ParkLokacija : ILokacija {
 
         public void ShowUpdateForm(int id)
