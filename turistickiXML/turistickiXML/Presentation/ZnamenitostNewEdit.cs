@@ -44,7 +44,7 @@ namespace turistickiXML.Presentation
             
             this.gradComboBox.Items.Clear ();
             this.gradComboBox.DataSource = grad;
-            this.gradComboBox.DisplayMember = "nazivGrad";
+            this.gradComboBox.DisplayMember = "naziv";
             this.gradComboBox.ValueMember = "pbr";
             this.gradComboBox.SelectedIndex = 0;
         }
