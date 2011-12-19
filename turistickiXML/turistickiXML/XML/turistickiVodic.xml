@@ -7,8 +7,17 @@
     <grad pbr="21000">
       <naziv>Split</naziv>
     </grad>
-    <grad pbr="22000">
+    <grad pbr="31000">
       <naziv>Osijek</naziv>
+    </grad>
+    <grad pbr="20000">
+      <naziv>Dubrovnik</naziv>
+    </grad>
+    <grad pbr="30000">
+      <naziv>Zadar</naziv>
+    </grad>
+    <grad pbr="51000">
+      <naziv>Rijeka</naziv>
     </grad>
   </gradovi>
   <bolnice>
@@ -33,13 +42,54 @@
       </opis>
       <radnoVrijeme>0-24</radnoVrijeme>
     </bolnica>
+    <bolnica id="4" pbr="10000" dezurstvo="True">
+      <naziv>Nova bolnica</naziv>
+      <ulica>Jukićeva 17</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </bolnica>
   </bolnice>
   <muzeji>
-    <muzej id="1" pbr="10000" tipMuzeja="Arheološki">
+    <muzej id="1" pbr="10000" tipMuzeja="Umjetnički">
       <naziv>Muzej suvremene umjetnosti</naziv>
       <ulica>Trg hrvatskih velikana 6</ulica>
       <opis>Ovo je opis Muzeja suvremene umjetnosti.</opis>
       <radnoVrijeme>8-20</radnoVrijeme>
+    </muzej>
+    <muzej id="2" pbr="21000" tipMuzeja="Arheološki">
+      <naziv>Arheološki muzej</naziv>
+      <ulica>Zrinsko Frankopanska 25</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </muzej>
+    <muzej id="3" pbr="21000" tipMuzeja="Povijesni">
+      <naziv>Pomorski muzej</naziv>
+      <ulica>Glagoljaša 18</ulica>
+      <opis>Pomorski muzej u Splitu</opis>
+      <radnoVrijeme>9-14</radnoVrijeme>
+    </muzej>
+    <muzej id="4" pbr="21000" tipMuzeja="Arheološki">
+      <naziv>Etnografski muzej</naziv>
+      <ulica>Iza Velebita 4</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>Pon-Pet 9.00 -19-00</radnoVrijeme>
+    </muzej>
+    <muzej id="5" pbr="10000" tipMuzeja="Tehnički">
+      <naziv>Tehnički muzej</naziv>
+      <ulica>Šubićeva 33</ulica>
+      <opis>Tehnički muzej u Zagrebu</opis>
+      <radnoVrijeme>08 - 20</radnoVrijeme>
+    </muzej>
+    <muzej id="6" pbr="10000" tipMuzeja="Prirodoslovni">
+      <naziv>Prirodoslovni muzej</naziv>
+      <ulica>Jurišićeva 4</ulica>
+      <opis>Prirodoslovni muzej u Zagrebu </opis>
+      <radnoVrijeme>08 - 20</radnoVrijeme>
     </muzej>
   </muzeji>
   <znamenitosti>
@@ -50,6 +100,32 @@
       <radnoVrijeme>0-24</radnoVrijeme>
       <datumIzgradnje>2011-12-08</datumIzgradnje>
     </znamenitost>
+    <znamenitost id="2" pbr="21000" tipZnamenitost="Tvrđava">
+      <naziv>Dioklecijanova palača</naziv>
+      <ulica>Trg Dioklecijana 12</ulica>
+      <opis>Dioklecijanova palača je 1979. uvrštena u UNESCO-v popis svjetske baštine. To je jedan od najbolje sačuvanih spomenika rimskog graditeljstva na svijetu. Careva palača je sagrađena između 295 i 305 godine kao kombinacija luksuzne vile i rimskog vojnog logora (castruma), podijeljena na četiri dijela dvjema glavnim ulicama. </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+      <datumIzgradnje>1753-01-01</datumIzgradnje>
+    </znamenitost>
+    <znamenitost id="3" pbr="10000" tipZnamenitost="Tvrđava">
+      <naziv>Kula lotrščak</naziv>
+      <ulica>Zagrebačka 140</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+      <datumIzgradnje>1800-12-18</datumIzgradnje>
+    </znamenitost>
+    <znamenitost id="4" pbr="10000" tipZnamenitost="Spomenik">
+      <naziv>Zdenac života</naziv>
+      <ulica>Kazališni trg 32</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+      <datumIzgradnje>1986-04-01</datumIzgradnje>
+    </znamenitost>
   </znamenitosti>
   <parkovi>
     <park id="1" pbr="10000" otvoren="False">
@@ -57,6 +133,21 @@
       <ulica>Zrinjevac 8</ulica>
       <opis>Ovo je opis Zrinjevca.</opis>
       <radnoVrijeme>0-24</radnoVrijeme>
+    </park>
+    <park id="2" pbr="21000" otvoren="True">
+      <naziv>Marjan</naziv>
+      <ulica>Marjan 10</ulica>
+      <opis>
+      </opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
+    </park>
+    <park id="3" pbr="10000" otvoren="True">
+      <naziv>Kralja Tomislava</naziv>
+      <ulica>Medulićeva 14</ulica>
+      <opis>Park Kralja Tomislava smješten je u blizini glavnog kolodvora.</opis>
+      <radnoVrijeme>
+      </radnoVrijeme>
     </park>
   </parkovi>
 </turistickiVodic>
