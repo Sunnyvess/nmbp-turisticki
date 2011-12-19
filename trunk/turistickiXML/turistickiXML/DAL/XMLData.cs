@@ -17,7 +17,7 @@ namespace turistickiXML.DAL
         static XmlDocument xml;
         public static string filePath = "..\\..\\XML\\turistickiVodic.xml";
 
-        public static void DeleteLocation (string location, int id) {
+        public static void DeleteLokacija (string location, int id) {
             XmlDocument document = new XmlDocument ();
             document.Load (filePath);
             XmlNode node = document.SelectSingleNode (string.Format ("/*/*/{0}[@id='{1}']", location.ToLower (), id));
