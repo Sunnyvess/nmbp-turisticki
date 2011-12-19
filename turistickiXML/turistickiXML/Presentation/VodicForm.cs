@@ -98,7 +98,7 @@ namespace turistickiXML.Presentation {
             {
                 Lokacija odabranaLokacija = masterLista.SelectedItem as Lokacija;
                 string vrstaLokacije = lokacijaComboBox.SelectedItem.ToString();
-                DAL.XMLData.DeleteLocation(vrstaLokacije, odabranaLokacija.ID);
+                DAL.XMLData.DeleteLokacija(vrstaLokacije, odabranaLokacija.ID);
                 FillMasterList();
             }
         }
